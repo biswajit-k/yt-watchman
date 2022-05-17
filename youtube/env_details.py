@@ -1,0 +1,18 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
+YT_API_KEY = os.getenv('YT_API_KEY')
+SENDER_EMAIL = os.getenv('DEV_EMAIL')
+SENDER_PASS = os.getenv('DEV_PASS') 
+SAMPLE_RECEIVER = os.getenv('SAMPLE_RECEIVER')
+RECEIVER_LIST = [SENDER_EMAIL, SAMPLE_RECEIVER]
+SAMPLE_CHANNEL_ID = os.getenv("YT_SAMPLE_CHANNEL_ID")
+
+env_details = {
+    "SENDER_EMAIL": SENDER_EMAIL,
+    "SENDER_PASS": SENDER_PASS,
+    "SAMPLE_RECEIVER": SAMPLE_RECEIVER, 
+    "RECEIVER_LIST": RECEIVER_LIST,
+    "SAMPLE_CHANNEL_ID": SAMPLE_CHANNEL_ID,
+}

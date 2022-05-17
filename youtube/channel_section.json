@@ -1,0 +1,200 @@
+{
+  "kind": "youtube#channelSectionListResponse",
+  "etag": "sgwiFMBuehs8UjhpQtgsTBOsrak",
+  "items": [
+    {
+      "kind": "youtube#channelSection",
+      "etag": "8rm7I7ECqQGiuFhbLvRqnAZUvSo",
+      "id": "UCsvqVGtbbyHaMoevxPAq9Fg.jNQXAC9IVRw",
+      "snippet": {
+        "type": "singleplaylist",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "position": 0
+      },
+      "contentDetails": {
+        "playlists": [
+          "PLEiEAq2VkUULxYBpoIVO9rYL34t5AA18u"
+        ]
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "lfMtWEt-Oy6zaqXHhDRyeZG1tZ0",
+      "id": "UCsvqVGtbbyHaMoevxPAq9Fg.LeAltgu_pbM",
+      "snippet": {
+        "type": "singleplaylist",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "position": 1
+      },
+      "contentDetails": {
+        "playlists": [
+          "PLEiEAq2VkUULB6YBZRsLFOUiiANy5-EvW"
+        ]
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "4KCf3B_rEweEZFVesXEhoLc33c0",
+      "id": "UCsvqVGtbbyHaMoevxPAq9Fg.nGzAI5pLbMY",
+      "snippet": {
+        "type": "singleplaylist",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "position": 2
+      },
+      "contentDetails": {
+        "playlists": [
+          "PLEiEAq2VkUULDtA3a8qXPzm0ofucBgC_B"
+        ]
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "NsBWRU87pP4kW4jHkdjnMh4NtyE",
+      "id": "UCsvqVGtbbyHaMoevxPAq9Fg.__WLXNpu6u8",
+      "snippet": {
+        "type": "singleplaylist",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "position": 3
+      },
+      "contentDetails": {
+        "playlists": [
+          "PLEiEAq2VkUUK76-Jy6NRPwQSaGQtGC_Td"
+        ]
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "UfH9FmJ7FYTK_AK-aNW_YgnDJe4",
+      "id": "UCsvqVGtbbyHaMoevxPAq9Fg.Zx4DA4xg9IM",
+      "snippet": {
+        "type": "multipleplaylists",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Trending Technologies 2021",
+        "position": 4
+      },
+      "contentDetails": {
+        "playlists": [
+          "PLEiEAq2VkUULyr_ftxpHB6DumOq1Zz2hq",
+          "PLEiEAq2VkUUKmhU6SO2P73pTdMZnHOsDB",
+          "PLEiEAq2VkUUJfPOj5nRounXvf3n17PCft",
+          "PLEiEAq2VkUUJS6zkGgXeWw9l32EwRoYdR",
+          "PLEiEAq2VkUULlNtIFhEQHo8gacvme35rz",
+          "PLEiEAq2VkUULYYgj13YHUWmRePqiu8Ddy",
+          "PLEiEAq2VkUUIEQ7ENKU5Gv0HpRDtOphC6",
+          "PLEiEAq2VkUUIMai0l1LiX_ZgU51MkM5op",
+          "PLEiEAq2VkUUIJ3o1tehvtux0_Ynf42CBN",
+          "PLEiEAq2VkUUIhyGLSiEzotDRF0hc1xbiN",
+          "PLEiEAq2VkUUJpY2dHm-X7VB1acIH8d0Ze",
+          "PLEiEAq2VkUULa5aOQmO_al2VVmhC-eqeI"
+        ]
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "CDT8tcybzSvFyVqel3AWdxetMdg",
+      "id": "UCsvqVGtbbyHaMoevxPAq9Fg.MykmTeTiooA",
+      "snippet": {
+        "type": "singleplaylist",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "position": 5
+      },
+      "contentDetails": {
+        "playlists": [
+          "PLEiEAq2VkUUK56bAwcQTjwwN0PRs6zBb1"
+        ]
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "Up8sBTAtELuJNeU5XZTMiL-oep8",
+      "id": "UCsvqVGtbbyHaMoevxPAq9Fg.iJLXf_7B368",
+      "snippet": {
+        "type": "multipleplaylists",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Digital Marketing Tutorials",
+        "position": 6
+      },
+      "contentDetails": {
+        "playlists": [
+          "PLEiEAq2VkUULa5aOQmO_al2VVmhC-eqeI",
+          "PLEiEAq2VkUUJpY2dHm-X7VB1acIH8d0Ze",
+          "PLEiEAq2VkUUKzyU5fgjArG7DmUjy__vjI",
+          "PLEiEAq2VkUUK4-Inc4LAUDeiCSLWFX2u-",
+          "PLEiEAq2VkUULo3XxIahvDY8HJIPMjkC-L",
+          "PLEiEAq2VkUUIEwGI8HhRKnkI5KRrvp1jI",
+          "PLEiEAq2VkUUKL2lhRWUHiLIlAGcNPiSqD",
+          "PLEiEAq2VkUULPk73XBrYk_eJu9S3MGKcU",
+          "PLEiEAq2VkUUIeq5u2Rbv7pBvWtGzY7Nuo",
+          "PLEiEAq2VkUUKVLDfTf79x2kQTpzOzRlSn"
+        ]
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "G0BkfB07bu0MgGiko-_nvAgFdiY",
+      "id": "UCsvqVGtbbyHaMoevxPAq9Fg.UgY69lf0UCE",
+      "snippet": {
+        "type": "multipleplaylists",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Programming Languages Tutorials",
+        "position": 7
+      },
+      "contentDetails": {
+        "playlists": [
+          "PLEiEAq2VkUUKoW1o-A-VEmkoGKSC26i_I",
+          "PLEiEAq2VkUUI5_Z4vOtWE6AMcSrYbth1t",
+          "PLEiEAq2VkUUKMie-cEUnkHRxiFKDZJGqO",
+          "PLEiEAq2VkUUIzcMkvJKwXLf13SqV8lPes",
+          "PLEiEAq2VkUUKAw0aAJ1W4jpZ1q9LpX4yG",
+          "PLEiEAq2VkUUKL3yPbn8yWnatjUg0P0I-Z",
+          "PLEiEAq2VkUUJALG6nbw0sY-zbhAAx5IuT",
+          "PLEiEAq2VkUUJgT4Y6EyN_bND71KnskM6h",
+          "PLEiEAq2VkUUL3scxEjT4YX6zGXsjjeWhv",
+          "PLEiEAq2VkUULG4j7aDpamb6b5Ym3RFQOj"
+        ]
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "m_tQRR8H5dU_yPU3hs32ovXmOyY",
+      "id": "UCsvqVGtbbyHaMoevxPAq9Fg.ebKlgRwnpFY",
+      "snippet": {
+        "type": "singleplaylist",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "position": 8
+      },
+      "contentDetails": {
+        "playlists": [
+          "PLD7AD4618679868EC"
+        ]
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "3hyRcq7CHtFlZWkZkVw0O3sbS68",
+      "id": "UCsvqVGtbbyHaMoevxPAq9Fg.aqsRo9JYx5M",
+      "snippet": {
+        "type": "channelsectiontypeundefined",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "position": 9
+      }
+    },
+    {
+      "kind": "youtube#channelSection",
+      "etag": "eCBJz65kLnCd28Kx_F3hHuu274k",
+      "id": "UCsvqVGtbbyHaMoevxPAq9Fg.XgM4c0oGu94",
+      "snippet": {
+        "type": "multiplechannels",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Featured Channels",
+        "position": 10
+      },
+      "contentDetails": {
+        "channels": [
+          "UC9iMriYmer476o8BttUoF3A",
+          "UCIvbT_2gRdj8_Y0ZadGk-mg"
+        ]
+      }
+    }
+  ]
+}

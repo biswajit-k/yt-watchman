@@ -1,0 +1,1018 @@
+{
+  "kind": "youtube#activityListResponse",
+  "etag": "NT9MDksy7ZJyHvBkNEnvTqxodYc",
+  "items": [
+    {
+      "kind": "youtube#activity",
+      "etag": "WJv-2bmMFtmdpa3SjFyB6tYaxYA",
+      "id": "MTUxNjQ4OTk5ODAyMTY0ODk5OTgwMjAwMDA2Mg",
+      "snippet": {
+        "publishedAt": "2022-04-03T15:30:02+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Lambda Expression C# Tutorial | LINQ C# | C# Tutorial For Beginners | Simplilearn",
+        "description": "This video on Lambda Expression C# Tutorial will acquaint you with a clear understanding of the fundamentals of LINQ C#. In this C# Tutorial for beginners, you will get a better understanding of are Lambda Expression C# tutorial. We will begin our session with a discussion on Linq. Then we will discuss the Lambda Expression and Async Lambda. After that, we will look into Lambda in the standard query operators with an implementation. Now we will dive into the Type Interface. Then we will discuss the Variable scope. After that, we will have a look at the Expression tree. Finally, we will wind up this session with a conclusion.\n\nThe topics covered in this video are:\n\n00:00 Introduction to Lambda Expression C# Tutorial        \n01:19 What is a C# Linq in Lambda Expression C# Tutorial?\n01:46 What are Lambda Expression in Lambda Expression C# Tutorial\n06:42 Lambda in the standard query operators to Lambda Expression C# Tutorial.\n11:27 Type Interface in Lambda Expression C# Tutorial\n12:02 Variable scope in Lambda Expression C# Tutorial.\n22:48 Expression tree in Lambda Expression C# Tutorial\n29:41 Conclusion on Lambda Expression C# Tutorial.\n\n🔥 Explore our FREE Courses with Completion Certificates: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=LambdaExpressionC#Tutorial&utm_medium=Description&utm_source=youtube\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n⏩ Check out the C++ Programming training videos: https://www.youtube.com/playlist?list=PLEiEAq2VkUUKqiV3x0XzAuMtlvyYxHuin\n\n#LambdaExpressionC#Tutorial #LINQCSharp #CSharpTutorial #WhatIsLambdaExpressionInCSharp #LambdaExpressionExplained #LINQInCSharp #CSharpTutorialForBeginners #LearnCSharpProgramming #Simplilearn \n\nThis video covers the following topics\n\nWe will begin our Lambda Expression C# Tutorial with a discussion on Linq.\n\nThen we will discuss the Lambda Expression and Async Lambda.\n\nAfter that, we will look into Lambda in the standard query operators with an implementation.\n\nNow we will dive into the Type Interface to understand Lambda Expression C# Tutorial.\n\nThen we will discuss the Variable scope to get a better understanding of Lambda Expression C# Tutorial.\n\nAfter that, we will have a look at the Expression tree to articulate the Lambda Expression C# Tutorial.\n\nFinally, we will wind up this Lambda Expression C# Tutorial with a conclusion.\n\nWhat is C# programming language?\nC# (C Sharp) is a multi-paradigm, general-purpose programming language. C# programming language encompasses the programming disciplines of static typing, strong typing, lexically scoped, imperative, declarative, functional, generic, object-oriented (class-based), and component-oriented.\n\nASP.NET Web API is a framework that makes it simple to create HTTP web services that can be accessed by a wide variety of clients, including browsers, mobile applications, desktop applications, and IoT devices.\n\nWhat are the applications of C#?\nC# is a popular programming language for creating desktop applications, web applications, and web services. It is widely used in the development of Microsoft applications on a large scale. C# is also used in Unity game development.\nNet framework is a ground-breaking platform that allows you to create the following types of applications:\nApplications for Windows\nWeb-based applications\nWeb-based services\nNet framework applications are cross-platform in nature. \n\nC# Career Prospects:\nWith just C# programming expertise, you will have excellent job opportunities, salaries, and career prospects. However, for a career based on programming languages such as Java and Python (which are in more demand than C#) or for careers based on front-end, back-end, and full-stack development, you will go a lot further with C# expertise. Furthermore, in development domains such as software testing, you are expected to know C#. C# gives us more Edge over other languages because of its .Net Framework integration.\n\n👉To know about C++ programming, visit: https://www.simplilearn.com/c-plus-plus-programming-for-beginners-article?utm_campaign=LambdaExpressionsC#Tutorial&utm_medium=Description&utm_source=youtube\n\n🔥 Explore our FREE Courses with Completion Certificates: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=LambdaExpressionsC#Tutorial&utm_medium=Description&utm_source=youtube\n\nFor more updates on courses and tips follow us on:\n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/K_62nX2z5As/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/K_62nX2z5As/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/K_62nX2z5As/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/K_62nX2z5As/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/K_62nX2z5As/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "K_62nX2z5As"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "TpLMYKqQFNFoCUMoIMzGB956xI8",
+      "id": "MTUxNjQ4ODI3MDA3MTY0ODgyNzAwNzAwMDQzNQ",
+      "snippet": {
+        "publishedAt": "2022-04-01T15:30:07+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "First C Program Tutorial | Writing First C Program | C Programming For Beginners | Simplilearn",
+        "description": "This video by simpliliearn is based on First c program tutorial. In this tutorial you will be writing first c program using visual studio code IDE. C programming tutorial for beginners will help you with the following.\n\nIntroduction to First C Program Tutorial \nFirst C Program Tutorial\n\n🔥 Explore our FREE courses with completion certificates: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=FirstCProgramTutorial&utm_medium=Description&utm_source=youtube\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n⏩ Check out the C++ Programming training videos: https://www.youtube.com/playlist?list=PLEiEAq2VkUUKqiV3x0XzAuMtlvyYxHuin\n\n#FirstCProgramTutorial #WritingFirstCProgram #FirstCodeInC #CProgram #CProgrammingLanguage #LearnCProgramming #HowToCodeInCForBeginners #CTutorialForBeginners #LearnCProgramming #Simplilearn\n\n✅What is C++ Programming? \nC++ is an enhanced and extended version of C programming language, developed by Bjarne Stroustrup in 1979 as part of his Ph.D. project. Bjarne developed what he called ‘C with Classes’ (later renamed C++) because he felt limited by the existing programming languages that were not ideal for large scale projects. He used C to build what he wanted because C was already a general-purpose language that was efficient and fast in its operations.\n\n✅C++ Career Prospects:\nWith just C++ programming expertise, you will have excellent job opportunities, salaries, and career prospects. However, for a career based on programming languages such as Java and Python (which are in more demand than C++) or for careers based on front-end, back-end, and full-stack development, you will go a lot further with C++ expertise. Furthermore, in development domains such as software testing, you are expected to know C++.\n\n👉To know about C++ programming, visit: https://www.simplilearn.com/c-plus-plus-programming-for-beginners-article?utm_campaign=FirstCProgramTutorial&utm_medium=Description&utm_source=youtube\n\n🔥 Explore our FREE Courses with Completion Certificates: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=FirstCProgramTutorial&utm_medium=Description&utm_source=youtube\n\nFor more updates on courses and tips follow us on:\n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/J-eV_1Dje9U/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/J-eV_1Dje9U/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/J-eV_1Dje9U/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "J-eV_1Dje9U"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "suSS-hDdU2j2l8fL_wlL4X10y6w",
+      "id": "MTUxNjQ4ODI3MDAyMTY0ODgyNzAwMjAwMDI2MA",
+      "snippet": {
+        "publishedAt": "2022-04-01T15:30:02+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Career Transition With A Guaranteed Job | Harshad's Journey With Simplilearn | Simplilearn Reviews",
+        "description": "Harshad did his Engineering in Computer Science from BML Munjal University in 2020. He did not get the desired placement from his university, due to which he started helping in his family business. He always wanted to be in the corporate IT field, so he searched for various courses and got Simplilearn's Full Stack Development course. He found the content quite elaborate and decided to pursue it. After the course, he got job assistance from Simplilearn and was called for an interview at five places. He finally converted his interview at MYCOM and joined the company as a Software developer in October 2021. He is thankful to Simplilearn for helping him get to where he wanted and creating a strong base for him.\n\n🔥Explore Our Free Courses With Completion Certificate by SkillUp: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=HarshadTestimonial&utm_medium=Description&utm_source=youtube\n\nAbout Full Stack Full Stack Java Developer Program:\nThe Full Stack Java Developer Job Guarantee Program is an intense bootcamp, in partnership with HIRIST and HackerEarth, that offers a complete suite of full stack development skills. Complete the course to master these skills and get a guaranteed job with a median pay of 9 LPA\n\nKey Features:\n✅ 8X higher engagement in live online classes by industry experts\n✅ Learn 30+ cutting edge tools like SQL, Java, etc.\n✅ Sandboxed cloud labs for real-time application development\n✅ Build real-world applications like Amazon, Walmart etc.\n✅ Start building your product from Day 1 with 100% hands-on training\n✅ Career mentoring through live sessions with industry experts\n✅ Land a job within 6 months of graduation\n✅ Premium Job placements from top Tech and internet companies\n✅ Women-only cohorts in collaboration with JobsforHer\n✅ 5+ networking & expert-led mentorship sessions for women by JobsForHer\n✅ Industry recognized certification\n\nSkills Covered:\n✅ AgileJava\n✅ Hibernate and JPA\n✅ Spring Core 5.0\n✅ DevOps\n✅ HTML5 and CSS3\n✅ AWS\n✅ JavaScript ES6\n✅ Servlets\n✅ SOAP and REST\n✅ JSP\n\nWhat is MEAN Stack?\nThe term MEAN stack refers to a collection of JavaScript-based technologies used to develop web applications. MEAN is an acronym for MongoDB, Express, Angular, and Node.js. MongoDB is a database system, Express is a back-end web framework, Angular.js is a front-end framework, and Node.js is a back-end runtime environment.\n\nCan I become a full stack developer without a degree?\nYou can always learn the concepts of full stack development  on your own to become a full stack developer without a degree. However, having a formal degree in full stack development will undoubtedly help you beef up your CV and give you an added edge over other candidates. Moreover, a formal degree provides structured learning and helps learners gain real work experience through various real-world industry projects.\n\nIs full-stack development a good career?\nPursuing a career in full-stack development is worthwhile because companies are desperately looking for developers who are skilled in handling any situation and who can take care of both front-end and back-end development. Companies are also offering high salaries to full stack developers.\n\n👉Learn more at: https://www.simplilearn.com/java-full-stack-developer-certification-training-course?utm_campaign=HarshadTestimonial&utm_medium=Description&utm_source=youtube\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n⏩ Check out the Full Stack training videos: https://www.youtube.com/watch?v=8KaJRw-rfn8&list=PLEiEAq2VkUULCC3eEATL4zzuapTjmo1Z_\n\n#SuccessStories #SimplilearnReviews #FullStackJavaDeveloper #Simplilearn\n\nFor more information about Simplilearn’s courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JNBQii1Zjq0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JNBQii1Zjq0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JNBQii1Zjq0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/JNBQii1Zjq0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/JNBQii1Zjq0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "JNBQii1Zjq0"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "6s2HwdJqsW-e_gUAdzsY7Kcn8cM",
+      "id": "MTUxNjQ4ODE3MjEwMTY0ODgxNzIxMDAwMDY2NQ",
+      "snippet": {
+        "publishedAt": "2022-04-01T12:46:50+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Top 5 Mobile Processors In 2022 | Best Mobile Processor 2022 | #Shorts | Simplilearn",
+        "description": "🔥Explore Our Free Courses With Completion Certificate by SkillUp: https://www.simplilearn.com/skillup-f...\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n#Top5MobileProcessorsIn2022 #BestMobileProcessor2022 #A15BionicChip #SnapDragon888 #Exynos2700 #Geekbench5Score #GeekbenchBenchmarking #BestProcessor #Shorts #Simplilearn\n\nSimplilearn is one of the world’s leading certification training providers. We partner with companies and individuals to address their unique needs, providing training and coaching that helps working professionals achieve their career goals. We've helped over 1 million professionals and companies across 150+ countries get trained, acquire certifications, and upskill their employees. Our training courses are designed and updated by 2000+ renowned industry experts. Our blended learning approach combines online classes, instructor-led live virtual classrooms, project work, and 24/7 teaching assistance. \n\nWe provide online training in Machine Learning, AWS, DevOps, Big Data, Hadoop, Data Science, Artificial Intelligence, Cloud Computing, Project Management, Digital Marketing, Cyber Security and Salesforce among others, where technologies and best practices are changing rapidly and demand for qualified candidates significantly exceeds supply.\n\nLearn more at: https://www.simplilearn.com/?utm_camp...\n\nFor more information about Simplilearn courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simp...\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn...\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simp...\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/j_t2Gev-Mgw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/j_t2Gev-Mgw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/j_t2Gev-Mgw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/j_t2Gev-Mgw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/j_t2Gev-Mgw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "j_t2Gev-Mgw"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "zVqxA6cJ6VJOrjVp2Cdv-3bNi38",
+      "id": "MTUxNjQ4ODE0MTMwMTY0ODgxNDEzMDAwMDM3Nw",
+      "snippet": {
+        "publishedAt": "2022-04-01T11:55:30+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "What Is AR And VR | Virtual Reality And Augmented Reality Explained | AR VR Tutorial | Simplilearn",
+        "description": "This video by simplilearn is based on what is AR and VR. This tutorial will help you understand the fundamentals of AR and VR with the help of theoretical and practical methods. Augmented reality (AR) adds digital elements to a live view often by using the camera on a smartphone. virtual reality (VR) implies a complete immersion experience that shuts out the physical world.\n\n🔥Enroll for Free AI Course & Get Your Completion Certificate: https://www.simplilearn.com/learn-ai-basics-skillup?utm_campaign=WhatIsARAndVR&utm_medium=Description&utm_source=youtube \n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH  \n\n⏩ Check out the Artificial Intelligence training videos: https://bit.ly/2Li4Rur  \n\n#WhatIsARAndVR #VirtualRealityAndAugmentedRealityExplained #WhatIsAugmentedReality, #WhatIsVirtualReality #HowARVRWorks #ARVRTutorial #ARVRTechnology #AugmentedReality #VirtualReality #Simplilearn \n\nSimplilearn’s Artificial Intelligence course provides training in the skills required for a career in AI. You will master TensorFlow, Machine Learning and other AI concepts, plus the programming languages needed to design intelligent agents, deep learning algorithms & advanced artificial neural networks that use predictive analytics to solve real-time decision-making problems without explicit programming.  \n\nWhy learn Artificial Intelligence? \nThe current and future demand for AI engineers is staggering. The New York Times reports a candidate shortage for certified AI Engineers, with fewer than 10,000 qualified people in the world to fill these jobs, which according to Paysa earn an average salary of $172,000 per year in the U.S. (or Rs.17 lakhs to Rs. 25 lakhs in India) for engineers with the required skills.  You can gain in-depth knowledge of Artificial Intelligence by taking our Artificial Intelligence certification training course. Those who complete the course will be able to:  \n\n1. Master the concepts of supervised and unsupervised learning \n2. Gain practical mastery over principles, algorithms, and applications of machine learning through a hands-on approach which includes working on 28 projects and one capstone project. \n3. Acquire thorough knowledge of the mathematical and heuristic aspects of machine learning. \n4. Understand the concepts and operation of support vector machines, kernel SVM, naive bayes, decision tree classifier, random forest classifier, logistic regression, K-nearest neighbors, K-means clustering and more. \n5. Comprehend the theoretical concepts and how they relate to the practical aspects of machine learning. \n6. Be able to model a wide variety of robust machine learning algorithms including deep learning, clustering, and recommendation systems  \n\n👉Learn more at: https://www.simplilearn.com/artificial-intelligence-masters-program-training-course?utm_campaign=WhatIsARAndVR&utm_medium=Description&utm_source=youtube  \n\nFor more updates on courses and tips follow us on: \n- Facebook: https://www.facebook.com/Simplilearn  \n- Twitter: https://twitter.com/simplilearn  \n- LinkedIn: https://www.linkedin.com/company/simplilearn/ \n- Website: https://www.simplilearn.com  \n- Instagram: https://www.instagram.com/simplilearn_elearning \n- Telegram Mobile: https://t.me/simplilearnupdates \n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates  \n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/04AMaTsXFJU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/04AMaTsXFJU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/04AMaTsXFJU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "04AMaTsXFJU"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "IeTp9MSOQMa6OxhQzXzLDmQP0GE",
+      "id": "MTUxNjQ4NzQwNjEwMTY0ODc0MDYxMDAwMDcwNg",
+      "snippet": {
+        "publishedAt": "2022-03-31T15:30:10+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Top 10 Skills To Learn In 2022 | 10 High Income Skills | Top 10 Skills For Jobs | Simplilearn",
+        "description": "🔥Explore Our Free Courses With Completion Certificate by SkillUp: https://www.simplilearn.com/skillup-f...\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n#Top10SkillsToLearnIn2022 #10HighIncomeSkills #Top10SkillsForJobs #Top10SkillsForFuture #SkillsForSuccess #SoftSkills #SkillsYouNeed #SkillsYouShouldLearnIn2022 #Simplilearn\n\nSimplilearn is one of the world’s leading certification training providers. We partner with companies and individuals to address their unique needs, providing training and coaching that helps working professionals achieve their career goals. We've helped over 1 million professionals and companies across 150+ countries get trained, acquire certifications, and upskill their employees. Our training courses are designed and updated by 2000+ renowned industry experts. Our blended learning approach combines online classes, instructor-led live virtual classrooms, project work, and 24/7 teaching assistance. \n\nWe provide online training in Machine Learning, AWS, DevOps, Big Data, Hadoop, Data Science, Artificial Intelligence, Cloud Computing, Project Management, Digital Marketing, Cyber Security and Salesforce among others, where technologies and best practices are changing rapidly and demand for qualified candidates significantly exceeds supply.\n\nLearn more at: https://www.simplilearn.com/?utm_camp...\n\nFor more information about Simplilearn courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simp...\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn...\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simp...\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/x7H9gDgKZy8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/x7H9gDgKZy8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/x7H9gDgKZy8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "x7H9gDgKZy8"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "vWD4rW8KBp6AQ7iaGPPqWdz5U0U",
+      "id": "MTUxNjQ4NzQwNjA1MTY0ODc0MDYwNTAwMDEyNg",
+      "snippet": {
+        "publishedAt": "2022-03-31T15:30:05+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Packages In Python Tutorial | Best Python Packages | Python Tutorial For Beginners | Simplilearn",
+        "description": "The video will introduce you to Python Packages. This Python basic tutorial will help you understand creating a Python package. You will understand the example of a Python Package. After that, you will understand different ways to access Python Packages. Further, the demonstration will educate you on how to create Python Package.\n\nBelow topics are covered in this video:\n\n00:00:00 Introduction\n00:51:05 What are Python Packages?\n01:52:03 Creating a Python package\n03:05:06 Example of a Python Package\n05:35:09 Different ways to access Python Packages\n\n\n🔥Enroll for Free Python Course & Get Your Completion Certificate: https://www.simplilearn.com/learn-python-basics-free-course-skillup?utm_campaign=PackagesInPythonTutorial&utm_medium=Description&utm_source=youtube\n\n\n\n✅Subscribe to our Channel to learn more programming languages: https://bit.ly/3eGepgQ\n\n\n⏩ Check out the Python for beginners playlist: https://www.youtube.com/watch?v=Tm5u97I7OrM&list=PLEiEAq2VkUUKoW1o-A-VEmkoGKSC26i_I\n\n#PackagesInPythonTutorial #BestPythonPackages #MostUsefulPythonPackages #BestPythonPackagesForBeginners #PythonPackages #PythonPackagesForDataScience #PythonTraining #PythonProgramming #LearnPythonProgramming #Simplilearn\n\nWhat is Python?\nPython is a high-level object-oriented programming language developed by Guido van Rossum in 1989 and was first released in 1991. Python is often called a batteries included language due to its comprehensive standard library. A fun fact about Python is that The name Python was actually taken from the popular BBC comedy show of that time, \"Monty Python's Flying Circus\". Python is widely used these days in data analytics, machine learning, and web development. Python allows you to write programs in fewer lines of code than most programming languages. Python as a programming language is growing rapidly. It's the right time to get trained in Python.\n\nWhy learn Data Science? \nData Scientists are being deployed in all kinds of industries, creating a huge demand for skilled professionals. A Data Scientist is the pinnacle rank in an analytics organization. Glassdoor has ranked data scientists first in the 25 Best Jobs for 2016, and good data scientists are scarce and in great demand. As a Data Scientist, you will be required to understand the business problem, design the analysis, collect and format the required data, apply algorithms or techniques using the correct tools, and finally make recommendations backed by data.\n\nSimplilearn’s Python Training Course is an all-inclusive program that will introduce you to the Python development language and expose you to the essentials of object-oriented programming, web development with Django and game development. Python has surpassed Java as the top language used to introduce U.S. students to programming and computer science. This course will give you hands-on development experience and prepare you for a career as a professional Python programmer.\n\n\nWhat is this course about?\nThe All-in-One Python course enables you to become a professional Python programmer. Any aspiring programmer can learn Python from the basics and go on to master web development & game development in Python. Gain hands-on experience creating a flappy bird game clone & website functionalities in Python.\nWhat are the course objectives?\n\n\nBy the end of this online Python training course, you will be able to:\n1. Internalize the concepts & constructs of Python\n2. Learn to create your own Python programs\n3. Master Python Django & advanced web development in Python\n4. Master PyGame & game development in Python\n5. Create a flappy bird game clone\n\n\nThe Python training course is recommended for: \n1. Any aspiring programmer can take up this bundle to master Python\n2. Any aspiring web developer or game developer can take up this bundle to meet their training needs\n\n\nLearn more https://www.simplilearn.com/mobile-and-software-development/python-development-training?utm_campaign=PackagesInPythonTutorial&utm_medium=Description&utm_source=youtube\n\n\nLearn Data Science: https://www.simplilearn.com/big-data-and-analytics/python-for-data-science-training?utm_campaign=PackagesInPythonTutorial&utm_medium=Description&utm_source=youtube\n\n\nFor more information about Simplilearn courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/S4J-rfFA3SE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/S4J-rfFA3SE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/S4J-rfFA3SE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/S4J-rfFA3SE/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/S4J-rfFA3SE/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "S4J-rfFA3SE"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "0I_yL6thTw40uIZYF6hatSjudAE",
+      "id": "MTUxNjQ4NzMzNDAwMTY0ODczMzQwMDAwMDM1Mg",
+      "snippet": {
+        "publishedAt": "2022-03-31T13:30:00+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Top 5 Highest Paying IT Jobs In 2022 | Highest Paying Jobs In IT Sector | #Shorts | Simplilearn",
+        "description": "🔥Explore Our Free Courses With Completion Certificate by SkillUp: https://www.simplilearn.com/skillup-f...\n\nThis short video on the Top 5 Highest Paying IT Jobs in 2022 will help you explore which IT job is most in-demand and in which sector. It will also help you gain perspective towards which leading technology you should opt for according to your skills.\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n#Top5HighestPayingITJobsIn2022 #HighestPayingJobsInITSector #Top5HighestPayingJobsIn2022 #ITJobsWithHighestSalaries #HighestPayingJobsInInformationTechnology #ITJobsForFreshers #CareersInInformationTechnology #Shorts #Simplilearn\n\n✅Top 5 IT Jobs Without Coding:\n\nSimplilearn is one of the world’s leading certification training providers. We partner with companies and individuals to address their unique needs, providing training and coaching that helps working professionals achieve their career goals. We've helped over 1 million professionals and companies across 150+ countries get trained, acquire certifications, and upskill their employees. Our training courses are designed and updated by 2000+ renowned industry experts. Our blended learning approach combines online classes, instructor-led live virtual classrooms, project work, and 24/7 teaching assistance. \n\nWe provide online training in Machine Learning, AWS, DevOps, Big Data, Hadoop, Data Science, Artificial Intelligence, Cloud Computing, Project Management, Digital Marketing, Cyber Security and Salesforce among others, where technologies and best practices are changing rapidly and demand for qualified candidates significantly exceeds supply.\n\nLearn more at: https://www.simplilearn.com/?utm_camp...\n\nFor more information about Simplilearn courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simp...\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn...\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simp...\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/aZDM91Gro14/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/aZDM91Gro14/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/aZDM91Gro14/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "aZDM91Gro14"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "nqyaqi1O3cTGmd1UMyP3XzVHqDQ",
+      "id": "MTUxNjQ4NzMwOTk1MTY0ODczMDk5NTAwMDU3Mw",
+      "snippet": {
+        "publishedAt": "2022-03-31T12:49:55+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Things You Need To Pack In Your Bag Before You Set Out For Appraisals | #Shorts | Simplilearn",
+        "description": "✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n#ThingsYouNeedToPackInYourBagBeforeYouSetOutForApprasisals #AppraisalDocs #AppraisalTalkWithManager #HowToPrepareForPerformanceAppraisal #AppraisalDiscussion #AppraisalMeetingTipsForEmployee #Appraisal #AppraisalInterview #Shorts #Simplilearn\n\nThe appraisal season is almost approaching. But are you prepared for your appraisal discussions yet? \nMost of the time, the mere thought of appraisal discussion scares many since this discussion plays a critical role in the individual's career growth for the approaching financial year. Even if you've worked extremely hard for the previous 364 days, you’ll have a better, more productive performance appraisal only if you prepare for it ahead of time. And here are a few tips to help you prepare for this appraisal talk:\n\n✅Have The Right Mindset: Know that this discussion is not held for you to be chastised as an employee. It's an opportunity for your manager to offer you the kind of honest feedback that can help you build your future in a firm. It’s increasingly crucial for you to understand that what is said in this discussion is for your own benefit, and not to tear you down. That is why we suggest you enter this appraisal discussion with an open mind and take the feedback under consideration whether you agree or disagree with it.\n\n✅Perform A Thorough Self Evaluation: Be cognizant of how well you have achieved your previous goals. Take responsibility in case you have missed any obligation, and be prepared to explain why that happened. Evaluate the aspects of work where you shine and aspects where you still need significant improvement. Match these listed factors with the previous year’s performance evaluation feedback.\n\n✅Walk Into Your Appraisal Discussion With Data Points: Don’t be vague while highlighting your achievements; rather, put them forward along with specific proof. This specific, tangible proof can be a presentation you made to help freshers understand how your team works, the new technology you mastered while continuing your routine work, or even the accredited certification you earned. Besides that, you can also exhibit your quarter-wise performance rating.   \n\n✅Accept The Feedback: Appraisal discussion is a two-way dialogue, at the end, your employers will provide you with their feedback as well. If you get positive feedback, well and good, patch yourself. This gives you an opportunity to articulate your value and put forward your request. If, on the other hand, you receive unfavourable feedback, you should gently question your manager about why they feel so. However, when you ask these questions, make sure they're non-confrontational, and they demonstrate your concerns because you care, not because you’re upset.\n\nAbout Simplilearn:\nSimplilearn is the world’s #1 online Bootcamp focused on helping people acquire the skills they need to thrive in the digital economy. Our award-winning online boot camps are designed and updated by 2000+ renowned industry and academic experts. Through individual courses, comprehensive certification programs, and partnerships with world-renowned universities, we provide millions of professionals and thousands of corporate training organizations with the work-ready skills they need to excel in their careers and businesses. Our practical and applied approach has resulted in 85 per cent of learners getting promotions or new jobs on day one. With over 1,000 live classes each month, real-world projects, and more, professionals learn by doing at Simplilearn.\n\n👉Learn more at: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=ThingsYouNeedToPackInYourBagBeforeYouSetOutForApprasisalsShorts&utm_medium=ShortsDescription&utm_source=youtube\n\nFor more updates on courses and tips follow us on:\n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Xv-hClfnhSA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Xv-hClfnhSA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Xv-hClfnhSA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "Xv-hClfnhSA"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "cosZ10Iq9QQXJDmhcFDvl2axl7A",
+      "id": "MTUxNjQ4NzEwNzk4MTY0ODcxMDc5ODAwMDIyOA",
+      "snippet": {
+        "publishedAt": "2022-03-31T07:13:18+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "TypeScript With Node And Express | Node And Express Explained | TypeScript Tutorial | Simplilearn",
+        "description": "This video on typescript with node and express js will walk you through to all the topics like what is typescript, what is node js, what is express js and then we will see how to setup typescript with node and express. TypeScript is an object oriented programming language, It is a strongly typed superset of JavaScript and all the code of typescript is complied with JavaScript, It was developed and maintained by Microsoft and typescript was created to develop large applications.\nNode js - Node.js is an open-source, cross-platform JavaScript runtime environment, and it runs on a web application outside the client's browser. Node js is used by the developers to build server-side web applications, it is perfect for data-intensive applications since it uses an asynchronous, event-driven model.\nExpress js - Express is a node js framework designed to build API's web applications, cross-platform mobile apps quickly and easily. It is Unopinionated, Express JS makes the node js easy and is used as a server-side scripting language.\n\n\n🔥Explore our FREE Courses with completion certificates: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=TypeScriptWithNodeAndExpress&utm_medium=Description&utm_source=youtube\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n⏩ Check out our TypeScript training videos playlist: https://www.youtube.com/playlist?list=PLEiEAq2VkUULrJCzLdveKPBEzYC5qPJud\n\n#TypeScriptWithNodeAndExpress #NodeAndExpressExplained #TypeScriptNodeJSExpressTutorial #WhatIsTypeScript #TypeScriptExpressRestAPI #TypeScriptNodeJSRestAPI #TypeScriptTutorialForBeginners #LearnTypeScript #TypeScriptExplained #Simplilearn\n\nWhat Is TypeScript?\nTypeScript is a superset of JavaScript and is an object-oriented programming language. In simple terms, it is just JavaScript with other impressive additional features. All codes in TypeScript ultimately get compiled to JavaScript. \n\nWhat Is Express.js?\nExpress.js is a Node.js web application framework that is free and open source. It is used to quickly and easily design and create web apps. To construct our applications, Express provides a simple interface. It gives us the resources we need to create our app. It's adaptable because there are a lot of modules on npm that can be directly integrated into Express.\n\n\nSome key features include - \n✅TypeScript supports all JavaScript libraries and frameworks. Angular, a JavaScript framework used to build single-page applications is entirely written in TypeScript. \n✅With an increase in code complexity, JavaScript had to fulfill the requirements of OOP; hence that lead to the introduction of TypeScript.\n✅TypeScript helps with quicker code development, thus improving performance.\n\nAdvantages of TypeScript Over JavaScript\nThere are a few improvements with TypeScript that give it an upper hand over JavaScript. Here is the list of advantages of TypeScript over JavaScript. \n✅Only at the time of development does TypeScript bring out compilation issues. This reduces the chances of mistakes occurring at runtime. \n✅A property of TypeScript is that it is strongly typed or enables static typing. Static typing allows type correctness to be checked at compilation time. In JavaScript, this isn't possible.\n✅TypeScript is nothing but JavaScript and some additional features i.e. ES6 features. Some of these features are - \n- Interfaces\n- Generics\n- Namespaces\n- Null checking\n- Access Modifiers\n✅TypeScript supports IntelliSense which provides active hints as the code is added.\n\nTo learn more about TypeScript, check our Full Stack Web Developer program: https://www.simplilearn.com/tutorials/typescript-tutorial/typescript-vs-javascript?utm_campaign=TypeScriptWithNodeAndExpress&utm_medium=Description&utm_source=youtube\n\nKey Features:\n✅ Comprehensive Blended Learning program\n✅ 270 hours of in-depth training\n✅ 150 hours of instructor-led training\n✅120 hours of self-paced learning\n✅ 20 + in-demand tools and skills\n✅ 10 lesson-end & 4 phase-end projects\n✅Choose from 4 industry-aligned capstone projects\n\nLearn more at: https://www.simplilearn.com/full-stack-web-developer-mean-stack-certification-training?utm_campaign=TypeScriptWithNodeAndExpress&utm_medium=Description&utm_source=youtube\n\nFor more updates on courses and tips follow us on:\n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/XBK_XPSPFmw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/XBK_XPSPFmw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/XBK_XPSPFmw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/XBK_XPSPFmw/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/XBK_XPSPFmw/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "XBK_XPSPFmw"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "WDOaCoAJ6TW2lKaYG6xSGJ_UKOg",
+      "id": "MTUxNjQ4NjU0MjMzMTY0ODY1NDIzMzAwMDMyNA",
+      "snippet": {
+        "publishedAt": "2022-03-30T15:30:33+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Defying The Pandemic - Utkarsh's Data Science Upskilling Journey With Us | Simplilearn Reviews",
+        "description": "Converting setbacks into opportunities is a top skill and our learner Utkarsh has aced this skill.\nMany of us faced uncertainty during the pandemic, but a few realized that it was not a setback but an opportunity to upskill. Driven by the passion for learning, combined with discipline, they made considerable progress. Thank you for sharing your story with us, Utkarsh. Your focus, dedication and emphasis on discipline is inspiring. More success to you!\n\n🔥Explore Our Free Courses: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=UtkarshTestimonial&utm_medium=Description&utm_source=youtube\n\n✅Subscribe to the Simplilearn channel for more Data Science Training Videos - https://www.youtube.com/user/Simplilearn?sub_confirmation=1\n\n⏩ Check out the Data Science Playlist: https://youtube.com/playlist?list=PLEiEAq2VkUUIEQ7ENKU5Gv0HpRDtOphC6\n\nThis Data Science with Python course will establish your mastery of data science and analytics techniques using Python. With this Python for Data Science Course, you’ll learn the essential concepts of Python programming and become an expert in data analytics, machine learning, data visualization, web scraping, and natural language processing. Python is a required skill for many data science positions, so jumpstart your career with this interactive, hands-on course.\n\nWhy learn Data Science? \nData Scientists are being deployed in all kinds of industries, creating a huge demand for skilled professionals. Data scientist is the pinnacle rank in an analytics organization. Glassdoor has ranked data scientists first in the 25 Best Jobs for 2016, and good data scientists are scarce and in great demand. As a data, you will be required to understand the business problem, design the analysis, collect and format the required data, apply algorithms or techniques using the correct tools, and finally make recommendations backed by data.\n\nYou can gain in-depth knowledge of Data Science by taking our Data Science with python certification training course. With Simplilearn’s Data Science certification training course, you will prepare for a career as a Data Scientist as you master all the concepts and techniques. Those who complete the course will be able to: \n\n1. Gain an in-depth understanding of data science processes, data wrangling, data exploration, data visualization, hypothesis building, and testing. You will also learn the basics of statistics.\nInstall the required Python environment and other auxiliary tools and libraries\n2. Understand the essential concepts of Python programming such as data types, tuples, lists, dicts, basic operators, and functions\n3. Perform high-level mathematical computing using the NumPy package and its large library of mathematical functions\nPerform scientific and technical computing using the SciPy package and its sub-packages such as Integrate, Optimize, Statistics, IO, and Weave\n4. Perform data analysis and manipulation using data structures and tools provided in the Pandas package\n5. Gain expertise in machine learning using the Scikit-Learn package\n\nThe Data Science with python is recommended for: \n1. Analytics professionals who want to work with Python\n2. Software professionals looking to get into the field of analytics\n3. IT professionals interested in pursuing a career in analytics\n4. Graduates looking to build a career in analytics and data science\n5. Experienced professionals who would like to harness data science in their fields\n\nLearn more at: https://www.simplilearn.com/big-data-and-analytics/senior-data-scientist-masters-program-training?utm_campaign=Utkarsh&utm_medium=Description&utm_source=youtube\n\nFor more information about Simplilearn courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simp...\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn...\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simp...\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/e0pWITP2HUU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/e0pWITP2HUU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/e0pWITP2HUU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/e0pWITP2HUU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/e0pWITP2HUU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "e0pWITP2HUU"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "ldp0sX00aRdkj2Yr_9aRh_wsBzA",
+      "id": "MTUxNjQ4NjU0MjA1MTY0ODY1NDIwNTAwMDYxNg",
+      "snippet": {
+        "publishedAt": "2022-03-30T15:30:05+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Interview Questions Asked By Top Companies | Google, Amazon, TCS And Wipro Interview | Simplilearn",
+        "description": "🔥Explore Our Free Courses With Completion Certificate by SkillUp: https://www.simplilearn.com/skillup-f...\n\nThis video by simplilearn will help you with the most frequently asked interview questions by Top companies around the world like Google, Amazon, TCS, and Wipro. These interview questions will definitely help you crack the trickiest questions asked to you to test your true potential.\n\nThis video will cover the following topics\n\n00:00 - Introduction\n01:04 - Google Interview Questions \n09:08 - Amazon Interview Questions \n29:18 - TCS Interview Questions \n52:46 - Wipro Interview Questions \n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n#InterviewQuestionsAskedByTopCompanies #TopGoogleInterviewQuestionsAndAnswers #TopAmazonInterviewQuestionsAnd Answers #TCSInterviewQuestions #WiproInterviewQuestions #InterviewQuestionsAndAnswers #InterviewPreparation #InterviewTips #Simplilearn\n\nThe interview plays a vital role in any job selection process. For that reason, preparation is key. Technical questions are part of the interview process, which impact more in the interview. If you are planning to start your career as a developer, you have to possess some development skills that empower your ability to crack the interview. If you want to make a career in Software development and improve your chances, then this Amazon Interview Questions and Answers will help you make your preparation easy. \n\nYou can prepare for a job interview by studying weeks in advance, but there’s still no guarantee that you won’t be asked a question you have no idea how to answer. The trickiest and most important questions are designed to help employers gain a deeper understanding of details beyond what’s listed on your resume.\nA potential sales candidate, for example, might be asked to talk through how they’d approach a short sales cycle differently than a long sales cycle. A candidate interviewing for a managerial role might be asked how they’d handle customer objections or a team conflict. These questions aren’t always easy, and they often cause most people to stress and freeze up.\n\nLearn more at: https://www.simplilearn.com/?utm_camp...\n\nFor more information about Simplilearn courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simp...\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn...\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simp...\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Z1erA-E1dHE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Z1erA-E1dHE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Z1erA-E1dHE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "Z1erA-E1dHE"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "rZr-iiCIw_wLRimrMdNUH1MQn3s",
+      "id": "MTUxNjQ4NjQ3MDA3MTY0ODY0NzAwNzAwMDc1MQ",
+      "snippet": {
+        "publishedAt": "2022-03-30T13:30:07+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "What Is An API? | Application Programming Interface Explained In 1 Minute | #Shorts | Simplilearn",
+        "description": "🔥Explore Our Free Courses With Completion Certificate by SkillUp: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=WhatIsAnAPI?Shorts&utm_medium=ShortsDescription&utm_source=youtube\n\nThis short video on what is API gives you an overview of what is API and how it is used and how it serves as a connection between applications. And it will also give you a glimpse over how data interfaces between critical business applications are only possible because of API-based tools.\n\nAbout Full Stack Web Developer - MEAN Stack Program:\nThis program will advance your career as a MEAN stack developer. You’ll learn top skills such as MongoDB, Express.js, Angular, and Node.js (“MEAN”), plus GIT, HTML, CSS, and JavaScript to build and deploy interactive applications and services throughout this Full Stack MEAN Developer program. Full Stack Web Developer Mean Stack course provides complete knowledge of software development and testing technologies such as JavaScript, Node.js, Angular, Docker, and Protractor. You'll build an end-to-end application, test and deploy code, and store data using MongoDB.\n\nKey Features:\n✅ Comprehensive Blended Learning program\n✅ 8X higher interaction in live online classes conducted by industry experts\n✅ 150 hours of instructor-led training\n✅ 120 hours of self-paced learning\n✅ 20+ in-demand tools and skills\n✅ 10 lesson-end & 4 phase-end projects\n✅ Choose from 4 industry-aligned capstone projects\n✅ Simplilearn's JobAssist helps you get noticed by top hiring companies\n\nSkills Covered:\n✅ Agile\n✅ HTML\n✅ CSS\n✅ HTTP\n✅ Express.js\n✅ API Testing with Postman\n\nWhat is MEAN Stack?\nThe term MEAN stack refers to a collection of JavaScript-based technologies used to develop web applications. MEAN is an acronym for MongoDB, Express, Angular, and Node.js. MongoDB is a database system, Express is a back-end web framework, Angular.js is a front-end framework, and Node.js is a back-end runtime environment.\n\nHow do I become a MEAN stack developer?\nIn order to become a MEAN stack developer, you will need to have a working knowledge of software development tools, databases, testing tools, and frameworks. You should be able to work as part of a scrum team—following agile methods, building, testing, and delivering features.\n\nCan I become a full stack developer without a degree?\nYou can always learn the concepts of full stack development  on your own to become a full stack developer without a degree. However, having a formal degree in full stack development will undoubtedly help you beef up your CV and give you an added edge over other candidates. Moreover, a formal degree provides structured learning and helps learners gain real work experience through various real-world industry projects.\n\nHow long does it take to learn full stack development?\nYou can learn the basics of full stack in just three months. However, it’s imperative to have in-depth knowledge of all of the concepts related to front-end and back-end development to make a successful career in this field. Because of this, it may take around 1-2 years to learn full stack thoroughly. Simplilearn can help you learn full stack in just 12 months with its full stack web developer — MEAN stack course. The course curriculum is highly rigorous and covers full stack development with a special focus on MEAN stack. It makes learning easy by offering knowledge on over 20 skills and tools that are highly-relevant in the industry and providing learners with real industrial exposure through four capstone projects.\n\nIs full stack development a good career?\nPursuing a career in full stack development is worthwhile because companies are desperately looking for developers who are skilled in handling any situation and who can take care of both front-end and back-end development. Companies are also offering high salaries to full stack developers.\n\n👉Learn more at: https://www.simplilearn.com/full-stack-web-developer-mean-stack-certification-training?utm_campaign=WhatIsAnAPI?Shorts&utm_medium=ShortsDescription&utm_source=youtube\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n⏩ Check out the Full Stack training videos: https://www.youtube.com/watch?v=8KaJRw-rfn8&list=PLEiEAq2VkUULCC3eEATL4zzuapTjmo1Z_\n\n#WhatIsAnAPI #ApplicationProgrammingInterfaceExplained #APISimplyExplained #ApplicationProgrammingInterface #HowAPIWorks #API #Simplilearn #Shorts\n\n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/M840Ht8eC7A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/M840Ht8eC7A/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/M840Ht8eC7A/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/M840Ht8eC7A/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/M840Ht8eC7A/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "M840Ht8eC7A"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "JT32Ly8Q_TRpq30WMP1AocMRlAI",
+      "id": "MTUxNjQ4NjQzNDA4MTY0ODY0MzQwODAwMDkyNw",
+      "snippet": {
+        "publishedAt": "2022-03-30T12:30:08+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Top 5 Appraisal Meeting Tips For Employee | Performance Appraisal | #Shorts | Simplilearn",
+        "description": "✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\nThis shorts video on ‘Top 5 Appraisal Meeting Tips For Employee’ will assist you in preparing for performance review.  This video will take you through Appraisal Discussion With Employee And Manager Tips for the fiscal year 2021-2022. This list of tips will provide you with an overview of how you should prepare for your performance appraisal. So, let's get started!\n\n#AppraisalDiscussionWithEmployeeAndManager #Top5AppraisalMeetingTipsForEmployee #AppraisalQuestionsAndAnswers #AppraisalTalkWithManager #HowToPrepareForPerformanceAppraisal #AppraisalDiscussion #AppraisalMeetingTipsForEmployee #Appraisal #AppraisalInterview #Shorts #Simplilearn\n\nThe appraisal season is almost approaching. But are you prepared for your appraisal discussions yet? \nMost of the time, the mere thought of appraisal discussion scares many since this discussion plays a critical role in the individual's career growth for the approaching financial year. Even if you've worked extremely hard for the previous 364 days, you’ll have a better, more productive performance appraisal only if you prepare for it ahead of time. And here are few tips to help you prepare for this appraisal talk:\n\n✅Have The Right Mindset: Know that this discussion is not held for you to be chastised as an employee. It's an opportunity for your manager to offer you the kind of honest feedback that can help you build your future in a firm. It’s increasingly crucial for you to understand that what is said in this discussion is for your own benefit, and not to tear you down. That is why we suggest you enter this appraisal discussion with an open mind and take the feedback under consideration whether you agree or disagree with it.\n\n✅Perform A Thorough Self Evaluation: Be cognizant of how well you have achieved your previous goals. Take responsibility in case you have missed any obligation, and be prepared to explain why that happened. Evaluate the aspects of work where you shine at and aspects where you still need significant improvement. Match these listed factors with the previous year’s performance evaluation feedback.\n\n✅Walk Into Your Appraisal Discussion With Data Points: Don’t be vague while highlighting your achievements; rather, put them forward along with specific proof. This specific, tangible proof can be a presentation you made to help freshers understand how your team works, the new technology you mastered while continuing your routine work, or even the accredited certification you earned. Besides that, you can also exhibit your quarter-wise performance rating.   \n\n✅Accept The Feedback: Appraisal discussion is a two-way dialogue, at the end, your employers will provide you with their feedback as well. If you get positive feedback, well and good, patch yourself. This gives you an opportunity to articulate your value and put forward your request. If, on the other hand, you receive unfavourable feedback, you should gently question your manager about why they feel so. However, when you ask these questions, make sure they're non-confrontational, and they demonstrate your concerns because you care, not because you’re upset.\n\nAbout Simplilearn:\nSimplilearn is the world’s #1 online bootcamp focused on helping people acquire the skills they need to thrive in the digital economy. Our award-winning online bootcamps are designed and updated by 2000+ renowned industry and academic experts. Through individual courses, comprehensive certification programs, and partnerships with world-renowned universities, we provide millions of professionals and thousands of corporate training organizations with the work-ready skills they need to excel in their careers and businesses. Our practical and applied approach has resulted in 85 percent of learners getting promotions or new jobs on day one. With over 1,000 live classes each month, real-world projects, and more, professionals learn by doing at Simplilearn.\n\n👉Learn more at: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=Top5AppraisalMeetingTipsForEmployee&utm_medium=Description&utm_source=youtube\n\nFor more updates on courses and tips follow us on:\n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_XOlp-LOYuU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_XOlp-LOYuU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_XOlp-LOYuU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/_XOlp-LOYuU/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/_XOlp-LOYuU/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "_XOlp-LOYuU"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "bK2OYZ_yLbCnbzK6adTiQfRz5NI",
+      "id": "MTUxNjQ4NjI1NjgyMTY0ODYyNTY4MjAwMDYzNw",
+      "snippet": {
+        "publishedAt": "2022-03-30T07:34:42+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "What Is SEO And How Does It Work? | Search Engine Optimization Tutorial For Beginners | Simplilearn",
+        "description": "The video What is SEO and How Does It Work is complete guide by Simplilearn for the beginners willing to learn SEO. In these 25 minutes you will learn in brief about what is digital marketing, components of digital marketing, what is SEO?, some myths about SEO in the industry, why SEO is important?, how search engines work? - Crawling, Indexing and Ranking, what are the types of SEO?- On page SEO, Off page SEO, Technical SEO, essential tools required for best SEO practices, a case study that demonstrates how SEO brings success to business, job roles with effective salaries in the industry and we will end up this session with understanding what the future holds for SEO.\n\n🔥Enroll for Free Digital Marketing Course & Get Your Completion Certificate: https://www.simplilearn.com/learn-digital-marketing-fundamentals-basics-skillup?utm_campaign=WhatIsSEOAndHowDoesItWork?&utm_medium=Description&utm_source=youtube\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n⏩ Check out the Digital Marketing training videos: https://bit.ly/36d97Fs\n\n#WhatIsSEOAndHowDoesItWork #WhatIsSEO #SEOExplained #SEOTutorial #SEOTutorialForBeginners #SearchEngineOptimization #SearchEngineOptimizationTutorialForBeginners #WhatIsSEOInDigitalMarketing #Simplilearn\n\n✅What is Digital Marketing?\nPromoting products and services on the online platform using digital technology is called digital marketing. Components of digital marketing includes Search engine optimization (SEO), Social media marketing (SMM), Email marketing, Affiliate marketing, Mobile marketing, Content marketing and Search engine marketing (SEM).\n\n✅What is SEO?\nThe practice of getting traffic organically through the search results with the help of a search engine is called search engine optimization. It seeks to boost your website's ranking in search engine results pages. Remember that the higher the website ranks in the search results, the more people will see it. It seeks to boost your website's ranking in search engine results pages. Remember that the higher the website ranks in the search results, the more people will see it.\n\n✅Importance of Search Engine Optimization:\n1. SEO increases brand awareness \n2. Traffic obtained organically is more consistent \n3. With SEO, one can reach a large audience to promote products and services \n4. SEO builds trust among the audience \n5. Your competitors are doing it. Then you should also do it! \n\n✅How Search Engines Works?\nSearch engines work on three basic steps - Crawling, Indexing and Ranking\n1. Crawling: Search engines are hungry for content, and so they send the web spiders, also known as crawlers or robots or search engine bots, to discover new content or any updated content. Content can be an image, webpage, video, or anything else present on the web. This process is known as crawling. \n2. Indexing: Soon after discovering content, web spiders start storing the URL of the content into the search index, and this process is known as indexing. Once the content is indexed, it appears in search results for the relevant searches.\n3. Ranking: When a user enters a search query, the most relevant results are taken from the index and displayed from most relevant to least relevant on the search result pages. This process is known as ranking.\n\nAbout Post Graduate Program in Digital Marketing Program:\nThe Post Graduate Program in Digital Marketing in partnership with Purdue University, will help accelerate your digital marketing career. In this digital marketing certification program, you'll learn the latest tools, strategies, frameworks, and best practices in the field.This Post Graduate Program in Digital Marketing will help you gain a deep understanding of digital marketing strategies and expertise in the most widely used digital marketing tools and channels. \n\nKey Features:\n✅ Purdue-Simplilearn Joint Post Graduate Program Certification\n✅ Purdue Alumni Membership and Masterclasses\n✅ Masterclasses from top Purdue instructors\n✅ 200+ hours of applied learning\n✅ Experiential learning through case studies and theme-based project work\n✅ Get noticed by the top hiring companies\n✅ Learn 35+ Digital Marketing tools\n\nLearn more at: https://www.simplilearn.com/pgp-digital-marketing-certification-program?utm_campaign=WhatIsSEOAndHowDoesItWork?&utm_medium=Description&utm_source=youtube\n\nFor more information about Simplilearn courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/2IFrJoOK4A8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/2IFrJoOK4A8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/2IFrJoOK4A8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "2IFrJoOK4A8"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "Y5vt-vQhxpJrbXAkb6Q4mIRzxnA",
+      "id": "MTUxNjQ4NjAyMzg4MTY0ODYwMjM4ODAwMDU5MQ",
+      "snippet": {
+        "publishedAt": "2022-03-30T01:06:28+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "NodeJS And ReactJS Full Course 2022 | NodeJS & ReactJS Tutorial For Beginners | Simplilearn",
+        "description": "🔥Free NodeJS Course with Completion Certificate: https://www.simplilearn.com/learn-nodejs-basics-free-course-skillup?utm_campaign=NodeJSAndReactJSFC29Mar22&utm_medium=DescriptionFirstFold&utm_source=youtube\nThis video on NodeJS and React js will help you understand what happens in the front end and the backend of an application. Node.js is an open-source, cross-platform JavaScript runtime environment and ReactJS is a front-end JavaScript library for building user interfaces based on UI components. Both these technologies are crucial in app development. First, you will understand what NodeJS is and how it works and then move on to an understanding of ReactJS. \n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n⏩ Check out the NodeJs training videos: https://www.youtube.com/watch?v=qYwLOXjAiwM&list=PLEiEAq2VkUULF5YIu5OCx1x0xrEyuAqfW\n\n⏩ Check out the MongoDB training videos: https://www.youtube.com/watch?v=l1XRggQQ3NM&list=PLEiEAq2VkUUKCD-GZCDsqqNmFyz3mNUv5\n\n#NodeJSFullCourse #ReactJSFullCourse #NodeJSAndReactJSFullCourse #NodeJSAndReactJSTutorial #LearnNodeJS #LearnReactJS #NodeJsTutorial #ReactJSTutorial  #Simplilearn\n\nAbout our Node.js Certification Training:\nThis Node JS training enables you to build network applications quickly and efficiently using JavaScript. The Node JS certification training course is designed to help developers understand and build web applications with the help of JavaScript.\n\nNode JS Course Overview:\nThe Node JS certification training course helps you gain an in-depth knowledge of concepts such as Express.js, Node Packet Manager (NPM), shrink-wrap, NPM Vet, REST, Express.js with MongoDB, and SQLite CRUD operations. This Node JS training focuses on the essential concepts of Node JS and provides hands-on experience in building an HTTP server.\n\nNode JS Certification Training Key Features\n✅100% Money Back Guarantee\n✅36 hours of instructor-led online training\n✅Three real-life, industry-based projects\n✅16 chapter-end quizzes\n✅Master Node.js, Socket.io, Express.js with MongoDB, and SQLite\n✅Flexibility to choose classes\n\n👉Learn more about NodeJS at: https://www.simplilearn.com/node-js-certification-training?utm_campaign=NodeJSAndReactJSFC29Mar22&utm_medium=Description&utm_source=youtube\n\n🔥Explore Our Free Courses With Completion Certificate by SkillUp:  https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=WebDevWeekDec10&utm_medium=Description&utm_source=youtube\n\nFor more updates on courses and tips follow us on:\n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/WlgGfipGS1A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/WlgGfipGS1A/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/WlgGfipGS1A/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload",
+        "groupId": "MTUxNjQ4NjAyMzg4MTY0ODYwMjM4ODAwMDU5MQ"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "WlgGfipGS1A"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "nbZjQ0cq-vTv9OXmJXH5kg7t80o",
+      "id": "MTUxNjQ4NTY3ODA0MTY0ODU2NzgwNDAwMDI1MA",
+      "snippet": {
+        "publishedAt": "2022-03-29T15:30:04+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Blockchain And Cryptocurrency Explained In 10 Minutes | Blockchain And Cryptocurrency | Simplilearn",
+        "description": "This Blockchain and Cryptocurrency video covers all the important concepts from basics to advance. It will help you understand what led to the creation of Blockchain, what Blockchain is, how a Bitcoin transaction works, how Blockchain plays an integral role in it with features like hash encryption, proof of work and mining and how Blockchain technology is used in real-life scenarios. Also, it covers all the information about Cryptocurrency like what Cryptocurrency is, how Cryptocurrency originated, How Cryptocurrency works, How Cryptocurrency benefits us and How it works on Blockchain. Now, let’s dive into this video and understand the basics of Blockchain and  Cryptocurrency and how they work.\n\n🔥Free Blockchain Developer Course with Completion Certificate: https://www.simplilearn.com/learn-blockchain-basics-skillup?utm_campaign=BlockchainAndCryptocurrencyExplainedIn10Minutes&utm_medium=Description&utm_source=youtube\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n⏩ Check out the Blockchain training videos: https://www.youtube.com/watch?v=yubzJw0uiE4&list=PLEiEAq2VkUUKmhU6SO2P73pTdMZnHOsDB\n\n#BlockchainAndCryptocurrencyExplainedIn10Minutes #BlockChainAndCryptocurrencyForBeginners #CryptocurrencyExplained #BlockchainExplained #BlockChainAndCryptocurrency #ReasonsToLearnBlockchainIn2022 #BlockchainTutorial #CryptocurrencyTutorial #Bitcoin #WhyShouldYouLearnBlockchain #Blockchainforbeginners #BlockchainTechnology #Simplilearn\n\nTo know about cryptocurrency and Blockchain, visit: https://www.simplilearn.com/blockchain-certification-training-course?utm_campaign=BlockchainAndCryptocurrencyExplainedIn10Minutes&utm_medium=Description&utm_source=youtube\n\nAbout Simplilearn Blockchain Certification Training:\nSimplilearn’s Blockchain Certification Training has been designed for developers who want to decipher the global craze surrounding Blockchain, Bitcoin and cryptocurrencies. You’ll learn the core structure and technical mechanisms of Bitcoin, Ethereum, Hyperledger and Multichain Blockchain platforms, use the latest tools to build Blockchain applications, set up your own private Blockchain, deploy smart contracts on Ethereum and gain practical experience with real-world projects.\n\nWhy learn Blockchain? \nBlockchain technology is the brainchild of Satoshi Nakamoto, which enables digital information to be distributed. A network of computing nodes makes up the Blockchain. Durability, robustness, success rate, transparency, incorruptibility are some of the enticing characteristics of Blockchain. By design, Blockchain is a decentralized technology that is used by a global network of the computer to manage Bitcoin transactions easily. Many new business applications will result in the usage of Blockchain such as Crowdfunding, smart contracts, supply chain auditing, Internet of Things(IoT), etc.\n\nAfter completing this course, you will be able to:\n1. Apply Bitcoin and Blockchain concepts in business situations\n2. Build compelling Blockchain applications using the Ethereum Blockchain\n3. Design, test and deploy secure Smart Contracts\n4. Use the latest version of Ethereum development tools (Web3 v1.0)\n5. Develop Hyperledger Blockchain applications using Composer Framework\n6. Model the Blockchain applications using Composer modeling language\n7. Develop front-end (client) applications using Composer API\n8. Leverage Composer REST Server to design a web-based Blockchain solution\n9. Design Hyperledger Fabric Composer Business Network 10. \n10. Understand the true purpose and capabilities of Ethereum and Solidity\n11. See practical examples of Blockchain and mining\n12. Describe the various components of Hyperledger Fabric Technology (Peers, Orderer, MSP, CA)\n\n\n🔥Free Blockchain Developer Course with Completion Certificate: https://www.simplilearn.com/learn-blockchain-basics-skillup?utm_campaign=BlockchainAndCryptocurrencyExplainedIn10Minutes&utm_medium=Description&utm_source=youtube\n\nFor more updates on courses and tips follow us on:\n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/MFw8Ax0p7dA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/MFw8Ax0p7dA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/MFw8Ax0p7dA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/MFw8Ax0p7dA/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/MFw8Ax0p7dA/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "MFw8Ax0p7dA"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "RioNO6MaW_Rtt-guB8n0LYhMPwY",
+      "id": "MTUxNjQ4NTQxOTg0MTY0ODU0MTk4NDAwMDQ1Mw",
+      "snippet": {
+        "publishedAt": "2022-03-29T08:19:44+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "What Is Ethernet? | Ethernet In Computer Netowrks | Networking Tutorial For Beginners | Simplilearn",
+        "description": "In this video on 'What Is Ethernet?'. we will look into the way for how netwrork devices access internet using the ethernet cables, why it is beneficial to use ethernet, along with types and advantages and disadvantages of using ethernet in the network.\n\nThe topics covered in this video on 'What Is Ethernet?' are:\n1. What Is Ethernet?\n2. Why use Ethernet?\n3. Types of Ethernet\n4. Working of Ethernet\n5. Advantages & Disadvantages of Ethernet\n6. Ethernet vs Internet\n\n🔥Enroll for Free Cyber Security Course & Get Your Completion Certificate: https://www.simplilearn.com/learn-cyber-security-basics-skillup?utm_campaign=WhatIsEthernet?&utm_medium=Description&utm_source=youtube\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n⏩ Check out the Cyber Security training videos: https://bit.ly/3cMmCxj\n\n#WhatIsEthernet #EthernetInComputerNetworks #HowEthernetWorks #HowEthernetSignalIsFormed #EthernetExplanation #ComputerNetworking #NetworkingTutorialForBeginners #CyberSecurity #Simplilearn\n\nWhat Is Ethernet?\nEtherne is the way to connect devices to access internet, and share data & information, ethernet provides it's users with the various features, like secure transmission, protocols for smooth transmission and relaible data transmission to the sender's side.\n\nAbout Advanced Executive Program in Cybersecurity:\nBecome an industry-ready professional with Advanced Executive Program in Cybersecurity and transform your career in 6 months. This course provides a high-engagement learning experience with real-world applications and is designed for individuals who want to start a new, more fulfilling career. This Advanced Executive Program in Cybersecurity will help you develop expertise in defensive cybersecurity, application security, malware analysis, ethical hacking, and much more. In partnership with IIIT Bangalore and NPCI, this program provides you with a deep understanding needed to spot the opportunities for disruption in the cybersecurity industry.\n\nKey Features:\n✅ Advanced Executive Program in Cybersecurity completion certificate from IIIT Bangalore\n✅ 8X higher interaction in live online classes conducted by industry experts\n✅ Learn by practicing 30+ demos and multiple projects on integrated labs\n✅ Validate your learning with Transcript from IIIT Bangalore\n✅ Virtual Internship Certificate from NPCI\n✅ Masterclasses from top faculty of IIIT Bangalore\n✅ Lifetime access to self-paced videos & class recordings to refresh the concepts\n✅ Get noticed by the top hiring companies\n\nWhat are the eligibility criteria's for this Advanced Executive Program in Cybersecurity?\nFor admission to this Advanced Executive Program in Cybersecurity, candidates:\n✅Should have a bachelor's degree in any discipline with an average of 50% or higher marks\n✅Prior work experience of 1 years or more\n✅May have a non-programming background\n\nWill financial aid be provided for this Advanced Executive Program in Cybersecurity?\nTo ensure money is not a limiting factor in learning, we offer various financing options to help make this cyber security certification in India financially manageable. For more details, please refer to our \"Admissions Fee and Financing\" section.\n\nWhat certificate will I receive?\nUpon completion of this Cybersecurity certification program in India, you will be awarded an Advanced Executive Program in Cybersecurity by IIIT Bangalore and virtual internship certification by NPCI. You will also receive industry-recognized certifications from Simplilearn for the courses included in the learning path.\n\nLearn more at: https://www.simplilearn.com/pgp-advanced-executive-program-in-cyber-security?utm_campaign=WhatIsEthernet?&utm_medium=Description&utm_source=youtube\n\nFor more information about Simplilearn courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/idlYfhvE9lI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/idlYfhvE9lI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/idlYfhvE9lI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "idlYfhvE9lI"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "rAyyvgZxqkQltxrmBg0-wl8r4uc",
+      "id": "MTUxNjQ4NTE0MDYxMTY0ODUxNDA2MTAwMDc1Mg",
+      "snippet": {
+        "publishedAt": "2022-03-29T00:34:21+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Data Analytics Using Python And SQL 2022 | Data Analytics Full Course For Beginners | Simplilearn",
+        "description": "🔥 Enroll for FREE Data Analytics Course & Get your Completion Certificate:  https://www.simplilearn.com/learn-data-analytics-for-beginners-skillup?utm_campaign=Skillup-DataAnalyticsFC28Mar22&utm_medium=DescriptionFirstFold&utm_source=youtube\n\nData analytics has been rapidly growing, with companies looking to generate insights and drive their business with the help of data. In this Data Analytics Full Course video, you will learn what data analytics is, why data analytics is necessary, the types of data analytics, and the various data analytics applications. You will then understand a case study and perform analysis of data using Python and R. In addition to that; we will see the top 10 data analysis tools and understand the difference between a data scientist and a data analyst. Finally, we’ll see the top interview questions that will help you crack a data analyst interview.\n\nDataset Link - https://drive.google.com/drive/folders/1U8CF0Xx3NivXdfrQvXJ_462tEb26oPuX\n\nIntroduction\nData Analysis Basics\nData Analysis using NumPy\nData Analysis with Pandas\nSQL Basics\nJoins in SQL\nAdvances SQL\nSQL with Python\n\n⏩ Check out the Data Analytics Playlist: link: https://www.youtube.com/playlist?list=PLEiEAq2VkUUKgEFXH1tBbHwq38oWYDScU\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n#DataAnalyticsFullCourse #Python #SQL #2022 #DataAnalyticsForBeginners #LearnDataAnalytics #DataAnalysis #DataAnalytics #Simplilearn\n\nThis Data Analyst Master’s Program in collaboration with IBM will make you an expert in data analytics. In this Data Analytics course, you'll learn analytics tools and techniques, how to work with SQL databases, the languages of R and Python, how to create data visualizations, and how to apply statistics and predictive analytics in a business environment.\n\nWhat are the learning objectives?\nSimplilearn’s Data Analyst Master's Program developed in collaboration with IBM will provide you with extensive expertise in the booming data analytics field. This data analytics certification training course will teach you how to master descriptive and inferential statistics, hypothesis testing, regression analysis, data blending, data extracts, and forecasting. Through this course, you will also gain expertise in data visualization techniques using Tableau and Power BI, learning how to organize data and design dashboards. In this data analyst certification online course, a special emphasis is placed on those currently employed in the non-technical workforce. Through this Data Analytics course, those with a basic understanding of mathematical concepts will be able to complete the course and become an expert in data analytics. This learning experience melds the knowledge of Data Analytics with hands-on demos and projects via CloudLab. Upon completing this course, you will have all the skills required to become a successful data analyst.\n\nWhy become Data Analyst?\nBy 2020, the World Economic Forum forecasts that data analysts will be in demand due to increasing data collection and usage. Organizations view data analysis as one of the most crucial future specialities due to the value that can be derived from data. Data is more abundant and accessible than ever in today’s business environment. In fact, 2.5 quintillion bytes of data are created each day. With an ever-increasing skill gap in data analytics, the value of data analysts is continuing to grow, creating new job and career advancement opportunities. \n\nWho should take up this course?\nAspiring professionals of any educational background with an analytical frame of mind are best suited to pursue the Data Analyst Master’s Program, including:\n1. IT professionals\n2. Banking and finance professionals\n3. Marketing managers\n4. Sales professionals\n5. Supply chain network managers\n6. Beginners in the data analytics domain\n7. Students in UG/ PG programs\n\n👉Learn more at: https://www.simplilearn.com/data-analyst-masters-certification-training-course?utm_campaign=DataAnalyticsFC2022Jan13&utm_medium=Description&utm_source=youtube\n\nFor more information about Simplilearn’s courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UARBitWTIwQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/UARBitWTIwQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/UARBitWTIwQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload",
+        "groupId": "MTUxNjQ4NTE0MDYxMTY0ODUxNDA2MTAwMDc1Mg"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "UARBitWTIwQ"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "8U8u3eF_Tb5GgaOd4jXjY3Y-pMY",
+      "id": "MTUxNjQ4NDgxNDEyMTY0ODQ4MTQxMjAwMDI5OQ",
+      "snippet": {
+        "publishedAt": "2022-03-28T15:30:12+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Top 5 Rules For Success By Indra Nooyi | Indra Nooyi Motivational Speech | Success Tips |Simplilearn",
+        "description": "Indra Nooyi's Top 5 Rules For Success: In this video we're going to learn how to improve our lives by analyzing our take on Indra Nooyi's rules for success. Nooyi is one of the top female executives in the world and is consistently ranked among the World's 100 Most Powerful Women. She has been instrumental in the diversification and expansion of PepsiCo’s brands which had primarily been more focused on soft drinks. Known to be a highly innovative, energetic, and hard working person, Nooyi has risen to become one of the top most female executives in the world from a modest beginning. \n\n🔥Explore Our Free Courses With Completion Certificate by SkillUp: https://www.simplilearn.com/skillup-f...\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n#Top5RulesForSuccessByIndraNooyi #IndraNooyiMotivationalSpeech #SuccessTips #MotivationalVideo #IndraNooyiInterview #Motivation #IndraNooyiSpeech #MotivationalTips #Simplilearn\n\nSimplilearn is one of the world’s leading certification training providers. We partner with companies and individuals to address their unique needs, providing training and coaching that helps working professionals achieve their career goals. We've helped over 1 million professionals and companies across 150+ countries get trained, acquire certifications, and upskill their employees. Our training courses are designed and updated by 2000+ renowned industry experts. Our blended learning approach combines online classes, instructor-led live virtual classrooms, project work, and 24/7 teaching assistance. \n\nWe provide online training in Machine Learning, AWS, DevOps, Big Data, Hadoop, Data Science, Artificial Intelligence, Cloud Computing, Project Management, Digital Marketing, Cyber Security and Salesforce among others, where technologies and best practices are changing rapidly and demand for qualified candidates significantly exceeds supply.\n\nLearn more at: https://www.simplilearn.com/?utm_camp...\n\nFor more information about Simplilearn courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simp...\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn...\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simp...\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/paGvbvFG0gA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/paGvbvFG0gA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/paGvbvFG0gA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "paGvbvFG0gA"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "ouH83cr8cMbiMQEdRoHN9s5qxec",
+      "id": "MTUxNjQ4NDc4NDg0MTY0ODQ3ODQ4NDAwMDIyNQ",
+      "snippet": {
+        "publishedAt": "2022-03-28T14:41:24+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "FREE Premium Courses with Certificate 🔥 | 140+ Courses Anyone Can Join | #FreeCourse | Simplilearn",
+        "description": "Are you looking for free online courses with certificates? If so, you're in the right place! In this video, we will explore the best quality courses available for FREE so that you can future-proof your career.\n\n🔥Explore Our Free Courses With Completion Certificate by SkillUp: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=FreePremiumCourseWithCertificateMar25&utm_medium=DescriptionFirstFold&utm_source=youtube\n\nSkillUp is a learning platform from Simplilearn where learners can take free online courses. All of the self-learning courses are free of cost, where you can explore and learn in-demand skills on your schedule. This free online course content is prepared by industry experts & top practitioners. These free online courses are designed for anyone who wants to learn the latest digital skills. We provide courses in the fields of data science, cybersecurity, project management & leadership, cloud computing, digital marketing, and much more. Designed for all professionals, these free courses help students and beginners, as well as experienced developers, engineers, managers, and executives.. The curriculum is designed by renowned industry experts & course advisors like Ronald van Loon, Marc Weaver, Dean Pompilio, and Matt Bailey. All of the courses are completely free. You can learn online 100+ FREE courses, more than 600+ job-ready skills through 1000+ hours of online self-learning video content. The comprehensive course content is prepared by leading industry experts. SkillUp also provides free guides on career paths, salaries, interview tips, and more. You can learn while working or studying from any place and on any device.\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\nWatch more trending videos:\n⏩Top 10 Programming Languages in 2022: https://www.youtube.com/watch?v=Tck7MFXRQZg&t=1s\n⏩Top 10 Dying Programming Language in 2022: https://www.youtube.com/watch?v=wSIbbkl--ik\n⏩Top 10 Highest Paying Jobs in 2022: https://www.youtube.com/watch?v=tq9RojpSwuk\n⏩Top 10 Certifications for 2022: https://www.youtube.com/watch?v=rmDXEh7hi4w\n⏩Top 10 Technologies to Learn in 2022: https://www.youtube.com/watch?v=IrgGmaeYmdM\n\nCustomer Reviews: https://www.youtube.com/watch?v=vWUPGXXiQyc&list=PLD7AD4618679868EC\n\n#FreeOnlineCourses #FreeCoursesWithCertificates #FreePremiumCourses #FreeOnlineCourseWithCertificate #Skillup #Simplilearn #FreeCoruses2022\n\nFor more updates on courses and tips follow us on:\n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ynzO1gSBAG4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ynzO1gSBAG4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ynzO1gSBAG4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/ynzO1gSBAG4/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/ynzO1gSBAG4/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "ynzO1gSBAG4"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "BoOPhlgunlOTl6nq3FmtWPFOh_I",
+      "id": "MTUxNjQ4NDc0MjAwMTY0ODQ3NDIwMDAwMDYyNg",
+      "snippet": {
+        "publishedAt": "2022-03-28T13:30:00+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "5 Python Libraries To Build Command Line Tool 2022 | Python Programming | #Shorts | Simplilearn",
+        "description": "🔥Enroll for Free Python Course & Get Your Completion Certificate: https://www.simplilearn.com/learn-python-basics-free-course-skillup?utm_campaign=5PythonLibrariestoBuildCommandLineToolsShorts&utm_medium=ShortsDescription&utm_source=youtube\n\nIn this Python Programming short, You will see the Top 5 Python Libraries to Build Command Line Tool. A command-line interface (CLI) is a text-based user interface (UI) used to run programs, manage computer files and interact with the computer.\n\n\n✅Subscribe to our Channel to learn more programming languages: https://bit.ly/3eGepgQ\n\n\n⏩ Check out the Python for beginners playlist: https://www.youtube.com/playlist?list=PLEiEAq2VkUUJO27b6PyoSd7CJjWIPyHYO\n\n\n#PythonProgramOnRandomInformationGenerator #PythonTraining #PythonTutorial #PythonProgramming #Python #Simplilearn #Shorts\n\n\nWhat is Python?\nPython is a high-level object-oriented programming language developed by Guido van Rossum in 1989 and was first released in 1991. Python is often called a batteries included language due to its comprehensive standard library. A fun fact about Python is that The name Python was actually taken from the popular BBC comedy show of that time, \"Monty Python's Flying Circus\". Python is widely used these days from data analytics, machine learning, and web development. Python allows you to write programs in fewer lines of code than most of the programming languages. Python as a programming language is growing rapidly. It's the right time to get trained in Python.\n\n\nFollowing are the standard or built-in data type of Python: \n1. Numeric data types\n2. Text data type\n3. Sequence data type\n4. Mapping data type\n5. Set data type\n6. Boolean data type\n7. Binary data type\n\n\nA programming language needs to have support for numbers to carry out calculations. In Python, the numbers are categorized into different data-types and the types are implemented in Python as classes.There are three numeric types in Python: int for integers, float for decimal numbers, and complex for complex numbers. \n\n\nSimplilearn’s Python Training Course is an all-inclusive program that will introduce you to the Python development language and expose you to the essentials of object-oriented programming, web development with Django and game development. Python has surpassed Java as the top language used to introduce U.S. students to programming and computer science. This course will give you hands-on development experience and prepare you for a career as a professional Python programmer.\n\n\nWhat is this course about?\nThe All-in-One Python course enables you to become a professional Python programmer. Any aspiring programmer can learn Python from the basics and go on to master web development & game development in Python. Gain hands on experience creating a flappy bird game clone & website functionalities in Python.\nWhat are the course objectives?\n\n\nBy the end of this online Python training course, you will be able to:\n1. Internalize the concepts & constructs of Python\n2. Learn to create your own Python programs\n3. Master Python Django & advanced web development in Python\n4. Master PyGame & game development in Python\n5. Create a flappy bird game clone\n\n\nThe Python training course is recommended for: \n1. Any aspiring programmer can take up this bundle to master Python\n2. Any aspiring web developer or game developer can take up this bundle to meet their training needs\n\n\nLearn more at: https://www.simplilearn.com/mobile-and-software-development/python-development-training?utm_campaign=5PythonLibrariestoBuildCommandLineToolsShorts&utm_medium=ShortsDescription&utm_source=youtube\n\n\nFor more information about Simplilearn courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/1tQSaX-ljbg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/1tQSaX-ljbg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/1tQSaX-ljbg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/1tQSaX-ljbg/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/1tQSaX-ljbg/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "1tQSaX-ljbg"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "MZtjcJcwSNXbBXU7vL1V8vakhok",
+      "id": "MTUxNjQ4NDcwNjAxMTY0ODQ3MDYwMTAwMDg0OA",
+      "snippet": {
+        "publishedAt": "2022-03-28T12:30:01+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Top 5 NoCode Tools 2022 | 5 Best NoCode Tools 2022 | NoCode Development | #Shorts | Simplilearn",
+        "description": "🔥Explore Our Free Programming Courses With Completion Certificate by SkillUp: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=Top5NoCodeShorts&utm_medium=ShortsDescription&utm_source=youtube\n\nDevelopers create shopping apps, social media apps, video sites for current events, and other platforms we use today. And what are the responsibilities of developers? They write codes and program these software apps and websites to meet the needs of their users.\nHowever, some platforms now provide no-code apps or website creation. So, in this short video of Top 5 No-Code Tools, we have included some top 5 No-Code tools for developers for your better reference and understanding.\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n✅ Check Out Our New Channel Exclusively for Coding: https://bit.ly/3eGepgQ\n\n✅Explore our FREE courses on programming\n🔥Enroll for Free Java Course & Get Your Completion Certificate: https://www.simplilearn.com/learn-java-basics-skillup?utm_campaign=Top5NoCodeShorts&utm_medium=ShortsDescription&utm_source=youtube\n🔥Enroll for Free Python Course & Get Your Completion Certificate: https://www.simplilearn.com/learn-python-basics-free-course-skillup?utm_campaign=Top5NoCodeShorts&utm_medium=ShortsDescription&utm_source=youtube\n🔥Enroll for Free JavaScript Course & Get Your Completion Certificate: https://www.simplilearn.com/learn-javascript-basics-free-course-skillup?utm_campaign=Top5NoCodeShorts&utm_medium=ShortsDescription&utm_source=youtube\n\nLearn programming from our playlists:\n⏩ Python programming: https://bit.ly/3jVU1KT\n⏩ Java Programming: https://bit.ly/31erBEK\n⏩ Javascript: https://bit.ly/3fiV3yz\n⏩ R Programming: https://bit.ly/38PEqtc\n\n#TopNodeTools #TopNoCodeTools2022 #TopNoCodeAppBuilders2022 #BestNoCodeAppBuilders2022 #Simplilearn #Shorts\n\nWatch more trending videos:\n⏩Top 10 Programming Languages in 2022: https://www.youtube.com/watch?v=Tck7MFXRQZg&t=1s\n⏩Top 10 Dying Programming Languages in 2022: https://www.youtube.com/watch?v=wSIbbkl--ik\n⏩Top 10 Highest Paying Jobs in 2022: https://www.youtube.com/watch?v=tq9RojpSwuk\n⏩Top 10 Certifications for 2022: https://www.youtube.com/watch?v=rmDXEh7hi4w\n⏩Top 10 Technologies to Learn in 2022: https://www.youtube.com/watch?v=IrgGmaeYmdM\n\nExplore More Certification Courses from Simplilearn: https://www.simplilearn.com/?utm_campaign=Top5NoCodeShorts&utm_medium=ShortsDescription&utm_source=youtube\n\nFor more information about Simplilearn’s courses, visit: \n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4qHcCb2HDqc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4qHcCb2HDqc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4qHcCb2HDqc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/4qHcCb2HDqc/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/4qHcCb2HDqc/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "4qHcCb2HDqc"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "7jSzWJKMG0BE81PCyV5NAZRQHOU",
+      "id": "MTUxNjQ4NDU5OTQwMTY0ODQ1OTk0MDAwMDQzMA",
+      "snippet": {
+        "publishedAt": "2022-03-28T09:32:20+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "Kotlin Jetpack Tutorial | Android Kotlin Jetpack | Kotlin Tutorial For Beginners | Simplilearn",
+        "description": "In this video on Kotlin Jetpack Tutorial, we will learn why Jetpack compose, What is Kotlin Jetpack compose, and How does compose works?. We will also learn about Composable function, Layouts, and material design. At last, we will have a look at the List and animations.\n\n\nWhat is Kotlin Jetpack compose?\nWhy Jetpack compose?\nHow does the compose work?\nComposable function\nLayouts\nMaterial design\nList and animations\n\n🔥 Explore our FREE Courses with Completion Certificates: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=KotlinJetpackTutorial&utm_medium=Description&utm_source=youtube\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n⏩ Check out the C++ Programming training videos: https://www.youtube.com/playlist?list=PLEiEAq2VkUUKqiV3x0XzAuMtlvyYxHuin\n\n#KotlinJetpackTutorial #AndroidKotlinJetpack #JetpackKotlin #WhatIsJetpackInAndroid #BasicsOfKotlin #KotlinTutorialForBeginners #KotlinAndroidTutorial #WhatIsKotlin #IntroductionToKotlin #LearnProgramming #Simplilearn \n\nWhat Is Kotlin?\nKotlin is one of the fastest growing and widely used programming language. In may 2017 google announced it as an official language for developing android applications. After this announcement the jobs for kotlin increased in large numbers, since then the job opening for kotlin gets doubled every three months as per Dice. It is very easy and friendly language also it is quite easy to maintain and debug this language which is why it is good language to start with.\n\nKotlin is an open source, statically typed language designed by Jet brains. It has both the features of object oriented programming and functional programming. Kotlin is interoperable with java that means both the languages can share and use the information and just like java compiler , the kotlin compiler also generates the byte code which can run on JVM.  Also we can say Kotlin is a kind of java with some added features, even the java libraries can also be used in Kotlin project. Although java is a really cool language, the developers of kotlin focused more on simplifying the code and increasing the transparency.\n\nKotlin language can be used on multiple platforms which reduces the time that is spent on writing and maintaining the code on different platforms. Kotlin doesn’t depend on virtual machine on the target platform.\n\nIn Kotlin, there is a data class. A data class is that class which doesnt perform any operation and only contains state. The advantage of this class is that it provides self generated code and avoids the implementation of methods within the class. \n\nKotlin is used in data science as well, because of it’s features like null safety, statically typed, maintainable code and also being a language which runs on Jvm makes kotlin a good choice for working with the data. Companies such as Google, Uber, Netflix, and Airbnb use Kotlin for their daily business operations. Flutter is an open-source mobile SDK developer can use to build native-looking Android and iOS applications from the same code base.\n\n🔥 Explore our FREE Courses with Completion Certificates: https://www.simplilearn.com/skillup-free-online-courses?utm_campaign=KotlinJetpackTutorial&utm_medium=Description&utm_source=youtube\n\nFor more updates on courses and tips follow us on:\n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/8OdId23cmCU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/8OdId23cmCU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/8OdId23cmCU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "8OdId23cmCU"
+        }
+      }
+    },
+    {
+      "kind": "youtube#activity",
+      "etag": "At2lOsu1CFa-T-bu3jjkC_Ql5hg",
+      "id": "MTUxNjQ4Mzk1MDA2MTY0ODM5NTAwNjAwMDQyMQ",
+      "snippet": {
+        "publishedAt": "2022-03-27T15:30:06+00:00",
+        "channelId": "UCsvqVGtbbyHaMoevxPAq9Fg",
+        "title": "10 Arduino Projects For Beginners 2022 | Simple Arduino Projects For Beginners | Simplilearn",
+        "description": "In this video on Arduino Projects we will look at the different domains in which projects can be done. We will also look at some of the example projects. Audrino is an open-source electronic gadget that reads inputs such as light on a sensor, a finger on a button, or a tweet and generates outputs based on those inputs such as turning on an LED or activating a motor. \n\n🔥FREE IoT Course With Completion Certificate: https://www.simplilearn.com/learn-iot-basics-skillup?utm_campaign=ArduinoProjects?&utm_medium=Description&utm_source=youtube\n\n✅Subscribe to our Channel to learn more about the top Technologies: https://bit.ly/2VT4WtH\n\n⏩ Check out the IoT training videos: https://bit.ly/30ofSD6\n\n#ArduinoProjects #ArduinoProjectsForBeginners #SimpleArduinoProjects #SimpleArduinoProjectsForBeginners #Arduino #ArduinoTutorial #Simplilearn\n\nWhat Is Arduino?\nAudrino is an open-source electronic gadget that reads inputs and generates outputs based on those inputs. Audrino was created at the Ivrea Interaction Design Institute as a simple tool for students with no prior experience with electronics or programming. After acquiring popularity, it began to evolve in order to meet new demands and obstacles. Arduino boards are microcontrollers, not entire computers with operating systems of their own, like the Raspberry Pi. They just run C/C++ code that is stored in their firmware. The Arduino Integrated Development Environment (IDE) is free software that allows you to create and upload code to an Arduino board.\n\nSimplilearn IoT Course Overview:\nIf you’re new to the Internet of Things (IoT) and want to leverage it across business functions, then this introductory course is for you. You’ll get a glimpse into the ever-growing field of IoT, a technology that allows the intelligent exchange of data among a network of internet-connected objects. The primary objective of this Introduction to IoT Training Course is to give you insights into the bright and exciting future of the Internet of Things (IoT). The course will familiarize you with IoT concepts, their origin, impact, methodologies and tools, and how IoT is integrated into business applications to improve business results.\n\nKey Features:\n- 2 hours of in-depth eLearning\n- Lifetime access to self-paced learning\n- Industry-relevant course completion certificate\n- Comprehensive industry-relevant use cases and case studies\n\nEligibility:\nThis IoT course caters to CXO level and middle management professionals who want to enhance business value and ROI leveraging IoT. Simplilearn’s Introduction to IoT Training Course is ideal for anyone who wants to learn the fundamentals of IoT or pursue a career in this growing field.\n\n👉Learn more at: https://www.simplilearn.com/iot-certification-training-course?utm_campaign=ArduinoProjects?&utm_medium=Description&utm_source=youtube\n\n- Facebook: https://www.facebook.com/Simplilearn \n- Twitter: https://twitter.com/simplilearn \n- LinkedIn: https://www.linkedin.com/company/simplilearn/\n- Website: https://www.simplilearn.com \n- Instagram: https://www.instagram.com/simplilearn_elearning\n- Telegram Mobile: https://t.me/simplilearnupdates\n- Telegram Desktop: https://web.telegram.org/#/im?p=@simplilearnupdates\n\nGet the Simplilearn app: https://simpli.app.link/OlbFAhqMqgb",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/IU9zw4RpzH0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/IU9zw4RpzH0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/IU9zw4RpzH0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          },
+          "standard": {
+            "url": "https://i.ytimg.com/vi/IU9zw4RpzH0/sddefault.jpg",
+            "width": 640,
+            "height": 480
+          },
+          "maxres": {
+            "url": "https://i.ytimg.com/vi/IU9zw4RpzH0/maxresdefault.jpg",
+            "width": 1280,
+            "height": 720
+          }
+        },
+        "channelTitle": "Simplilearn",
+        "type": "upload"
+      },
+      "contentDetails": {
+        "upload": {
+          "videoId": "IU9zw4RpzH0"
+        }
+      }
+    }
+  ],
+  "nextPageToken": "CBkQAA",
+  "pageInfo": {
+    "totalResults": 60,
+    "resultsPerPage": 25
+  }
+}

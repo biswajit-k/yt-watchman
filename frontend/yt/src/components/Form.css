@@ -1,0 +1,12 @@
+.react-tag-input {
+  min-height: 42px;
+  border-radius: .4em;
+}
+.react-tag-input:focus-within {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 1px #3182ce;
+  transition: all .2s;
+}
+.modify{
+  background-color: red !important;
+}

@@ -1,0 +1,13 @@
+1. improve pattern maching -> algo
+2. dashboard
+3. oauth login
+4. database - (user, prev findings)
+5. what is watched
+6. live search (not subscribe)
+7. telegram bot control + notifications
+8. adding multiple ids for watching
+9. api request -> limited, so prioritize channels to watched
+10. watch video for - (likes, subscribers, new video, comments)
+11. live stream
+IMP 
+maintain app on api change

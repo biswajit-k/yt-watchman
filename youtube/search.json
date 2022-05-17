@@ -1,0 +1,862 @@
+{
+  "kind": "youtube#searchListResponse",
+  "etag": "hk67041vpG2clqVMC3kS-sxsLnI",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "IN",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
+  "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "9zyQOJGU9rB8uUoqqadhS9ZYPEQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "uAcALH67-2A"
+      },
+      "snippet": {
+        "publishedAt": "2017-01-06T16:05:57Z",
+        "channelId": "UCOR-iqlcedb8VMnax37m3MQ",
+        "title": "Hans Zimmer - Time (OST &quot;Inception&quot;) │ Fingerstyle guitar",
+        "description": "If you are looking for really cool guitar lessons you should check out GuitarTricks FREE 14 day trial ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/uAcALH67-2A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/uAcALH67-2A/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/uAcALH67-2A/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Eiro Nareth",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-01-06T16:05:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "KGjaPigpwGwG1HV6bGqpBVWUWy4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "z3BHrFvqZmE"
+      },
+      "snippet": {
+        "publishedAt": "2018-07-03T14:34:05Z",
+        "channelId": "UCDY62gqfWfCF1xlCiP7uuKQ",
+        "title": "Hans Zimmer - Time (OST &quot;Inception&quot;) │ Fingerstyle guitar 2 Hour Loop",
+        "description": "Original: https://www.youtube.com/watch?v=uAcALH67-2A.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/z3BHrFvqZmE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/z3BHrFvqZmE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/z3BHrFvqZmE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Ted Hubble",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-07-03T14:34:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "rcC0UDufldgLw_jFwYN-6h25iPk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "aIj087v0LLo"
+      },
+      "snippet": {
+        "publishedAt": "2017-09-21T17:33:14Z",
+        "channelId": "UCBl5sCJVHmnj_TZOYubd5cg",
+        "title": "&quot;TIME&quot; - Hans Zimmer (Inception) | Fingerstyle Guitar Lesson (Tutorial) How to play Fingerstyle",
+        "description": "Exclusive content and Awesome Rewards like Tabs, Playthrough videos, chord sheets, and much more are now available at ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/aIj087v0LLo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/aIj087v0LLo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/aIj087v0LLo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Let'sPlayGuitar!",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-09-21T17:33:14Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "LkKfOhw2Q6leK9TwbRfaavJ3YYU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "SaZiUBfXKEs"
+      },
+      "snippet": {
+        "publishedAt": "2019-01-06T17:03:23Z",
+        "channelId": "UCOR-iqlcedb8VMnax37m3MQ",
+        "title": "Hans Zimmer - Time (OST &quot;Inception&quot;) ⎪Epic 12 STRING GUITAR",
+        "description": "If you are looking for really cool guitar lessons you should check out GuitarTricks FREE 14 day trial ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/SaZiUBfXKEs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/SaZiUBfXKEs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/SaZiUBfXKEs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Eiro Nareth",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-01-06T17:03:23Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "iG49SSLx5itKKwPhGvd_cezQ2dA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "mc5WqcFmtq4"
+      },
+      "snippet": {
+        "publishedAt": "2021-01-06T12:46:56Z",
+        "channelId": "UCOR-iqlcedb8VMnax37m3MQ",
+        "title": "Hans Zimmer - Time (2021)⎥Eiro Nareth Fingerstyle Guitar Cover",
+        "description": "My guitar tabs - https://enareths.com Guitar - Avian Songbird 5A And if you decide to buy ANY Avian guitar, use my 5% discount ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/mc5WqcFmtq4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/mc5WqcFmtq4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/mc5WqcFmtq4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Eiro Nareth",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-01-06T12:46:56Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "qg6hdNZLMNir1r4_g7jeYDVXsOg",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "JTO6zoGugpU"
+      },
+      "snippet": {
+        "publishedAt": "2017-01-13T22:43:57Z",
+        "channelId": "UCtCk-MO2azkKGmmeoGk7oJQ",
+        "title": "Hans Zimmer Inception - Time - GUITAR COVER",
+        "description": "you can buy this track below*** Thank you for the support!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JTO6zoGugpU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JTO6zoGugpU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JTO6zoGugpU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "JCM Justin",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-01-13T22:43:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "4AUYB9iNLI6CNLNYlfP_sTXlzL8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "BlEiK9BeBRM"
+      },
+      "snippet": {
+        "publishedAt": "2019-11-04T13:54:57Z",
+        "channelId": "UCgsjvY2qODbkIv8AYkxpNmQ",
+        "title": "How to play &#39;Time (Inception)&#39; Guitar Tutorial [TABS] Fingerstyle",
+        "description": "Guitar: Baton Rouge AR11C Strings: D'Addario 12-53 (80/20 Bronze) Download Tabs: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/BlEiK9BeBRM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/BlEiK9BeBRM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/BlEiK9BeBRM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Soviet Guitar",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-11-04T13:54:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "GuLyZP5ZCA_vBDohmlugsp5bPSc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "xdYYN-4ttDg"
+      },
+      "snippet": {
+        "publishedAt": "2018-11-23T21:50:34Z",
+        "channelId": "UC5CqAZGAoLtY6_V1O3BQh0w",
+        "title": "Hans Zimmer performs INCEPTION &quot;Time&quot; - The World of Hans Zimmer",
+        "description": "at Hollywood in Vienna 2018 The World of Hans Zimmer Vienna Radio Symphony Orchestra Martin Gellner, conductor Hans ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/xdYYN-4ttDg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/xdYYN-4ttDg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/xdYYN-4ttDg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Film Music Fan",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-11-23T21:50:34Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "GMhnrZSFW9fZKQsX2hxedaC7Abo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "eXqPYte8tvc"
+      },
+      "snippet": {
+        "publishedAt": "2010-12-07T20:53:19Z",
+        "channelId": "UCMJecdKUslHToOEpeuRGwXg",
+        "title": "Ewan Dobson - Time 2 - Guitar - www.candyrat.com",
+        "description": "CD & Guitar Tabs available at http://www.candyrat.com Also available on itunes, Apple music, Spotify, and amazon. Visit Ewan ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/eXqPYte8tvc/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/eXqPYte8tvc/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/eXqPYte8tvc/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Candyrat Records",
+        "liveBroadcastContent": "none",
+        "publishTime": "2010-12-07T20:53:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "lhv2LYQrOniha5md9KNAeqKsy9I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "j3zdqkDypNM"
+      },
+      "snippet": {
+        "publishedAt": "2020-03-06T15:19:31Z",
+        "channelId": "UC8LgDpDsFXiwYupTihnTF5g",
+        "title": "TIME (Hans Zimmer) - &quot;Inception&quot; Theme Classical Guitar Cover",
+        "description": "GUITAR TABS & SHEET MUSIC link below. Here's my guitar cover of Time from the Inception soundtrack, by Hans Zimmer.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/j3zdqkDypNM/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/j3zdqkDypNM/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/j3zdqkDypNM/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Beyond The Guitar",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-03-06T15:19:31Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0uc0nwP2fkFzJgg9qF_LAQsfVNc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "p8x59cgTIZs"
+      },
+      "snippet": {
+        "publishedAt": "2015-11-08T14:41:35Z",
+        "channelId": "UC47xx7w1_Qr-053a_aJn1vQ",
+        "title": "[Guitar] Yukari Hashimoto – Koi ga Shitai (Golden Time soundtrack)",
+        "description": "Really amazing guitar play From anime: Golden Time.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/p8x59cgTIZs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/p8x59cgTIZs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/p8x59cgTIZs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "AniMusic",
+        "liveBroadcastContent": "none",
+        "publishTime": "2015-11-08T14:41:35Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "a0rjxpFpwphsO9LbSnSMaD0botI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "JqAxR_rziZk"
+      },
+      "snippet": {
+        "publishedAt": "2018-06-25T13:25:13Z",
+        "channelId": "UCiBUWd8dFSqVbrkFHHg1gjw",
+        "title": "Hans Zimmer - Time (OST &quot;Inception&quot;) Fingerstyle guitar with TABS",
+        "description": "В табулатуре возможны ошибки, но расписал как мог) Скачать их можно здесь ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JqAxR_rziZk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JqAxR_rziZk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JqAxR_rziZk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Alex Yatsenko - Guitar covers & tabs!",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-06-25T13:25:13Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "hdpe0dT4Z0U2qCqW50KPwZ7zM5U",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "IuEEEwgdAZs"
+      },
+      "snippet": {
+        "publishedAt": "2018-01-06T08:28:57Z",
+        "channelId": "UCOR-iqlcedb8VMnax37m3MQ",
+        "title": "Hans Zimmer - INTERSTELLAR⎪12 STRING FINGERSTYLE GUITAR",
+        "description": "If you are looking for really cool guitar lessons you should check out GuitarTricks FREE 14 day trial ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/IuEEEwgdAZs/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/IuEEEwgdAZs/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/IuEEEwgdAZs/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Eiro Nareth",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-01-06T08:28:57Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "9rOIwLOZIo3G1EF59WtfqXier0A",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jinBS2iO3rk"
+      },
+      "snippet": {
+        "publishedAt": "2021-04-23T10:00:28Z",
+        "channelId": "UCy_QFkH1J7fawYImNXHLszA",
+        "title": "The most beautiful OST of all time",
+        "description": "YourName #KimiNoNawa #guitar Kataware Doki Fingerstyle Guitar by RADWIMPS Tabs ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jinBS2iO3rk/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jinBS2iO3rk/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jinBS2iO3rk/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Edward Ong",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-04-23T10:00:28Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "QOixD_PgsZQw_BgyZ1y_sIt0NU8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "HbSQ5MIFywU"
+      },
+      "snippet": {
+        "publishedAt": "2021-04-24T12:56:19Z",
+        "channelId": "UC8j241Dq81anDBwXGAxDnmQ",
+        "title": "Hans Zimmer - Time ( Guitar + Tabs)",
+        "description": "Hi, here is a tutorial of how i play this music, hope you like it... Enjoy!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/HbSQ5MIFywU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/HbSQ5MIFywU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/HbSQ5MIFywU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "NewGuitarist",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-04-24T12:56:19Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "h6lVU86_J8iRXiwohq76TOI2Y9I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "7Z7hqpPsjQA"
+      },
+      "snippet": {
+        "publishedAt": "2015-09-07T15:00:01Z",
+        "channelId": "UCDNle3D-uI4EmTqhQyBsnfA",
+        "title": "Inception - Time - Hans Zimmer - Fingerstyle Guitar Cover by James Bartholomew",
+        "description": "Guitar Tabs: http://bit.ly/GuitarTabStore Spotify: http://spoti.fi/2cmTHkp Instagram: http://bit.ly/2uvhD24 ━━━━━━ Support ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/7Z7hqpPsjQA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/7Z7hqpPsjQA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/7Z7hqpPsjQA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "James Bartholomew",
+        "liveBroadcastContent": "none",
+        "publishTime": "2015-09-07T15:00:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "JQ0sO8cjs4Yv1VzVmBbxEGm4gUM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "tgcTNb-gYlE"
+      },
+      "snippet": {
+        "publishedAt": "2018-01-21T14:03:06Z",
+        "channelId": "UCpxUGL9sKiF7xYxoCywXiXg",
+        "title": "(Hans Zimmer) Time // Inception OST - Fingerstyle Guitar Cover",
+        "description": "Buy my tabs as packages and SAVE UP TO 30% ▻ https://bit.ly/3H6Kbl0 | Spotify ▻ https://goo.gl/Rjkygb iTunes/Apple Music ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/tgcTNb-gYlE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/tgcTNb-gYlE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/tgcTNb-gYlE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Leon Alex",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-01-21T14:03:06Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "DP-PyWjkCBw4NtqiZG-jRK9f2co",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "qoB4IGgJCLw"
+      },
+      "snippet": {
+        "publishedAt": "2021-05-25T19:26:21Z",
+        "channelId": "UCf6FVD1WuHNHHsH-EO0LTlQ",
+        "title": "Guitar TAB (Eiro Nareth) Hans Zimmer - Time (OST &quot;Inception&quot;)  | Tutorial / Sheet / Lesson #iMn",
+        "description": "Guitar TAB (Eiro Nareth) Hans Zimmer - Time (OST \"Inception\") | Tutorial / Sheet / Lesson #iMn List Guitar TAB (Eiro Nareth) on ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/qoB4IGgJCLw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/qoB4IGgJCLw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/qoB4IGgJCLw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "iMusical Note",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-05-25T19:26:21Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "y_ODG9LCPv8vurHBahhoo5aqXNo",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "SpaiYcegojQ"
+      },
+      "snippet": {
+        "publishedAt": "2018-08-21T15:20:27Z",
+        "channelId": "UCIHct_g8GZNIKuQtc9ALB2w",
+        "title": "【Guitar solo】시간 Time OST Part 1 - Kim Jung Hyun x Seohyun",
+        "description": "Please support us by subscribing to Bong Benh Chanel. Have a good day and happiness. ---------------------------- Arranged: Rymax ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/SpaiYcegojQ/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/SpaiYcegojQ/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/SpaiYcegojQ/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Bong Benh",
+        "liveBroadcastContent": "none",
+        "publishTime": "2018-08-21T15:20:27Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "SZuCOo6SjlzhHlozHztJ87Na_Fc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "DgiDmAaUhRg"
+      },
+      "snippet": {
+        "publishedAt": "2020-03-05T20:25:03Z",
+        "channelId": "UClJCJmXN2rlUNgOKefTx_7g",
+        "title": "Hans Zimmer - Inception (Time) Guitar Tab Tutorial",
+        "description": "Hans Zimmer - Inception (Time) Guitar Tab, Sheet Music Tutorial You can adjust the song playback speed through YouTube ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/DgiDmAaUhRg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/DgiDmAaUhRg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/DgiDmAaUhRg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Paolo Marangone",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-03-05T20:25:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "xDCWYGz_JfuvjHjpf2kin5MGRak",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Cw3CPiOt_XE"
+      },
+      "snippet": {
+        "publishedAt": "2021-12-31T15:00:13Z",
+        "channelId": "UCKn9aTPF8xA6s6T0kwAM2gg",
+        "title": "TIME (Inception Main Theme) - Hans Zimmer - Guitar Cover",
+        "description": "I hope you enjoy my guitar cover of \"Time\" by Hans Zimmer from the film Inception. Make sure to hit the subscribe button and give ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Cw3CPiOt_XE/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Cw3CPiOt_XE/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Cw3CPiOt_XE/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Sebastian Lindqvist",
+        "liveBroadcastContent": "none",
+        "publishTime": "2021-12-31T15:00:13Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "sfuORk8QreVp1Uv7j6mXsuramGE",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "JGx0xEnh8Ug"
+      },
+      "snippet": {
+        "publishedAt": "2017-05-16T13:28:05Z",
+        "channelId": "UC2rFnUbYpk1QpgO0zHdeXLA",
+        "title": "Time Inception OST guitar instrumental",
+        "description": "fingerstyle Cover instrumental of the soundtrack 'Time' by \"hans zimmer' from the movie 'Inception' of Leonardo Di caprio.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/JGx0xEnh8Ug/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/JGx0xEnh8Ug/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/JGx0xEnh8Ug/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Suchait Guitars",
+        "liveBroadcastContent": "none",
+        "publishTime": "2017-05-16T13:28:05Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "9u2CJW3bHv_GWYUQGiBXzUpV6lc",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "prAZQdUr3wA"
+      },
+      "snippet": {
+        "publishedAt": "2011-08-09T18:16:52Z",
+        "channelId": "UC_wBi6G3ME_fAujDOTNw3JQ",
+        "title": "Hans Zimmer - Time Cover",
+        "description": "Twitter - http://twitter.com/#!/NOTJORDANWALKER Soundcloud - https://soundcloud.com/notjordanwalker Was meant to be a ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/prAZQdUr3wA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/prAZQdUr3wA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/prAZQdUr3wA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Jordan Walker",
+        "liveBroadcastContent": "none",
+        "publishTime": "2011-08-09T18:16:52Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "-QXS8quPFpcQpe6nyPdDWNq02SQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "j-IupSnOq1A"
+      },
+      "snippet": {
+        "publishedAt": "2020-10-18T23:15:02Z",
+        "channelId": "UCdQ4Zi8QWVu4ydRq88CXC8Q",
+        "title": "Hans Zimmer - Time (Easy Guitar Tabs Tutorial)",
+        "description": "Request Songs on my New Instagram: https://www.instagram.com/neweasyguitartabstutorials DOWNLOAD FOR FREE MY 10 ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/j-IupSnOq1A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/j-IupSnOq1A/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/j-IupSnOq1A/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "New Easy Guitar Tabs",
+        "liveBroadcastContent": "none",
+        "publishTime": "2020-10-18T23:15:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "fe7ZafvWYaCCj04ZLoV_Zi_QHCU",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "45s2QyP2rX0"
+      },
+      "snippet": {
+        "publishedAt": "2019-05-25T18:48:41Z",
+        "channelId": "UCR0rr17_gU-7JOBrOxQnarg",
+        "title": "Inception - Time on Guitar",
+        "description": "MP3s and TABS available through my Patreon! https://www.patreon.com/nstens1117 Get this song on iTunes, Spotify and Google ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/45s2QyP2rX0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/45s2QyP2rX0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/45s2QyP2rX0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Niall Stenson",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-05-25T18:48:41Z"
+      }
+    }
+  ]
+}

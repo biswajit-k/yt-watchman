@@ -1,0 +1,9 @@
+1. Preference on how to group videos- 
+    a) Same Tag
+    b) Latest first
+    c) Oldest first
+
+    grouping preference available on app for instant view and on mail-
+
+2. Storing previous history in dashboard
+ 
