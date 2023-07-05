@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box !important;
+}
+
+html {
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgb(218, 218, 218);
+  border-radius: 40px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.clip-circle {
+  clip-path: circle(40%);
+}
+
+progress::-webkit-progress-bar {
+  background-color: rgb(229 231 235);
+  border-radius: 0.25rem;
+}
+progress::-webkit-progress-value {
+  background-color: rgb(22 163 74);
+  border-radius: 0.25rem;
+}

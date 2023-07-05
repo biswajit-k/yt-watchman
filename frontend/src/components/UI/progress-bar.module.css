@@ -1,0 +1,8 @@
+.step span:last-child {
+  width: 10rem !important;
+  margin-top: 0.5rem !important;
+}
+.wrapper + div {
+}
+.progress {
+}

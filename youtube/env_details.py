@@ -1,0 +1,38 @@
+import os
+
+YT_API_KEY = os.getenv('YT_API_KEY')
+# print("-----------api key is---------------")
+# print(YT_API_KEY)
+
+SENDER_EMAIL = os.getenv('DEV_EMAIL')
+SENDER_PASS = os.getenv('DEV_PASS')
+SAMPLE_RECEIVER = os.getenv('SAMPLE_RECEIVER')
+RECEIVER_LIST = [SENDER_EMAIL, SAMPLE_RECEIVER]
+SAMPLE_CHANNEL_ID = os.getenv("YT_SAMPLE_CHANNEL_ID")
+CLIENT_ID =  os.getenv("CLIENT_ID")
+CLIENT_SECRET =  os.getenv("CLIENT_SECRET")
+DB_ENDPOINT = os.getenv('DB_ENDPOINT')
+DB_PASS = os.getenv('DB_PASS')
+DB_USER = os.getenv('DB_USER')
+DB_NAME = os.getenv('DB_NAME')
+APP_CONFIG_SECRET = os.getenv('APP_CONFIG_SECRET')
+IS_DEV = os.getenv('IS_DEV')
+WEBSITE_URI = 'http://localhost:3000' if IS_DEV else os.getenv('WEBSITE_URI')
+
+env_details = {
+    "SENDER_EMAIL": SENDER_EMAIL,
+    "SENDER_PASS": SENDER_PASS,
+    "SAMPLE_RECEIVER": SAMPLE_RECEIVER,
+    "RECEIVER_LIST": RECEIVER_LIST,
+    "SAMPLE_CHANNEL_ID": SAMPLE_CHANNEL_ID,
+    "YT_API_KEY": YT_API_KEY,
+    "CLIENT_ID": CLIENT_ID,
+    "CLIENT_SECRET": CLIENT_SECRET,
+    "DB_ENDPOINT": DB_ENDPOINT,
+    "DB_PASS": DB_PASS,
+    "DB_NAME": DB_NAME,
+    "DB_USER": DB_USER,
+    "APP_CONFIG_SECRET": APP_CONFIG_SECRET,
+    "WEBSITE_URI": WEBSITE_URI,
+    'IS_DEV': IS_DEV,
+}
