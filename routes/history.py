@@ -11,6 +11,7 @@ from youtube.api_util import get_video
 from youtube.yt_request import youtube
 
 from routes.middleware import auth_required
+from utils.utilities import get_utc_now
 
 
 @router.route("/api/history", methods=["GET"])
@@ -37,13 +38,13 @@ def normalize_history(history_list):
         history['title'] = video['snippet']['title']
         history['channel_title'] = video['snippet']['channelTitle']
 
-        time_diff = datetime.now() - \
-            datetime.strptime(history["found_at"], "%Y-%m-%dT%H:%M:%S.%f")
+        time_diff = get_utc_now() - \
+            datetime.strptime(history["found_at"], "%Y-%m-%dT%H:%M:%S")
         if (divmod(time_diff.total_seconds(), 3600)[0] < 24):
             history["found_at"] = f"Found {humanize.naturaldelta(time_diff)} ago"
         else:
             date = datetime.strptime(
-                history["found_at"], "%Y-%m-%dT%H:%M:%S.%f")
+                history["found_at"], "%Y-%m-%dT%H:%M:%S")
             history["found_at"] = f"Found on {date.day} {date.strftime('%B')}, {date.year}"
 
     return history_list

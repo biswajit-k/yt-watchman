@@ -15,7 +15,7 @@ root.render(
   <BrowserRouter>
     <Provider store={store}>
       <CookiesProvider>
-        <GoogleOAuthProvider clientId={process.env.REACT_APP_CLIENT_ID}>
+        <GoogleOAuthProvider clientId={import.meta.env.VITE_CLIENT_ID}>
           <App />
         </GoogleOAuthProvider>
       </CookiesProvider>

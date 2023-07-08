@@ -1,5 +1,6 @@
 from datetime import datetime
 from settings import db, ma
+from utils.utilities import get_utc_now
 
 
 class Subscription(db.Model):
@@ -12,16 +13,16 @@ class Subscription(db.Model):
     tags = db.Column(db.JSON, nullable=False)
     emails = db.Column(db.JSON, nullable=False)
     active = db.Column(db.Boolean, nullable=False, default=True)
-    created_at = db.Column(db.DateTime, default=datetime.now)
+    created_at = db.Column(db.DateTime, default=get_utc_now())
     comment = db.Column(db.String(240), nullable=False, default='')
     last_fetched_at = db.Column(
-        db.DateTime, nullable=False, default=datetime.now)
+        db.DateTime, nullable=False, default=get_utc_now())
 
     def __repr__(self) -> str:
         return f'''sub_id- {self.id} \n
         user_id- {self.user_id} \n
         channel_id- {self.channel_id} \n
-        emails- {self.emails}\n  
+        emails- {self.emails}\n
         tags- {self.tags}  \n
         active- {self.active} \n
         comment- {self.comment} \n

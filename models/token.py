@@ -1,5 +1,6 @@
 from datetime import datetime
 from settings import db, ma
+from utils.utilities import get_utc_now
 
 
 class Token(db.Model):
@@ -7,7 +8,7 @@ class Token(db.Model):
                         primary_key=True)
     refresh_token = db.Column(db.String(120), nullable=False)
     available_request = db.Column(db.Integer, default=1)
-    reset_time = db.Column(db.DateTime, default=datetime.now)
+    reset_time = db.Column(db.DateTime, default=get_utc_now())
 
     def __repr__(self) -> str:
         return f'''user_id- {self.user_id} \n

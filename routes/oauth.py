@@ -12,7 +12,7 @@ from youtube.env_details import env_details
 from models.user import User, delete_user
 from models.token import Token
 from youtube.api_util import get_credentials, get_user_channel
-from utils.utilities import time_diff
+from utils.utilities import time_diff, get_utc_now
 
 from routes.middleware import auth_required
 
@@ -55,9 +55,9 @@ def refresh_request(user):
     if user is None:
         return
     total_req = (400 if len(user.email) > 0 else 200)
-    if (user.available_request < total_req and time_diff(datetime.now(), user.reset_time) >= 86400):
+    if (user.available_request < total_req and time_diff(get_utc_now(), user.reset_time) >= 86400):
         user.available_request = total_req
-        user.reset_time = datetime.now()
+        user.reset_time = get_utc_now()
     session['profile']['available'] = user.available_request
     session['profile']['reset'] = user.reset_time
     db.session.commit()
@@ -131,9 +131,9 @@ def get_token():
     if tok is None:
         return {}
 
-    if (tok.available_request > 0 or time_diff(datetime.now(), tok.reset_time) >= 86400):
+    if (tok.available_request > 0 or time_diff(get_utc_now(), tok.reset_time) >= 86400):
         return {"available": True}
-    return {"reset": humanize.naturaldelta(tok.reset_time + timedelta(days=1) - datetime.now())}
+    return {"reset": humanize.naturaldelta(tok.reset_time + timedelta(days=1) - get_utc_now())}
 
 
 @router.route("/api/set_token", methods=['POST'])

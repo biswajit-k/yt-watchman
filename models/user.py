@@ -1,5 +1,6 @@
 from datetime import datetime
 from settings import db, ma
+from utils.utilities import get_utc_now
 
 from models.history import delete_history
 from models.subscription import delete_subscription
@@ -11,7 +12,7 @@ class User(db.Model):
     name = db.Column(db.String(80), nullable=False)
     email = db.Column(db.String(120), default="")
     available_request = db.Column(db.Integer, default=400)
-    reset_time = db.Column(db.DateTime, default=datetime.now)
+    reset_time = db.Column(db.DateTime, default=get_utc_now())
     is_guest = db.Column(db.Boolean, nullable=False, default=False)
 
     def __repr__(self):

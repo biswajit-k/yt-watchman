@@ -1,17 +1,30 @@
+import threading
 from models.token import Token
 from models.history import History
 from models.subscription import Subscription
 from models.user import User
 from routes import router
 from settings import application, db
-from youtube.yt_watchman import YtWatchman
+from youtube.yt_watchman import yt_watchman
 
 # DB
 with application.app_context():
     db.create_all()
 
 # YT_WATCHMAN_CORE
-# YtWatchman().start()
+
+# TODO: improve logic - remove while 1
+def watchman_runner():
+    print('yt-watchman thread started')
+    import time
+    while 1:
+        print("running thread")
+        # requires app context as thread can't read current application
+        yt_watchman(application.app_context())
+        time.sleep(20)
+
+YtWatchman = threading.Thread(daemon=True, target=watchman_runner)
+# YtWatchman.start()
 
 # ROUTES
 application.register_blueprint(router)

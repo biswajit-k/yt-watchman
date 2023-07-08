@@ -19,7 +19,7 @@ const statusClass =
 export default function Settings() {
 
   const [history, setHistory] = useState([]);
-  const [subscriptionStats, setSubscriptionStats] = useState({});
+  const [subscriptionStats, setSubscriptionStats] = useState({active: 0, paused: 0});
 
   const { isError, requester, isLoading } = useHttp();
   const user = useProfile(requester);
@@ -78,7 +78,7 @@ export default function Settings() {
         pauseOnHover
       />
       {isLoading && <Modal />}
-      <div className="w-full h-40 bg-gray-100 rounded relative">
+      <div className="relative w-full h-40 bg-gray-100 rounded">
         <img
           referrerPolicy="no-referrer"
           src={image}
@@ -126,28 +126,28 @@ export default function Settings() {
           </div>
         </div>
 
-        <div className="ml-10 h-full relative">
-          <div className="sticky top-0 pl-12 pt-8 pb-4 bg-white space-x-7 text-base shadow-sm shadow-slate-50 z-10">
+        <div className="relative h-full ml-10">
+          <div className="sticky top-0 z-10 pt-8 pb-4 pl-12 text-base bg-white shadow-sm space-x-7 shadow-slate-50">
             <div
               className={`inline-block py-1 cursor-pointer ${ activeClass}`}
             >
               Overview
             </div>
           </div>
-          <div className="p-5 py-8 pb overflow-y-scroll space-y-4">
+          <div className="p-5 py-8 space-y-4 overflow-y-scroll pb">
             <div>
-              <h2 className="font-semibold text-xl py-1 border-b border-b-gray-100">
+              <h2 className="py-1 text-xl font-semibold border-b border-b-gray-100">
                 Subscriptions
               </h2>
-              <div className="py-4 text-sm px-2 space-y-4 font-medium">
+              <div className="px-2 py-4 space-y-4 text-sm font-medium">
                 <p className="font-normal">
                   This section contains the details of your subscription by
                   their active or paused status
                 </p>
                 <div className="flex items-center justify-between mx-3">
                   <div>
-                    Total Subscriptions: <span className="font-normal">{subscriptionStats.active + subscriptionStats.paused}</span>
-                    <div className="space-x-6 mt-2">
+                    Total Subscriptions: <span className="font-normal">{subscriptionStats.active + subscriptionStats.paused }</span>
+                    <div className="mt-2 space-x-6">
                       <div className="inline-block">
                         <div className={statusClass + " bg-green-500"}></div>
                         Active Subscriptions:{" "}
@@ -175,10 +175,10 @@ export default function Settings() {
               </div>
             </div>
             <div>
-              <h2 className="font-semibold text-xl py-1 border-b border-b-gray-100">
+              <h2 className="py-1 text-xl font-semibold border-b border-b-gray-100">
                 Search History
               </h2>
-              <div className="py-4 text-sm px-2 space-y-4">
+              <div className="px-2 py-4 space-y-4 text-sm">
                 <p>
                   Search history contains the videos of your subscriptions which
                   are matched according to your preference
@@ -194,8 +194,7 @@ export default function Settings() {
                     disabled
                   >
                     <div className="flex items-center gap-1">
-                      <AiOutlineDelete className="hover:cursor-pointer
-                      hover:fill-red-300 w-5 h-5" />{" "}
+                      <AiOutlineDelete className="w-5 h-5 hover:cursor-pointer hover:fill-red-300" />{" "}
                       <span className="tracking-wider">Clear History</span>
                     </div>
                   </Button>
@@ -203,14 +202,14 @@ export default function Settings() {
               </div>
             </div>
             <div>
-              <h2 className="font-semibold text-xl py-1 border-b border-b-gray-100">
+              <h2 className="py-1 text-xl font-semibold border-b border-b-gray-100">
                 Comments
               </h2>
-              <div className="py-4 text-sm px-2 space-y-4 font-medium">
+              <div className="px-2 py-4 space-y-4 text-sm font-medium">
               <div>This section contains details about auto-comments you have enabled on your subscriptions</div>
                 <div className="flex items-center justify-between mx-3">
                   <div>
-                    <div className="font-medium mb-2">
+                    <div className="mb-2 font-medium">
                     Comments Made: <span className="font-normal">{history.filter(h => h.comment_id.length > 0).length}</span>
                     </div>
                     <div className="font-medium">

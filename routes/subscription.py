@@ -5,7 +5,7 @@ from flask_cors import cross_origin
 
 from settings import db
 from routes import router
-from utils.utilities import format_date
+from utils.utilities import format_date, get_utc_now
 from models.subscription import Subscription, subscriptions_schema
 from models.user import User
 from youtube.yt_request import youtube, make_comment
@@ -48,7 +48,7 @@ def str_to_list(s):
 def normalize_subs(subs):
     for sub in subs:
         channel = get_channel_from_id(youtube, sub["channel_id"])
-        time_diff = datetime.now() - format_date(sub["created_at"])
+        time_diff = get_utc_now() - format_date(sub["created_at"])
         if (divmod(time_diff.total_seconds(), 3600)[0] < 24):
             sub["created_at"] = f"Created {humanize.naturaldelta(time_diff)} ago"
         else:

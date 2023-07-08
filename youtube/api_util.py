@@ -1,5 +1,6 @@
 import datetime
 from youtube.get_video_id import get_yt_video_id
+from utils.utilities import get_utc_now
 
 def credentials_to_dict(credentials):
   return {'token': credentials.token,
@@ -137,13 +138,16 @@ def extract_video(youtube, channelId, tag_list, last_fetch_time):
 
     response = api_activity(youtube, channelId)
     result = []
-    current_time = datetime.datetime.now()
+    current_time = get_utc_now()
     for video in response["items"]:
         if(video["snippet"]["type"] != "upload"):           # playlistItem maybe
             continue
         publish_time = datetime.datetime.strptime(video["snippet"]["publishedAt"][:19], '%Y-%m-%dT%H:%M:%S')
-        if(publish_time <= last_fetch_time):
+
+        # account for delay in api - assume 5 seconds
+        if(publish_time <= last_fetch_time - datetime.timedelta(seconds=5)):
             break
+
         str_publish_time = publish_time.strftime("%m/%d/%Y, %H:%M:%S")
         title = video["snippet"]["title"]
         description = video["snippet"]["description"]

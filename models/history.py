@@ -1,5 +1,6 @@
 from datetime import datetime
 from settings import db, ma
+from utils.utilities import get_utc_now
 
 
 class History(db.Model):
@@ -7,7 +8,7 @@ class History(db.Model):
     user_id = db.Column(db.String(80), primary_key=True, nullable=False)
     channel_id = db.Column(db.String(120), nullable=False)
     tag = db.Column(db.String(120), nullable=False)
-    found_at = db.Column(db.DateTime, default=datetime.now)
+    found_at = db.Column(db.DateTime, default=get_utc_now())
     comment_id = db.Column(db.String(120), nullable=False, default='')
 
     def __repr__(self) -> str:
