@@ -89,9 +89,12 @@ def get_channel_id_from_url(url):
     import requests
     import re
     r = requests.get(url)
-    # print(r.status_code)
-    # print("get channelId error- " + r.raise_for_status())
+
+    if r.status_code == 404:
+        raise Exception("Channel not found")
+
     page_source = r.text
+    print(f"channel page response: {r.status_code}")
     channel_id = re.search(r"<link\ rel=\"canonical\"\ href=\"https://www\.youtube\.com/channel/(.*?)\"", page_source).group(1)
     return channel_id
 

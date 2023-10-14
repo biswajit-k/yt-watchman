@@ -1,3 +1,4 @@
+from werkzeug.serving import is_running_from_reloader
 import threading
 from models.token import Token
 from models.history import History
@@ -23,8 +24,12 @@ def watchman_runner():
         yt_watchman(application.app_context())
         time.sleep(20)
 
-YtWatchman = threading.Thread(daemon=True, target=watchman_runner)
-# YtWatchman.start()
+# in debug mode flask starts 2 processes, one extra to watch changes and do reload
+# so prevent two watchman threads being created, below fn. only runs if this is not the
+# reloader process
+if not is_running_from_reloader():
+    YtWatchman = threading.Thread(daemon=True, target=watchman_runner)
+    YtWatchman.start()
 
 # ROUTES
 application.register_blueprint(router)

@@ -171,8 +171,8 @@ def serve_channel():
             channel = get_channel_from_id(
                 youtube, get_channel_id_from_url(url))
             return channel
-        except:
-            return {"error": "Something went wrong. please try again"}
+        except Exception as e:
+            return {"error": str(e) or "Something went wrong. please try again"}
     else:
         return {"error": "please enter a valid channel link"}
 
