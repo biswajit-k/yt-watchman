@@ -16,8 +16,7 @@ DB_PASS = os.getenv('DB_PASS')
 DB_USER = os.getenv('DB_USER')
 DB_NAME = os.getenv('DB_NAME')
 APP_CONFIG_SECRET = os.getenv('APP_CONFIG_SECRET')
-IS_DEV = os.getenv('IS_DEV')
-WEBSITE_URI = 'http://localhost:3000' if IS_DEV else os.getenv('WEBSITE_URI')
+WEBSITE_URI = os.getenv('WEBSITE_URI')
 
 env_details = {
     "SENDER_EMAIL": SENDER_EMAIL,
@@ -34,5 +33,4 @@ env_details = {
     "DB_USER": DB_USER,
     "APP_CONFIG_SECRET": APP_CONFIG_SECRET,
     "WEBSITE_URI": WEBSITE_URI,
-    'IS_DEV': IS_DEV,
 }

@@ -1,11 +1,10 @@
+.env*
 
 # frontend
 node_modules
-.env*
 build
 
 # backend
-.flaskenv
 __pycache__
 
 # others
