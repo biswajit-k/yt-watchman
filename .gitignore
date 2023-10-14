@@ -1,8 +1,8 @@
 .env*
 
 # frontend
-node_modules
 frontend/
+node_modules
 
 # backend
 __pycache__
