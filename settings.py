@@ -16,10 +16,6 @@ db_user = env_details['DB_USER']
 db_uri = f"mysql+pymysql://{db_user}:{db_pass}@{db_endpoint}/{db_name}"
 
 
-# OVERRIDE FLASK - allow multithreading to run when application initializes
-POOL_TIME = 5
-yourThread = threading.Thread()
-
 # static folder not required in dev, as serving frontend seperately
 application = Flask("application", static_url_path='/', static_folder='./build')
 
