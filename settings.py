@@ -19,7 +19,7 @@ db_uri = f"mysql+pymysql://{db_user}:{db_pass}@{db_endpoint}/{db_name}"
 # static folder not required in dev, as serving frontend seperately
 application = Flask("application", static_url_path='/', static_folder='./build')
 
-application.config['SECRET_KEY'] = env_details['APP_CONFIG_SECRET']
+application.config['SECRET_KEY'] = env_details['SECRET_KEY']
 application.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 application.config['SESSION_TYPE'] = 'sqlalchemy'

@@ -1,8 +1,8 @@
 import os
 
 YT_API_KEY = os.getenv('YT_API_KEY')
-# print("-----------api key is---------------")
-# print(YT_API_KEY)
+print("-----------api key is---------------")
+print(YT_API_KEY)
 
 SENDER_EMAIL = os.getenv('DEV_EMAIL')
 SENDER_PASS = os.getenv('DEV_PASS')
@@ -15,7 +15,7 @@ DB_ENDPOINT = os.getenv('DB_ENDPOINT')
 DB_PASS = os.getenv('DB_PASS')
 DB_USER = os.getenv('DB_USER')
 DB_NAME = os.getenv('DB_NAME')
-APP_CONFIG_SECRET = os.getenv('APP_CONFIG_SECRET')
+SECRET_KEY = os.getenv('SECRET_KEY')
 WEBSITE_URI = os.getenv('WEBSITE_URI')
 
 env_details = {
@@ -31,6 +31,6 @@ env_details = {
     "DB_PASS": DB_PASS,
     "DB_NAME": DB_NAME,
     "DB_USER": DB_USER,
-    "APP_CONFIG_SECRET": APP_CONFIG_SECRET,
+    "SECRET_KEY": SECRET_KEY,
     "WEBSITE_URI": WEBSITE_URI,
 }
