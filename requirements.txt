@@ -39,5 +39,5 @@ rsa==4.9
 SQLAlchemy==2.0.21
 typing_extensions==4.8.0
 uritemplate==4.1.1
-urllib3==2.0.6
+urllib3==1.26.9
 Werkzeug==3.0.0
