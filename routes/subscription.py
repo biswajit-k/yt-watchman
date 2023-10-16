@@ -102,7 +102,7 @@ def add_subscription():
         channel_id=channel_id, user_id=user_id).first()
     if (subscription_exist is None):
         subscription = Subscription(
-            channel_id=channel_id, tags=tags, emails=emails, user_id=user_id, comment=comment)
+            channel_id=channel_id, tags=tags, emails=emails, user_id=user_id, comment=comment, created_at=get_utc_now())
         db.session.add(subscription)
         db.session.commit()
         return {"message": "Voila! subscription added"}
