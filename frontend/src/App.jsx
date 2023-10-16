@@ -78,7 +78,7 @@ export default function App() {
   }, []);
 
   return (
-    <GoogleOAuthProvider clientId={import.meta.env.VITE_CLIENT_ID}>
+    <GoogleOAuthProvider clientId="218676759648-6q3mjmfrb8rd1vep2sk9d5m5d6rssgbp.apps.googleusercontent.com">
       <Routes>
         <Route index element={<Front />} />
         {/* <Route path="/" element={<Front />} /> */}
