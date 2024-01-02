@@ -34,5 +34,4 @@ env_details = {
     "DB_USER": DB_USER,
     "SECRET_KEY": SECRET_KEY,
     "WEBSITE_URI": WEBSITE_URI,
-    'IS_DEV': IS_DEV,
 }

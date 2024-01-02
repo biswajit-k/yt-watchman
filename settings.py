@@ -7,22 +7,15 @@ from flask_cors import CORS
 from youtube.env_details import env_details
 
 #DB CONFIG
+db_endpoint = env_details['DB_ENDPOINT']
+db_pass = env_details['DB_PASS']
+db_name = env_details['DB_NAME']
+db_user = env_details['DB_USER']
 
-if env_details['IS_DEV']:
-    db_uri = 'mysql+pymysql://root:@localhost/yt-watchman'
-else:
-    db_endpoint = env_details['DB_ENDPOINT']
-    db_pass = env_details['DB_PASS']
-    db_name = env_details['DB_NAME']
-    db_user = env_details['DB_USER']
-    db_uri = f"mysql+pymysql://{db_user}:{db_pass}@{db_endpoint}:3306/{db_name}"
+db_uri = f"mysql+pymysql://{db_user}:{db_pass}@{db_endpoint}:3306/{db_name}"
 
 
-
-# OVERRIDE FLASK - allow multithreading to run when application initializes
-POOL_TIME = 5
-yourThread = threading.Thread()
-
+# static folder not required in dev, as serving frontend seperately
 application = Flask("application", static_url_path='/', static_folder='./build')
 
 application.config['SECRET_KEY'] = env_details['SECRET_KEY']

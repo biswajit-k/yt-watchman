@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes, Navigate } from "react-router-dom";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 import { userActions } from "./store/user-store";
 import {
@@ -73,9 +74,8 @@ export default function App() {
       }
     );
   }, []);
-
   return (
-    <>
+    <GoogleOAuthProvider clientId="218676759648-6q3mjmfrb8rd1vep2sk9d5m5d6rssgbp.apps.googleusercontent.com">
       <Routes>
         <Route index element={<Front />} />
         {/* <Route path="/" element={<Front />} /> */}
@@ -101,6 +101,6 @@ export default function App() {
 
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </>
+    </GoogleOAuthProvider>
   );
 }

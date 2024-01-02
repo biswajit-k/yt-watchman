@@ -1,1 +1,0 @@
-Flask Flask-SQLAlchemy humanize flask-marshmallow flask-cors flask-session google-api-python-client pymysql marshmallow-sqlalchemy google-auth-oauthlib                                                                            
