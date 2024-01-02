@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate, Link, isRouteErrorResponse } from "react-router-dom";
 import { useGoogleLogin } from "@react-oauth/google";
 
 import {
@@ -20,13 +20,16 @@ import {
 } from "react-icons/ai";
 import { Modal, useHttp, Button, useImage, useProfile } from "../index";
 
+//TODO: keep toast container in global div, so that it could be accessed from any file using ref or something
+// then, set toast error message within use-http requester itself instead of useeffect(isError) in every file
+// also, toast for sucess messages
 
 export default function Dashboard() {
   const navigate = useNavigate();
   const [token, setToken] = useState({});
   const [history, setHistory] = useState([]);
   const [subIdx, setSubIdx] = useState(0);
-  const { isLoading, requester } = useHttp();
+  const { isLoading, requester, isError } = useHttp();
   const [subscriptions, setSubscriptions] = useState({});
   const user = useProfile(requester, true);
   const { image } = useImage(user.id, user.isGuest);
@@ -42,7 +45,7 @@ export default function Dashboard() {
   useEffect(() => {
     requester(
       {
-        url: "/api/get_token",
+        url: "/api/token_status",
         body: {
           credentials: "include",
         },
@@ -70,16 +73,18 @@ export default function Dashboard() {
         },
       },
       (data) => {
-        if(data.history) setHistory(data.history);
-        else {
-          toast.dismiss();
-          toast.error('something went wrong');
-        } 
-          
+        setHistory(data.history);
       }
     )
   }, []);
   useEffect(() => setSubIdx(0), [subscriptions]);
+  
+  useEffect(() => {
+    if(isError) {
+      toast.dismiss();
+      toast.error(isError || "something went wrong");
+    }
+  }, [isError])
 
   function setTokenHandler(response) {
     requester(

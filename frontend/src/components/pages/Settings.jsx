@@ -36,11 +36,6 @@ export default function Settings() {
       },
       (data) => {
         if(data.history) setHistory(data.history);
-        else {
-          toast.dismiss();
-          toast.error('something went wrong');
-        } 
-          
       }
     )
   }, []);
@@ -60,7 +55,7 @@ export default function Settings() {
   useEffect(() => {
     if (isError) {
       toast.dismiss();
-      toast.error(isError);
+      toast.error(isError || "something went wrong");
     }
   }, [isError]);
 

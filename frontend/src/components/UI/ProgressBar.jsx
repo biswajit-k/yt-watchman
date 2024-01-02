@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
 import {
   withStepProgress,
   useStepProgress,
@@ -27,9 +26,11 @@ const steps = [
   },
 ];
 
+// TODO: wherever api/set_token called, create a common function to give comment access 
+// instead of re-writing everywhere
+
 function ProgressBar() {
   const { isLoading, isError, requester } = useHttp();
-  const dispatch = useDispatch();
 
   const googleLogin = useGoogleLogin({
     onSuccess: (response) => requestHandler(response),
@@ -37,7 +38,7 @@ function ProgressBar() {
     flow: "auth-code",
   });
 
-  const { setStep, currentStep } = useStepProgress({
+  const { setStep } = useStepProgress({
     steps,
     startingStep: 0,
   });

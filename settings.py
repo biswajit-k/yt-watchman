@@ -1,10 +1,9 @@
 import threading
+from datetime import timedelta
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.orm import scoped_session, sessionmaker
 from flask_marshmallow import Marshmallow
 from flask_cors import CORS
-from flask_session import Session
 from youtube.env_details import env_details
 
 #DB CONFIG
@@ -26,10 +25,10 @@ yourThread = threading.Thread()
 
 application = Flask("application", static_url_path='/', static_folder='./build')
 
-application.config['SECRET_KEY'] = env_details['APP_CONFIG_SECRET']
+application.config['SECRET_KEY'] = env_details['SECRET_KEY']
+application.config['PERMANENT_SESSION_LIFETIME'] = timedelta(days=2)
 application.config['SQLALCHEMY_DATABASE_URI'] = db_uri
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-application.config['SESSION_TYPE'] = 'sqlalchemy'
 CORS(application)
 
 
@@ -37,15 +36,5 @@ CORS(application)
 # setting up engine, creating session for each request and closing after, managing connections, etc.
 db = SQLAlchemy(application)
 
-with application.app_context():
-    session_factory = sessionmaker(bind=db.engine)
-    Db_scoped_session = scoped_session(session_factory)
-
-
 # TODO: read about marshmallow requirement in this project- mostly for serialization and i/p validation
 ma = Marshmallow(application)
-application.config['SESSION_SQLALCHEMY'] = db
-
-
-# TODO: optimize sessions part
-sess = Session(application)

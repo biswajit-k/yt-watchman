@@ -31,10 +31,6 @@ export default function EditSubscription() {
   const user = useSelector((state) => state.user);
 
   function submitResponsehandler(data) {
-    if (data.error) {
-      toast.error(data.error);
-      return;
-    }
     toast.success(data.message);
     navigate("../subscription");
   }
@@ -59,10 +55,6 @@ export default function EditSubscription() {
   }
 
   function setChannelData(data) {
-    if (data.error) {
-      toast.error(data.error);
-      return;
-    }
     setChannel(data);
     toast.success("Yay! Channel Found");
   }
@@ -91,7 +83,7 @@ export default function EditSubscription() {
   useEffect(() => {
     if (isError) {
       toast.dismiss();
-      toast.error("something went wrong");
+      toast.error(isError || "something went wrong");
     }
   }, [isError]);
 

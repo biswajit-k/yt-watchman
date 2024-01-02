@@ -64,6 +64,13 @@ export default function Login() {
     );
   }
 
+  useEffect(() => {
+    if(isError) {
+      toast.dismiss();
+      toast.error(isError || "something went wrong");
+    }
+  }, [isError])
+  
   return (
     <div className="flex items-center justify-center w-full px-16 py-10 overflow-y-scroll bg-gray-50">
       {isLoading && <Modal />}

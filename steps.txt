@@ -1,0 +1,9 @@
+versioning steps-
+
+1. first commit changes and push to origin
+2. git tag <version-name> HEAD
+3. git tag          // to check all tags
+4. git push origin --tags
+5. git checkout -b <version-name.x>
+6. checkout to main again
+7. on github releases select this tag and add release notes

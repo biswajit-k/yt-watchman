@@ -5,8 +5,6 @@ export { default as YourSubscription } from "./pages/Subscription/YourSubscripti
 export { default as AddSubscription } from "./pages/Subscription/AddSubscription";
 export { default as EditSubscription } from "./pages/Subscription/EditSubscription";
 export { default as Settings } from "./pages/Settings";
-export { default as Landing } from "./pages/Landing";
-export { default as Playground } from "./pages/Playground";
 export { default as History } from "./pages/History";
 export { default as DashboardLayout } from "./pages/DashboardLayout";
 export { default as Dashboard } from "./pages/Dashboard";

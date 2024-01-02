@@ -28,10 +28,6 @@ export default function AddSubscription() {
   const formRef = useRef();
 
   function submitResponsehandler(data) {
-    if (data.error) {
-      toast.error(data.error);
-      return;
-    }
     toast.success(data.message);
     navigate("../subscription");
   }
@@ -89,7 +85,7 @@ export default function AddSubscription() {
   useEffect(() => {
     if (isError) {
       toast.dismiss();
-      toast.error("something went wrong");
+      toast.error(isError || "something went wrong");
     }
   }, [isError]);
 

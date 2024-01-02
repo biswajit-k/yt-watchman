@@ -59,7 +59,7 @@ export default function YourSubscription() {
   useEffect(() => {
     if (isError) {
       toast.dismiss();
-      toast.error("something went wrong");
+      toast.error(isError || "something went wrong");
     }
   }, [isError]);
 
@@ -79,12 +79,7 @@ export default function YourSubscription() {
         },
       },
       (data) => {
-        if (data.active) {
-          setSubscriptionsData(data);
-          return;
-        }
-        toast.dismiss();
-        toast.error(data.error);
+        setSubscriptionsData(data);
       }
     );
   }

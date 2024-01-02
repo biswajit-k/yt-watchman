@@ -3,8 +3,8 @@ from datetime import datetime, timezone
 def get_field_default(model, field):
   return getattr(model, field).default.arg
 
-def time_diff(time_1, time_2):
-  return (time_1 - time_2).total_seconds()
+def get_duration_seconds(time):
+  return (get_utc_now() - time).total_seconds()
 
 def format_date(date):
 

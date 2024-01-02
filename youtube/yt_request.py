@@ -1,27 +1,24 @@
-from googleapiclient.discovery import build
+
 from youtube.env_details import env_details
 from  youtube.mail_sender import send_mail
-from youtube.api_util import extract_video
+from youtube.youtube import youtube
 
 
-api_key = env_details['YT_API_KEY']
 SENDER_EMAIL = env_details['SENDER_EMAIL']
 SENDER_PASS = env_details['SENDER_PASS']
 
-youtube = build('youtube', 'v3', developerKey=api_key)
 
-
-def send_subscriber_mail(youtube, channelId, tag_list, SENDER_EMAIL, SENDER_PASS, RECEIVER_LIST):
+def send_subscriber_mail(youtube, channel_id, tag_list, SENDER_EMAIL, SENDER_PASS, RECEIVER_LIST):
 
     global last_fetch_time
 
     # subject
     subject = "Youtube Watchman | Video detected!"
-    # content 
-    result, new_time = extract_video(youtube, channelId, tag_list, last_fetch_time)
+    # content
+    result, new_time = youtube.extract_video(channel_id, tag_list, last_fetch_time)
 
     last_fetch_time = new_time
-    
+
     mail_result_list = []
     for video in result:
         mail_video = f"""Title- {video["title"]}\nLink- {video["link"]}\nTime- {video["time"]}\nTag Detected- {video["tag"]}"""
@@ -35,15 +32,15 @@ def send_subscriber_mail(youtube, channelId, tag_list, SENDER_EMAIL, SENDER_PASS
     send_mail(SENDER_EMAIL, SENDER_PASS, RECEIVER_LIST, subject, content)
 
 
-def timer(action, youtube, channelId, tag_list, SENDER_EMAIL, SENDER_PASS, RECEIVER_LIST, delay):
+def timer(action, youtube, channel_id, tag_list, SENDER_EMAIL, SENDER_PASS, RECEIVER_LIST, delay):
     import time
     while True:
-        action(youtube, channelId, tag_list, SENDER_EMAIL, SENDER_PASS, RECEIVER_LIST)
+        action(youtube, channel_id, tag_list, SENDER_EMAIL, SENDER_PASS, RECEIVER_LIST)
         time.sleep(delay)
 
 def send_emails(user, findings, recipients):
     for recipient_email, sub_ids in recipients.items():
-        
+
         subject = "Youtube Watchman | Video detected!"
         mail_str = ""
         mail_result_list = []
@@ -61,25 +58,6 @@ def send_emails(user, findings, recipients):
     {nl}{mail_str}
     """)
         send_mail(SENDER_EMAIL, SENDER_PASS, recipient_email, subject, mail_content)
-
-
-
-def make_comment(youtube, video_id, comment):
-    request = youtube.commentThreads().insert(
-        part="snippet",
-        body={
-          "snippet": {
-            "videoId": video_id,
-            "topLevelComment": {
-              "snippet": {
-                "textOriginal": comment
-              }
-            }
-          }
-        }
-    )
-    response = request.execute()    
-    return response['id']
 
 
 

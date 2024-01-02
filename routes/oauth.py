@@ -1,145 +1,103 @@
-from datetime import datetime, timedelta
-
-import humanize
 from routes import router
 from flask import session, request
 from flask_cors import cross_origin
 from google.oauth2 import id_token
 from google.auth.transport import requests
 import google_auth_oauthlib
-from settings import db
+from settings import db                     # db.session is a scoped_session - flask creates, you can create it on ur own aswell
 from youtube.env_details import env_details
-from models.user import User, delete_user
+from models.user import User
 from models.token import Token
-from youtube.api_util import get_credentials, get_user_channel
-from utils.utilities import time_diff, get_utc_now
 
 from routes.middleware import auth_required
 
 google_request = requests.Request()
 
 
-@router.route("/api/authenticate", methods=['GET', 'POST'])
-@cross_origin(supports_credentials=True)
-def authenticate():
-    profile = session.get('profile')
-    is_authenticated = profile is not None
-    return {"is_authenticated": is_authenticated}
-
-# TODO: user_details-> make class
-
-@router.route('/api/login', methods=["POST", "GET"])
+@router.route('/api/login', methods=["POST"])
 @cross_origin(supports_credentials=True)
 def login_user():
     token = request.json['token']
-    id_info = id_token.verify_oauth2_token(
-        token, google_request, env_details['CLIENT_ID'])
 
-    session['profile'] = {"id": id_info['sub'], "name": id_info['name'],
-                          "email": id_info['email'], "is_guest": False}
-    # save_image(id_info['picture'], id_info['sub'])
+    try:
+        id_info = id_token.verify_oauth2_token(
+            token, google_request, env_details['CLIENT_ID'])
 
-    user = db.session.query(User).filter_by(id=id_info['sub']).first()
-    refresh_request(user)
-    if user is None:
-        print("user dont exits")
-        user = User(id=id_info['sub'],
-                    name=id_info['name'], email=id_info['email'])
-        db.session.add(user)
-        db.session.commit()
+        session['user_id'] = id_info['sub']
+        session.permanent = True
 
-    return session['profile']
+        user = User.get_user(db.session, id_info['sub'])
+        if user is None:
+            print("user dont exits")
+            user = User.add_user(id=id_info['sub'], name=id_info['name'], email=id_info['email'])
+            db.session.add(user)
+            db.session.commit()
+        return user.asdict()
 
+    except ValueError:
+        return {"message": "Opps! Invalid token. Try again."}, 401
 
-def refresh_request(user):
-    if user is None:
-        return
-    total_req = (400 if len(user.email) > 0 else 200)
-    if (user.available_request < total_req and time_diff(get_utc_now(), user.reset_time) >= 86400):
-        user.available_request = total_req
-        user.reset_time = get_utc_now()
-    session['profile']['available'] = user.available_request
-    session['profile']['reset'] = user.reset_time
-    db.session.commit()
 
 @router.route('/api/login/guest', methods=["GET"])
 @cross_origin(supports_credentials=True)
 def login_guest():
+    if session['user_id']:
+        return {"message": "You are already logged in"}, 405
 
-    guest = generate_guest()
-    session['profile'] = {"id": guest.id,
-                          "name": guest.name, "email": "", "is_guest": True}
-    refresh_request(guest)
-    return session['profile']
-
-
-def generate_guest():
-    import uuid
-    import random
-    id = str(uuid.uuid4())
-    name = "guest-" + str(random.randrange(10**4, 10**5))
-    available_request = 200
-    guest = User(id=id, name=name,
-                 available_request=available_request, is_guest=True)
+    guest = User.create_guest_user()
     db.session.add(guest)
     db.session.commit()
-    print(guest)
-    return guest
+    session['user_id'] = guest.id
+
+    return guest.asdict()
 
 
 @router.route("/api/profile", methods=['GET'])
 @cross_origin(supports_credentials=True)
+@auth_required
 def get_current_user():
-    profile = session.get('profile')    # set by user
-    if not profile:
-        return ({"error": "please login"})
+    user_id = session['user_id']
 
-    user = db.session.query(User).filter_by(id=profile['id']).first()
-    refresh_request(user)
-    has_token = get_credentials(profile['id']) is not None
+    user = User.get_user(db.session, user_id)
     return ({
         "id": user.id,
         "name": user.name,
         "email": user.email,
         "is_guest": user.is_guest,
         "available_request": user.available_request,
-        "has_token": has_token,
+        "has_token": user.has_token,
     })
 
 
 @router.route("/api/logout", methods=['GET', 'POST'])
 @cross_origin(supports_credentials=True)
+@auth_required
 def logout_user():
-    profile = session.get('profile')
-    if profile is not None:
-        if (profile['is_guest'] == True):
-            delete_user(profile['id'])
-        session.pop('profile')
-        print("session deleted")
-    return {"message": "success logout"}
+    user = User.get_user(db.session, session['user_id'])
+    if user.is_guest:
+        User.delete_guest(db.session, user.id)
+
+    session.pop('user_id')
+    print("session deleted")
+    return '', 201
 
 
-@router.route("/api/get_token", methods=['GET'])
+@router.route("/api/token_status", methods=['GET'])        # change to something like "request_for_token"
 @cross_origin(supports_credentials=True)
 @auth_required
-def get_token():
-
-    profile = session.get('profile')
-    if not profile:
-        return ({"error": "please login"})
-    tok = db.session.query(Token).filter_by(user_id=profile['id']).first()
-    if tok is None:
-        return {}
-
-    if (tok.available_request > 0 or time_diff(get_utc_now(), tok.reset_time) >= 86400):
-        return {"available": True}
-    return {"reset": humanize.naturaldelta(tok.reset_time + timedelta(days=1) - get_utc_now())}
+def get_token_status():
+    user_id = session.get('user_id')
+    return Token.get_status(db.session, user_id)
 
 
 @router.route("/api/set_token", methods=['POST'])
 @cross_origin(supports_credentials=True)
 @auth_required
-def set_token(code=None):
+def set_token_from_code():
+
+    code = request.json.get('code')
+    if code is None:
+        return {"message" :'Code not provided'}, 400
 
     # create flow
     flow = google_auth_oauthlib.flow.Flow.from_client_secrets_file(
@@ -148,9 +106,6 @@ def set_token(code=None):
                 "https://www.googleapis.com/auth/userinfo.profile", "https://www.googleapis.com/auth/youtube.force-ssl"],
         redirect_uri=env_details['WEBSITE_URI'])
 
-    if code is None:
-        code = request.json['code']
-
     # exchange code with token
     flow.fetch_token(code=code)
 
@@ -158,9 +113,15 @@ def set_token(code=None):
     credentials = flow.credentials
 
     # update db
-    token = Token(user_id=session['profile']['id'],
-                  refresh_token=credentials.refresh_token)
-    db.session.add(token)
+    user_id = session['user_id']
+    existing_token = Token.get_token(db.session, user_id)
+
+    if not existing_token:
+        token = Token(user_id=user_id, refresh_token=credentials.refresh_token)
+        db.session.add(token)
+    else:
+        existing_token.refresh_token=credentials.refresh_token
+
     db.session.commit()
 
     return {"success": "Comment Access Granted!"}
@@ -171,16 +132,13 @@ def set_token(code=None):
 @auth_required
 def has_comment_access():
 
-    profile = session.get('profile')
-    if profile is None:
-        return {"error": "Oops! Couldn't find credentials. Please login again!"}
+    user_id = session.get('user_id')
 
-    id = session['profile']['id']
-
-    if (get_credentials(id) == None):
+    if not Token.get_status(db.session, user_id).get('available'):
         return {"status": 0}                            # no comment access
 
-    user_channel = get_user_channel(id)
+    user_youtube = User.get_user(db.session, user_id).get_youtube()
+    user_channel = user_youtube.get_channel()
 
     if (len(user_channel["items"]) == 0):
         # comment access, but no user channel to comment

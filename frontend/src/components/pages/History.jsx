@@ -47,36 +47,31 @@ export default function History() {
         },
       },
       (data) => {
-        if (data.history) {
-          const newChannels = [];
-          data.history.forEach((history) => {
-            if (!newChannels.includes(history.channel_title)) {
-              newChannels.push(history.channel_title);
-            }
-          });
-          const newTags = [];
-          data.history.forEach((history) => {
-            if (!newTags.includes(history.tag)) {
-              newTags.push(history.tag);
-            }
-          });
-          setTags(newTags);
-          setChannels(newChannels);
-          setChannelCheckbox(
-            new Array(newChannels.length + 1)
-              .fill(false)
-              .map((state, idx) => (idx === 0 ? !state : state))
-          );
-          setTagCheckbox(
-            new Array(newTags.length + 1)
-              .fill(false)
-              .map((state, idx) => (idx === 0 ? !state : state))
-          );
-          setHistory(data.history);
-          return;
-        }
-        toast.dismiss();
-        toast.error(data.error);
+        const newChannels = [];
+        data.history.forEach((history) => {
+          if (!newChannels.includes(history.channel_title)) {
+            newChannels.push(history.channel_title);
+          }
+        });
+        const newTags = [];
+        data.history.forEach((history) => {
+          if (!newTags.includes(history.tag)) {
+            newTags.push(history.tag);
+          }
+        });
+        setTags(newTags);
+        setChannels(newChannels);
+        setChannelCheckbox(
+          new Array(newChannels.length + 1)
+            .fill(false)
+            .map((state, idx) => (idx === 0 ? !state : state))
+        );
+        setTagCheckbox(
+          new Array(newTags.length + 1)
+            .fill(false)
+            .map((state, idx) => (idx === 0 ? !state : state))
+        );
+        setHistory(data.history);
       }
     );
   }, []);
@@ -84,7 +79,7 @@ export default function History() {
   useEffect(() => {
     if (isError) {
       toast.dismiss();
-      toast.error("something went wrong");
+      toast.error(isError || "something went wrong");
     }
   }, [isError]);
 
