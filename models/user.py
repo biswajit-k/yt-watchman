@@ -7,13 +7,9 @@ from models.subscription import Subscription
 from youtube.youtube import UserYoutube
 from utils.utilities import get_duration_seconds, get_utc_now
 from youtube.env_details import env_details
-from youtube.mail_sender import send_mail
 
 LOGGED_IN_USER_QUOTA = 400
 GUEST_USER_QUOTA = 200
-
-SENDER_EMAIL = env_details['SENDER_EMAIL']
-SENDER_PASS = env_details['SENDER_PASS']
 
 
 class User(db.Model):
@@ -52,7 +48,7 @@ class User(db.Model):
                    Relax and let watchman work for you.\n
                    YT-Watchman
                 """
-        send_mail(SENDER_EMAIL, SENDER_PASS, self.email, subject, body)
+        send_mail(self.email, subject, body)
 
 
 

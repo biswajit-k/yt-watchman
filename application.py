@@ -14,19 +14,17 @@ from settings import application, db
 from youtube.yt_watchman import yt_watchman
 
 
-# DB
+# create tables using db models
 with application.app_context():
     db.create_all()
 
 
-# YT_WATCHMAN_CORE
-# TODO: improve logic - remove while 1
+# background task
 def watchman_runner():
     print('yt-watchman thread started')
     import time
-    while 1:
+    while True:
         print("running thread")
-        # requires app context as thread can't read current application
         yt_watchman()
         time.sleep(20)
 

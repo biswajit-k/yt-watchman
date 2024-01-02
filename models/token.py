@@ -16,8 +16,8 @@ class Token(db.Model):
     def __repr__(self) -> str:
         return f'''user_id- {self.user_id} \n
       refresh_token- {self.refresh_token} \n
-      reset_time- {self.reset_time} \n
-      available_request- {self.available_request} \n'''
+      reset_time- {self.__reset_time} \n
+      available_request- {self.__available_request} \n'''
 
 
     @property
@@ -62,7 +62,10 @@ class Token(db.Model):
         return session.query(cls).filter_by(user_id=user_id).first()
 
     @classmethod
-    def get_credentials(cls, session, user_id):                # checks if token present and is valid else deletes it
+    def get_credentials(cls, session, user_id):
+        """ checks if token present and is valid else deletes it
+        """
+
         token = cls.get_token(session, user_id)
 
         client_id = env_details['CLIENT_ID']
@@ -100,24 +103,6 @@ class Token(db.Model):
                 return r.json()['access_token']
         else:
                 return None
-
-
-    """
-        fields:
-            public:
-                token.user_id
-                token.refresh_token
-            private:
-                token.count
-                token.reset_time
-        methods:
-            token.is_available()
-                yes, if present or (cooldown > 1 day: update to 1 in this case)
-            token.use()
-                check if available, else raise exception
-                subsctract, and update reset_time
-    """
-
 
 
 class TokenSchema(ma.SQLAlchemyAutoSchema):

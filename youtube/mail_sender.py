@@ -1,16 +1,19 @@
 import smtplib
 from email.message import EmailMessage
+from youtube.env_details import env_details
 
-def send_mail(from_id, from_pass, to_id_list, subject, content):
+def send_mail(to_id_list, subject, content):
 
+    SENDER_MAIL = env_details['SENDER_EMAIL']
+    SENDER_PASS = env_details['SENDER_PASS']
     msg = EmailMessage()
     msg['Subject'] = subject
-    msg['From'] = from_id
+    msg['From'] = SENDER_MAIL
     msg['To'] = to_id_list
     msg.set_content(content)
 
     with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-        smtp.login(from_id, from_pass)
+        smtp.login(SENDER_MAIL, SENDER_PASS)
         smtp.send_message(msg)
 
     print("mail sent!")

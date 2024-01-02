@@ -57,12 +57,12 @@ class UserYoutube(Youtube):
         channel_response = channel_request.execute()
         return channel_response
 
-    def make_comment(self, video_id, comment, user_id, user_comment):
+    def make_comment(self, session, history, user, comment, user_token):
         request = self.__youtube.commentThreads().insert(
             part="snippet",
             body={
             "snippet": {
-                "videoId": video_id,
+                "videoId": history.video_id,
                 "topLevelComment": {
                 "snippet": {
                     "textOriginal": comment
@@ -72,7 +72,16 @@ class UserYoutube(Youtube):
             }
         )
         response = request.execute()
-        user_comment[user_id] = response['id']
+        history.comment_id = response['id']
+
+        # send mail
+        user.send_history_mail(history)
+        # add to history
+        session.add(history)
+        # use token
+        user_token.available_request -= 1
+
+        session.commit()
 
     @add_app_context(application.app_context())
     @create_scoped_session()

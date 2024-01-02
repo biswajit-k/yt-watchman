@@ -18,7 +18,6 @@ class History(db.Model):
         channel_id- {self.channel_id} \n
         tag- {self.tag}  \n
         user_id- {self.user_id}  \n
-        comment_status- {self.comment_status}  \n
         comment_id- {self.comment_id}  \n
         found_at- {self.found_at} \n'''
 

@@ -9,6 +9,7 @@ from models.token import Token
 from models.history import History
 from models.user import User
 from youtube.youtube import youtube, Video
+from youtube.mail_sender import send_mail
 
 
 
@@ -33,10 +34,9 @@ def yt_watchman(session):
                   Subscription.channel_id, Subscription.last_fetched_at).all()
   channel = [list(g) for k, g in groupby(all_subscriptions, attrgetter('channel_id'))]
 
-  user_history = defaultdict(lambda: defaultdict(dict))
+  all_history = []
   user_youtube = {}
   user_lock = {}
-  user_comment = {}
 
   for subscriptions in channel:
 
@@ -69,46 +69,72 @@ def yt_watchman(session):
         # create a lock on token(while not lock:) inside make comment and release after - return comment details then send mail
         # for comment separately
 
+        in_comment_thread = False
         if (sub.comment and youtube and user_token.available_request > 0):
           user_lock[user.id].acquire()
-          if(user_token.available_request):
-            comment_thread = threading.Thread(daemon=True, target=youtube.make_comment,
-                      args=(video.id, sub.comment, user.id, user_comment))
 
+          if(user_token.available_request):
+            in_comment_thread = True
+            comment_thread = threading.Thread(daemon=True, target=youtube.make_comment,
+                      args=(session, video_history, user, sub.comment, user_token))
             comment_thread.start()
-            video_history.comment_id = user_comment[user.id]
-            user_token.available_request -= 1
 
           user_lock[user.id].release()
-          user.send_history_mail(video_history)
-          user_history[user.id][sub.id]['history'].append(video_history)   # add matching video w/o comment in history
 
-  all_history = []
-
-  """
-   history
-    user_id:
-      subscription_id:
-        id, recipients, videos
-
-  """
+        if not in_comment_thread:
+          all_history.append(video_history)   # add matching video w/o comment in history
 
 
-  for user_id, history_list in user_history:
-    with user_lock[user_id]:
-      all_history.extend(history_list)
+  mail_recipients = defaultdict(lambda: defaultdict(list))
+  for history in all_history:
+    user = User.get_user(session, history.user_id)
+    subscription = session.query(Subscription).filter_by(
+                      user_id=history.user_id, channel_id=history.channel_id)
+    for recipient in user.emails:
+      mail_recipients[recipient][user.name].append(history)
 
-  session.add_all(all_history)
-  session.commit()
+    for recipient in mail_recipients:
+      subject = "Youtube Watchman | Video detected!"
+      subscriptions = []
 
-  # send mail
-  all_users = session.query(User).all()
-  for user in all_users:
-    if user.id in user_history:
-      user.send_mail(user_history[user.id])     # TODO: send mail from user - list of history
-      print(f"{user.name} done!")
+      body = "Hey,\n We have found videos that match your recommendation.\n\n"
+      for username, history_list in recipient:
+        body += f"Videos from the mailing list of {username}\n\n-"
+        video_content = [] 
+        for history in history_list:
+          video_content.append(f"""Title- {history.video_title}\nLink- {"https://www.youtube.com/watch?v=" + history.video_id}\n
+                              Time- {history.found_at}\nTag Detected- {history.tag}""")
+        body += "\n\n".join(video_content)
 
-  print("-----all mails sent! ------")
+      threading.Thread(daemon=True, target=send_mail,
+                      args=(recipient, subject, body)).start()
+
+
+
+  
+
+  # """
+  #  history
+  #   user_id:
+  #     subscription_id:
+  #       id, recipients, videos
+
+  # """
+
+
+  # for user_id, history_list in user_history:
+  #   with user_lock[user_id]:
+  #     all_history.extend(history_list)
+
+  # session.add_all(all_history)
+  # session.commit()
+
+  # # send mail
+  # all_users = session.query(User).all()
+  # for user in all_users:
+  #   if user.id in user_history:
+  #     user.send_mail(user_history[user.id])     # TODO: send mail from user - list of history
+  #     print(f"{user.name} done!")
 
     # TODO: commit only after certain logical group of things are done -- or use rollback to remove everything
 
