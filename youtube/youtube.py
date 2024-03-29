@@ -1,3 +1,4 @@
+import logging
 from models.token import Token
 from models.user import User
 from settings import application
@@ -21,101 +22,94 @@ class Youtube:
 
     """
     def __init__(self, youtube):
-        self.__youtube = youtube
+        self.youtube = youtube
 
     # TODO: copy exception handling if no channel found from deployed version
-    def get_channel_id_from_url(url):
+    def get_channel_id_from_url(self, url):
         import requests
         import re
         r = requests.get(url)
-        # print(r.status_code)
-        # print("get channelId error- " + r.raise_for_status())
-        page_source = r.text
-        channel_id = re.search(r"<link\ rel=\"canonical\"\ href=\"https://www\.youtube\.com/channel/(.*?)\"", page_source).group(1)
-        return channel_id
 
+        if r.status_code == 404:
+            raise Exception("Channel not found")
+
+        page_source = r.text
+        print(f"channel page response: {r.status_code}")
+        channel_id_match = re.search(r"<link\ rel=\"canonical\"\ href=\"https://www\.youtube\.com/channel/(.*?)\"", page_source)
+
+        if channel_id_match is None:
+            raise Exception("Unable to get channel Id")
+
+        return channel_id_match.group(1)
 
 class UserYoutube(Youtube):
 
     def __init__(self, session, user_id):
-        from google.oauth2 import credentials
-        import googleapiclient
+        from googleapiclient.discovery import build
         from models.token import Token
 
-        user_credentials = credentials.Credentials(**(Token.get_credentials(session, user_id)))
-        youtube = googleapiclient.discovery.build('youtube', 'v3', credentials=user_credentials)
+        token = Token.get_token(session, user_id)
+        if not Token:
+            return None
+
+        user_credentials = token.get_credentials(refresh=True)
+        youtube = build('youtube', 'v3', credentials=user_credentials)
         super().__init__(youtube)
 
     def get_channel(self):
-        if self.__youtube is None:
+        if self.youtube is None:
             return None
 
-        channel_request = self.__youtube.channels().list(
+        channel_request = self.youtube.channels().list(
             part="snippet,contentDetails,statistics",
             mine=True
         )
         channel_response = channel_request.execute()
         return channel_response
 
-    def make_comment(self, session, history, user, comment, user_token):
-        request = self.__youtube.commentThreads().insert(
-            part="snippet",
-            body={
-            "snippet": {
-                "videoId": history.video_id,
-                "topLevelComment": {
-                "snippet": {
-                    "textOriginal": comment
-                }
-                }
-            }
-            }
-        )
-        response = request.execute()
-        history.comment_id = response['id']
-
-        # send mail
-        user.send_history_mail(history)
-        # add to history
-        session.add(history)
-        # use token
-        user_token.available_request -= 1
-
-        session.commit()
 
     @add_app_context(application.app_context())
-    @create_scoped_session()
-    def make_comment_and_send_mail_if_request_available(self, session, video_history, comment, user_history, lock):
+    @create_scoped_session
+    def make_comment(self, session, history, user_id, comment, user_lock):
 
-        user = User.get_user(session, video_history.user_id)
-        user_token = session.query(Token).filter_by(user_id=user.id).first()
+        from sqlalchemy.exc import SQLAlchemyError
 
-        # use lock to ensure user_token data intergrity
-        lock.acquire()
+        user = User.get_user(session, user_id)
+        user_token = Token.get_token(session, user.id)
 
-        if user_token.available_request > 0:
-
-            video_id = video_history.video['id']
-            comment_id = self.make_comment(video_id, comment)
-
-            video_history.comment_id = comment_id
-            print(f"commented for {user.id} here https://www.youtube.com/watch?v={video_id}&lc={comment_id}")
-            user_token.available_request -= 1
-
-            # inserting video history
-            session.add(video_history)
-
+        if not user or not user_token:
+            return
+        try:
+            request = self.youtube.commentThreads().insert(
+                part="snippet",
+                body={
+                "snippet": {
+                    "videoId": history.video_id,
+                    "topLevelComment": {
+                    "snippet": {
+                        "textOriginal": comment
+                    }
+                    }
+                }
+                }
+            )
+            response = request.execute()
+            history.comment_id = response['id']
+            print(f"commented for {user_id} here https://www.youtube.com/watch?v={history.video_id}&lc={history.comment_id}")
             # send mail
-            user.send_mail(video_history)
-            print(f"comment mail sent to user {user.name}")
+            user.send_commented_mail(history)
+            # add to history
+            session.add(history)
+            # use token
+            user_token.available_request -= 1
+            session.commit()
 
-
-        else:
-            user_history.append(video_history)
-
-        lock.release()
-
-
+        except SQLAlchemyError as e:
+            logging.error("Object deleted but trying to access")
+            raise e
+        finally:
+            user_lock.release()
+            print("lock released")
 
 
 class DeveloperYoutube(Youtube):
@@ -127,7 +121,7 @@ class DeveloperYoutube(Youtube):
         super().__init__(youtube)
 
     def get_channel_from_id(self, channel_id):
-        channel_request = self.__youtube.channels().list(
+        channel_request = self.youtube.channels().list(
             part="snippet,statistics",
             id=channel_id
         )
@@ -150,7 +144,7 @@ class DeveloperYoutube(Youtube):
         }
 
     def get_video(self, video_id):
-        video_request = self.__youtube.videos().list(
+        video_request = self.youtube.videos().list(
             part="snippet",
             id=video_id
         )
@@ -159,7 +153,7 @@ class DeveloperYoutube(Youtube):
 
     def api_activity(self, channel_id):
 
-        activity_request = self.__youtube.activities().list(
+        activity_request = self.youtube.activities().list(
             part= "snippet,contentDetails",
             channelId= channel_id,
             maxResults = 20
@@ -169,12 +163,6 @@ class DeveloperYoutube(Youtube):
 
 
     # def extract_video(self, channel_id, tag_list, last_fetch_time):
-
-
-
-
-from env_details import env_details
-youtube = DeveloperYoutube(developer_key=env_details['YT_API_KEY'])
 
 class Video:
 
@@ -193,8 +181,7 @@ class Video:
         return word_match[0] if len(word_match) > 0 else None
 
     @classmethod
-    def get_latest_videos(youtube, channel_id, last_fetch_time):
-        from datetime import datetime
+    def get_latest_videos(cls, youtube, channel_id, last_fetch_time):
         from utils.utilities import get_utc_now
 
         response = youtube.api_activity(channel_id)
@@ -221,7 +208,7 @@ class Video:
             video_id = video['contentDetails']['upload']['videoId']
             video_link = "https://www.youtube.com/watch?v=" + video_id
 
-            video = Video(id=id, title=title, link=video_link, time=str_publish_time, description=description)
+            video = Video(id=video_id, title=title, link=video_link, time=str_publish_time, description=description)
 
             result.append(video)
 

@@ -18,9 +18,9 @@ def give_history():
 
     user = User.get_user(db.session, user_id)
     if (len(history_query) > user.available_request):
-        return {"message": "Oops! requests exceed quota limit"}, 429
+        return {"error": "Oops! requests exceed quota limit"}, 429
 
     user.available_request -= len(history_query)
-    history_list = [history.normalize() for history in history_schema.dump(history_query)]
+    history_list = [History.normalize(history) for history in history_schema.dump(history_query)]
     return {"history": history_list}
 

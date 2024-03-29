@@ -7,7 +7,7 @@ def auth_required(f):
     def decorated(*args, **kwargs):
       user_id = session.get('user_id')
       if user_id is None:
-        return {"message": "Unauthorized"}, 401
+        return {"error": "Unauthorized"}, 401
       return f(*args, **kwargs)
 
     return decorated

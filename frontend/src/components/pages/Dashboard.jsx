@@ -33,6 +33,9 @@ export default function Dashboard() {
   const [subscriptions, setSubscriptions] = useState({});
   const user = useProfile(requester, true);
   const { image } = useImage(user.id, user.isGuest);
+
+  const userAvailableRequests = user.availableRequest || 0;
+
   // youtube comment access flow by oauth
   const googleLogin = useGoogleLogin({
     onSuccess: (response) => {
@@ -207,14 +210,14 @@ export default function Dashboard() {
                 >
                   <span>Request Left</span>
                   <span>
-                    {user.availableRequest} / {!user.isGuest ? 400 : 200}
+                    {userAvailableRequests} / {!user.isGuest ? 400 : 200}
                   </span>
                 </label>
                 <progress
                   id="file"
                   className={"w-56 h-[.4rem] rounded shadow"}
                   max="100"
-                  value={user ? user.availableRequest / (!user.isGuest ? 4 : 2) : 0}
+                  value={user ? (userAvailableRequests / (user.isGuest ? 2: 4)): 0}
                 ></progress>
               </div>
               <QuickLink name="Your Subscription" to="/user/subscription" />
@@ -225,7 +228,7 @@ export default function Dashboard() {
           <div className="grid flex-grow grid-cols-2 grid-rows-2 gap-4 px-auto">
             <Metric
               name="Request Made"
-              value={(!user.isGuest ? 400 : 200) - user.availableRequest}
+              value={(!user.isGuest ? 400 : 200) - userAvailableRequests}
               Icon={AiOutlineCloudUpload}
             />
             <Metric name="Video Watched" value={history.length} Icon={AiOutlineEye} />
@@ -280,7 +283,7 @@ export default function Dashboard() {
             {!token.available && !token.reset && (
               <div className="flex items-baseline justify-between gap-3">
                 <p className="flex-1 text-sm font-slate-400">
-                  We don't have auto-comment access for your account
+                  We don&apos;t have auto-comment access for your account
                 </p>
                 <Button small onClick={googleLogin}>
                   Give Access

@@ -1,20 +1,22 @@
 import threading
+import logging
 from itertools import groupby
 from collections import defaultdict
 from operator import attrgetter
+from sqlalchemy.exc import SQLAlchemyError
+
 from settings import application
 from thread_safe_utils import create_scoped_session, add_app_context
 from models.subscription import Subscription
 from models.token import Token
 from models.history import History
 from models.user import User
-from youtube.youtube import youtube, Video
+from youtube.youtube import Video
 from youtube.mail_sender import send_mail
 
 
-
 @add_app_context(application.app_context())
-@create_scoped_session()
+@create_scoped_session    # don't want to expire objects as co
 def yt_watchman(session):
   """
     algorithm:
@@ -26,15 +28,22 @@ def yt_watchman(session):
       - you get list of {recipients:history_found}
       - send mail to each recipient group videos by subscription(1. mailing list for livlyf 2. mailing list for bandhu...)
 
+      shortcomings
+      - new sub. created after watchman ran: if new video is published before watchman is finished - it won't be detected(rare)
+      - same if sub. moved from paused to active(rare)
+      - after deleting sub. while watchman is running and matching video comes and if it has comment enabled - it will comment on it
+      and mail you but not shown in dashboard
   """
   print("yt_watchman core activated!\n")
+
+  from application import youtube
 
   # core logic
   all_subscriptions = session.query(Subscription).filter_by(active=True).order_by(
                   Subscription.channel_id, Subscription.last_fetched_at).all()
   channel = [list(g) for k, g in groupby(all_subscriptions, attrgetter('channel_id'))]
 
-  all_history = []
+  all_history: list[History] = []
   user_youtube = {}
   user_lock = {}
 
@@ -48,9 +57,13 @@ def yt_watchman(session):
     latest_videos, fetch_time = Video.get_latest_videos(youtube, channel_id, last_fetched_at)
 
     for sub in subscriptions:
-
       user = User.get_user(session, sub.user_id)
-      user_token = session.query(Token).filter_by(user_id=user.id).first()
+
+      if user is None:
+        continue
+
+      user_token = Token.get_token(session, user.id)
+
       sub.last_fetched_at = fetch_time
 
       for video in latest_videos:
@@ -65,108 +78,58 @@ def yt_watchman(session):
           user_youtube[user.id] = user.get_youtube()
           user_lock[user.id] = threading.Lock()
 
-        youtube = user_youtube[user.id]
+        user_yt = user_youtube[user.id]
         # create a lock on token(while not lock:) inside make comment and release after - return comment details then send mail
         # for comment separately
 
         in_comment_thread = False
-        if (sub.comment and youtube and user_token.available_request > 0):
+        if (sub.comment and user_yt and user_token.available_request > 0):
           user_lock[user.id].acquire()
-
-          if(user_token.available_request):
+          print("acquired lock for comment")
+          session.refresh(user_token)
+          if(user_token.available_request > 0):
+            print("starting comment thread")
             in_comment_thread = True
-            comment_thread = threading.Thread(daemon=True, target=youtube.make_comment,
-                      args=(session, video_history, user, sub.comment, user_token))
+            comment_thread = threading.Thread(daemon=True, target=user_yt.make_comment,
+                      args=(video_history, user.id, sub.comment, user_lock[user.id]))
             comment_thread.start()
-
-          user_lock[user.id].release()
+          else:
+            user_lock[user.id].release()
+            print("released lock")
 
         if not in_comment_thread:
-          all_history.append(video_history)   # add matching video w/o comment in history
+          try:
+            all_history.append(video_history)   # add matching video w/o comment in history
+            session.add(video_history)
+            session.commit()
+          except SQLAlchemyError as e:
+            session.rollback()
+            all_history.pop()
+            logging.error("Error while completing transaction for subscription-\n%s", e)
 
 
   mail_recipients = defaultdict(lambda: defaultdict(list))
   for history in all_history:
     user = User.get_user(session, history.user_id)
-    subscription = session.query(Subscription).filter_by(
-                      user_id=history.user_id, channel_id=history.channel_id)
-    for recipient in user.emails:
-      mail_recipients[recipient][user.name].append(history)
+    subscription = history.get_subscription()
+    for recipient_email in subscription.emails: # type:ignore
+      mail_recipients[recipient_email][user.name].append(history)
 
-    for recipient in mail_recipients:
-      subject = "Youtube Watchman | Video detected!"
-      subscriptions = []
+  for recipient_email, recipient_users in mail_recipients.items():
+    subject = "Youtube Watchman | Video detected!"
+    subscriptions = []
 
-      body = "Hey,\n We have found videos that match your recommendation.\n\n"
-      for username, history_list in recipient:
-        body += f"Videos from the mailing list of {username}\n\n-"
-        video_content = [] 
-        for history in history_list:
-          video_content.append(f"""Title- {history.video_title}\nLink- {"https://www.youtube.com/watch?v=" + history.video_id}\n
-                              Time- {history.found_at}\nTag Detected- {history.tag}""")
-        body += "\n\n".join(video_content)
+    body = "Hey,\nWe have found videos that match your recommendation.\n\n"
+    for username, history_list in recipient_users.items():
+      body += f"Videos from the mailing list of {username}-\n"
+      video_content = []
+      for history in history_list:
+        video_content.append(f"""Title- {history.video_title}\nLink- {"https://www.youtube.com/watch?v=" + history.video_id}
+Time(in UTC)- {history.found_at}\nTag Detected- {history.tag}""")
+      body += "\n\n".join(video_content)
 
-      threading.Thread(daemon=True, target=send_mail,
-                      args=(recipient, subject, body)).start()
+    threading.Thread(daemon=True, target=send_mail,
+                    args=(recipient_email, subject, body)).start()
+    print(f"{recipient_email} done!")
 
-
-
-  
-
-  # """
-  #  history
-  #   user_id:
-  #     subscription_id:
-  #       id, recipients, videos
-
-  # """
-
-
-  # for user_id, history_list in user_history:
-  #   with user_lock[user_id]:
-  #     all_history.extend(history_list)
-
-  # session.add_all(all_history)
-  # session.commit()
-
-  # # send mail
-  # all_users = session.query(User).all()
-  # for user in all_users:
-  #   if user.id in user_history:
-  #     user.send_mail(user_history[user.id])     # TODO: send mail from user - list of history
-  #     print(f"{user.name} done!")
-
-    # TODO: commit only after certain logical group of things are done -- or use rollback to remove everything
-
-        # break
-        # if(len(video_list) != 0):
-        #   channel_title = get_channel_from_id(youtube, sub.channel_id)['title']
-        #   findings[sub.id] = [channel_title, video_list]
-        #   normalized_videos = []
-        #   for email_id in sub.emails:
-        #     if email_id not in recipients:
-        #       recipients[email_id] = []
-        #     recipients[email_id].append(sub.id)
-
-        #   tokenized_youtube = get_youtube(sub.user_id)
-
-        #   if(tokenized_youtube != None):
-        #     diff = time_diff(get_utc_now(), user_token.reset_time)
-        #     if(diff >= 86400):
-        #       user_token.available_request = get_field_default(Token, "available_request")
-        #       user_token.reset_time = get_utc_now()
-
-        #   for video in video_list:
-        #     history = normalize_video(video, sub, fetch_time)
-
-        #     if((tokenized_youtube != None) and (sub.comment != '') and (user_token.available_request > 0)):
-        #       comment_id = make_comment(tokenized_youtube, video['id'], sub.comment)
-        #       history.comment_id = comment_id
-        #       print(f"commented for {sub.user_id} here https://www.youtube.com/watch?v={video['id']}&lc={comment_id}")
-        #       user_token.available_request -= 1
-        #       print(f"req. available - {user_token.available_request}")
-        #     normalized_videos.append(history)
-
-      #     session.add_all(normalized_videos)
-      #   session.commit()
-      # send_emails(user, findings, recipients)
+  session.commit()

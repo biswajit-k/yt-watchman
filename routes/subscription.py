@@ -4,11 +4,9 @@ from flask_cors import cross_origin
 
 from settings import db
 from routes import router
-from utils.utilities import format_date, get_duration_seconds
+from utils.utilities import get_utc_now
 from models.subscription import Subscription, subscriptions_schema
 from models.user import User
-from youtube.yt_request import youtube
-from youtube.youtube import youtube
 from routes.middleware import auth_required
 
 # TODO: make routes plural - sub, history routes
@@ -26,13 +24,13 @@ def give_subscriptions():
     user = User.get_user(db.session, user_id)
     total_subscriptions = len(active_subscription_query) + len(paused_subscription_query)
     if (total_subscriptions > user.available_request):
-        return {"message": "Oops! requests exceed quota limit"}, 429
+        return {"error": "Oops! requests exceed quota limit"}, 429
 
     user.available_request -= total_subscriptions
 
-    paused_subscriptions = [subscription.normalize() for subscription
+    paused_subscriptions = [Subscription.normalize(subscription) for subscription
                             in subscriptions_schema.dump(paused_subscription_query)]
-    active_subscriptions = [subscription.normalize() for subscription
+    active_subscriptions = [Subscription.normalize(subscription) for subscription
                             in subscriptions_schema.dump(active_subscription_query)]
 
     return {"active": active_subscriptions, "paused": paused_subscriptions}
@@ -58,9 +56,9 @@ def give_subscriptions_stats():
             auto_comments += 1
 
     user = User.get_user(db.session, user_id)
-    total_subscriptions = len(active_subscriptions) + paused_subscriptions
+    total_subscriptions = len(active_subscriptions) + len(paused_subscriptions)
     if (total_subscriptions > user.available_request):
-        return {"message": "Oops! requests exceed quota limit"}, 429
+        return {"error": "Oops! requests exceed quota limit"}, 429
 
     user.available_request -= total_subscriptions
     return {
@@ -75,13 +73,15 @@ def give_subscriptions_stats():
 @auth_required
 def add_subscription():
     user_id = session.get('user_id')
-    channel_id = request.json["channelId"]
-    tags = request.json["tags"]
-    emails = request.json["emails"]
-    comment = request.json["comment"]
+
+    data = request.get_json()
+    channel_id = data.get("channelId")
+    tags = data.get("tags")
+    emails = data.get("emails")
+    comment = data.get("comment")
 
     if (len(emails) > 5):
-        return {"message": "Sorry! maximum 5 emails allowed"}, 400
+        return {"error": "Sorry! maximum 5 emails allowed"}, 400
 
     subscription_exist = db.session.query(Subscription).filter_by(channel_id=channel_id, user_id=user_id).first()
     if not subscription_exist:
@@ -91,7 +91,7 @@ def add_subscription():
         db.session.commit()
         return {"message": "Voila! subscription added"}
 
-    return {"message": "Oops! Subscription with same channel already present, try editing it."}, 400
+    return {"error": "Oops! Subscription with same channel already present, try editing it."}, 400
 
 
 @router.route("/api/subscription/pause/<id>", methods=["GET"])
@@ -100,7 +100,7 @@ def add_subscription():
 def pause_subscriptions(id):
     user_id = session.get('user_id')
     sub = db.session.query(Subscription).filter_by(channel_id=id, user_id=user_id).first()
-    sub.active = False
+    sub.active = False  # type: ignore
     db.session.commit()
     return {"status": "success"}
 
@@ -111,7 +111,7 @@ def pause_subscriptions(id):
 def resume_subscription(id):
     user_id = session.get('user_id')
     sub = db.session.query(Subscription).filter_by(channel_id=id, user_id=user_id).first()
-    sub.active = True
+    sub.active = True  # type: ignore
     db.session.commit()
     return {"status": "success"}
 
@@ -142,15 +142,16 @@ def edit_subscription(id):
 @cross_origin(supports_credentials=True)
 @auth_required
 def serve_channel():
-    url = request.json["url"]
+    from application import youtube
+    url = request.get_json().get("url")
     if (is_channel(url)):
         try:
             channel = youtube.get_channel_from_id(youtube.get_channel_id_from_url(url))
             return channel
         except:
-            return {"message": "Something went wrong. please try again"}, 520
-    else:
-        return {"message": "please enter a valid channel link"}, 400
+            return {"error": "Something went wrong. please try again"}, 520
+
+    return {"error": "please enter a valid channel link"}, 400
 
 
 def is_channel(url):

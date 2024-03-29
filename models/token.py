@@ -1,14 +1,14 @@
+import os
 from sqlalchemy.orm.session import object_session
 
 from settings import db, ma
 from utils.utilities import get_utc_now, get_duration_seconds
-from youtube.env_details import env_details
 
+# TODO: put constants in a file and import from there like environment variables
 TOKEN_QUOTA = 1
 
 class Token(db.Model):
-    user_id = db.Column(db.String(120), db.ForeignKey('user.id'),
-                        primary_key=True)
+    user_id = db.Column(db.String(120), db.ForeignKey('user.id'), primary_key=True)
     refresh_token = db.Column(db.String(120), nullable=False)
     __available_request = db.Column(db.Integer, default=TOKEN_QUOTA)
     __reset_time = db.Column(db.DateTime, default=get_utc_now())
@@ -25,7 +25,7 @@ class Token(db.Model):
         if (get_duration_seconds(self.__reset_time) >= 86400 and self.__available_request == 0):
             self.__available_request = TOKEN_QUOTA
             self.__reset_time = get_utc_now()
-            object_session(self).commit()
+            object_session(self).commit()   # type: ignore
         return self.__available_request
 
     @available_request.setter
@@ -33,6 +33,34 @@ class Token(db.Model):
         self.__available_request = value
 
 
+    def get_credentials(self, refresh=False):
+        """ returns credentials if token is valid else deletes it and returns None
+        """
+        from google.oauth2 import credentials
+        from google.auth.transport.requests import Request
+
+        config = {
+            'token': None,
+            'refresh_token': self.refresh_token,
+            'token_uri': 'https://www.googleapis.com/oauth2/v3/token',
+            'client_id': os.environ.get('CLIENT_ID'),
+            'client_secret': os.environ.get('CLIENT_SECRET')
+        }
+
+        cred = credentials.Credentials(**config)
+
+        if cred.expired:
+            print("token is expired")
+            object_session(self).delete(self)       # type:ignore
+            return None
+
+        if refresh:
+            cred.refresh(Request())
+
+        return cred
+
+    # TODO: this function can be made to return time in which comment will get reset
+    # 0 - token available; 3352 - 3352 seconds more required; -1 - token not present(use humanize in route, not here)
     @classmethod
     def get_status(cls, session, user_id):
         """
@@ -47,67 +75,16 @@ class Token(db.Model):
         import humanize
         from datetime import timedelta
 
-        token = session.query(cls).filter_by(user_id=user_id).first()
+        token = cls.get_token(session, user_id)
         status = {
-            'available': token is not None
+            'available': (token and token.get_credentials() is not None) or False
         }
         if status.get('available'):
             if token.available_request == 0:
-                status['reset'] = humanize.naturaldelta(token.__reset_time + timedelta(days=1) - get_utc_now())
+                status['reset'] = humanize.naturaldelta(token.__reset_time + timedelta(days=1) - get_utc_now())  # type: ignore
 
         return status
 
     @classmethod
     def get_token(cls, session, user_id):
         return session.query(cls).filter_by(user_id=user_id).first()
-
-    @classmethod
-    def get_credentials(cls, session, user_id):
-        """ checks if token present and is valid else deletes it
-        """
-
-        token = cls.get_token(session, user_id)
-
-        client_id = env_details['CLIENT_ID']
-        client_secret = env_details['CLIENT_SECRET']
-        access_token = cls.fetch_access_token(client_id, client_secret, token.refresh_token) if token else None
-
-        if token and not access_token:
-            token.delete()
-            session.commit()
-
-        return access_token and {
-            'token': access_token,
-            'refresh_token': token.refresh_token,
-            'token_uri': 'https://www.googleapis.com/oauth2/v3/token',
-            'client_id': env_details['CLIENT_ID'],
-            'client_secret': env_details['CLIENT_SECRET'],
-        }
-
-    @classmethod
-    def fetch_access_token(cls, client_id, client_secret, refresh_token):
-        import requests
-
-        params = {
-                "grant_type": "refresh_token",
-                "client_id": client_id,
-                "client_secret": client_secret,
-                "refresh_token": refresh_token
-        }
-
-        authorization_url = "https://oauth2.googleapis.com/token"
-
-        r = requests.post(authorization_url, data=params)
-
-        if r.ok:
-                return r.json()['access_token']
-        else:
-                return None
-
-
-class TokenSchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = Token
-
-
-token_schema = TokenSchema()

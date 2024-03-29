@@ -1,4 +1,4 @@
-import { current, configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
   name: "user",
@@ -24,7 +24,7 @@ const userSlice = createSlice({
       state.availableRequest = newState.available_request;
       state.hasToken = newState.has_token;
     },
-    logoutUser: (state) => {
+    logoutUser: () => {
       return { isLoggedIn: false, ...userSlice.initialState };
     },
   },

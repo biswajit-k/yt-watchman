@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import {useEffect} from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { GoogleLogin} from "@react-oauth/google";
 
@@ -13,7 +13,7 @@ import login from "../../data/login.svg";
 export default function Login() {
   const dispatch = useDispatch();
 
-  const { isLoading, requester } = useHttp();
+  const { isLoading, requester, isError } = useHttp();
   const navigate = useNavigate();
 
   function successHandler(googleData) {

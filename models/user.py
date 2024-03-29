@@ -1,12 +1,11 @@
-from settings import db, ma
+from settings import db
 from sqlalchemy.orm.session import object_session
 
 from models.token import Token
 from models.history import History
 from models.subscription import Subscription
-from youtube.youtube import UserYoutube
 from utils.utilities import get_duration_seconds, get_utc_now
-from youtube.env_details import env_details
+from youtube.mail_sender import send_mail
 
 LOGGED_IN_USER_QUOTA = 400
 GUEST_USER_QUOTA = 200
@@ -21,58 +20,66 @@ class User(db.Model):
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.__available_request = GUEST_USER_QUOTA if kwargs.get('is_guest') is True else LOGGED_IN_USER_QUOTA
-
-    def __repr__(self):
-        return f"{self.id}  {self.name} {self.email}"
+        self.__available_request = GUEST_USER_QUOTA if self.is_guest() is True else LOGGED_IN_USER_QUOTA
 
     def asdict(self):
         return {
             'id': self.id,
             'name': self.name,
             'email': self.email,
-            'is_guest': self.is_guest
+            'is_guest': self.is_guest()
         }
 
     def get_youtube(self):
-        return self.has_token and UserYoutube(object_session(self), self.id) or None
+        from youtube.youtube import UserYoutube
+        return UserYoutube(object_session(self), self.id)
 
-    def send_history_mail(self, history):
+    def send_commented_mail(self, history):
         subject = "Youtube Watchman | Comment made on video sucessfully!"
-        body = f"""Hi Subscriber,\n\n
-                   Comment made on your behalf on video. The details are below-
-                   Title: {history.video_title}\n
-                   Tag Found: {history.tag}\n
-                   Comment Link: https://www.youtube.com/watch?v={history.video_id}&lc={history.comment_id}\n\n
+        body = f"""Hi Subscriber,
 
-                   Relax and let watchman work for you.\n
-                   YT-Watchman
-                """
+        Comment made on your behalf on video. The details are below-
+        Title: {history.video_title}
+        Tag Found: {history.tag}
+        Comment Link: https://www.youtube.com/watch?v={history.video_id}&lc={history.comment_id}
+
+Relax and let watchman work for you.
+YT-Watchman
+"""
+        print("starting mail send function")
         send_mail(self.email, subject, body)
 
 
-
-    @property
     def is_guest(self):
-        return self.email == ''
+        return not bool(self.email)
+
+    def has_token(self):
+        token = Token.get_token(object_session(self), self.id)
+        return token and token.get_credentials() is not None or False
 
     @property
     def available_request(self):
-        request_quota = LOGGED_IN_USER_QUOTA if self.is_guest else GUEST_USER_QUOTA
+        request_quota = GUEST_USER_QUOTA if self.is_guest() else LOGGED_IN_USER_QUOTA
         if (get_duration_seconds(self.__reset_time) >= 86400 and self.__available_request < request_quota):
             self.__available_request = request_quota
             self.__reset_time = get_utc_now()
-            object_session(self).commit()
+            object_session(self).commit()           # type: ignore (guaranteed that session exist as object is commited
+                                                    #               at the time of creation)
+
         return self.__available_request
 
     @available_request.setter
     def available_request(self, value):
         self.__available_request = value
-        object_session(self).commit()
+        object_session(self).commit()            # type: ignore
 
-    @property
-    def has_token(self):
-        return Token.get_credentials(object_session(self), self.id) is not None
+
+    @classmethod
+    def create_user(cls, session, id, name, email):
+        user = User(id=id, name=name, email=email)
+        session.add(user)
+        session.commit()
+        return user
 
     @classmethod
     def get_user(cls, session, id):
@@ -82,8 +89,8 @@ class User(db.Model):
     def create_guest_user(cls):
         import uuid, random
         id = str(uuid.uuid4())
-        name = "guest-" + str(random.randrange(10**4, 10**5))
-        guest = User(id=id, name=name, is_guest=True)
+        name = "guest-" + str(random.randrange(10**2, 10**3))
+        guest = User(id=id, name=name)
         return guest
 
     @classmethod
@@ -114,11 +121,3 @@ class User(db.Model):
 
 
     """
-
-
-class UserSchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = User
-
-
-users_schema = UserSchema(many=True)        # TODO: not used anywhere

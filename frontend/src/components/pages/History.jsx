@@ -292,7 +292,7 @@ export default function History() {
               </p>
               <div className="space-y-4 text-xs">
                 {filteredHistory.map((history) => (
-                  <HistoryItem key={history.title} item={history} />
+                  <HistoryItem key={history.video_title} item={history} />
                 ))}
               </div>
             </div>
