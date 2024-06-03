@@ -1,9 +1,13 @@
-import logging
+import os
+import traceback
+import httplib2
 from models.token import Token
 from models.user import User
+from models.user import History
 from settings import application
-from utils.utilities import format_date
+from utils.utilities import MyException, parse_date, upsert
 from thread_safe_utils import add_app_context, create_scoped_session
+from youtube.mail_sender import EmailService
 
 class Youtube:
 
@@ -45,16 +49,41 @@ class Youtube:
 class UserYoutube(Youtube):
 
     def __init__(self, session, user_id):
+
         from googleapiclient.discovery import build
         from models.token import Token
+        from google.auth.transport.requests import Request
 
         token = Token.get_token(session, user_id)
-        if not Token:
-            return None
+        if token:
+            cred = UserYoutube.get_credentials(token)
+            try:
+                cred.refresh(Request())
+                youtube = build('youtube', 'v3', credentials=cred)
+            except Exception:
+                print(f"Exception occured during token refresh - expired maybe\n")
+                # traceback.print_exc()
+                print("deleting token!")
+                session.delete(token)
+                youtube = None
+        else:
+            youtube = None
 
-        user_credentials = token.get_credentials(refresh=True)
-        youtube = build('youtube', 'v3', credentials=user_credentials)
+        self.user_id = user_id
         super().__init__(youtube)
+
+    @classmethod
+    def get_credentials(cls, token):
+        from google.oauth2 import credentials
+        config = {
+            'token': None,
+            'refresh_token': token.refresh_token,
+            'token_uri': 'https://www.googleapis.com/oauth2/v3/token',
+            'client_id': os.environ.get('CLIENT_ID'),
+            'client_secret': os.environ.get('CLIENT_SECRET')
+        }
+
+        return credentials.Credentials(**config)
 
     def get_channel(self):
         if self.youtube is None:
@@ -64,53 +93,72 @@ class UserYoutube(Youtube):
             part="snippet,contentDetails,statistics",
             mine=True
         )
-        channel_response = channel_request.execute()
-        return channel_response
-
+        try:
+            channel_response = channel_request.execute()
+            return channel_response
+        except Exception:
+            print(traceback.format_exc())
+            raise MyException("Network Error! Please try again")
 
     @add_app_context(application.app_context())
-    @create_scoped_session
-    def make_comment(self, session, history, user_id, comment, user_lock):
+    @create_scoped_session()
+    def handle_comment(self, session, history, user_id, comment):
 
         from sqlalchemy.exc import SQLAlchemyError
 
         user = User.get_user(session, user_id)
-        user_token = Token.get_token(session, user.id)
 
-        if not user or not user_token:
+        # lock user_token until the session is committed
+        user_token = session.query(Token).filter_by(user_id=user_id).with_for_update().first()
+
+        if not user or not user_token or not user_token.available_request > 0:
             return
         try:
-            request = self.youtube.commentThreads().insert(
-                part="snippet",
-                body={
-                "snippet": {
-                    "videoId": history.video_id,
-                    "topLevelComment": {
-                    "snippet": {
-                        "textOriginal": comment
-                    }
-                    }
-                }
-                }
-            )
-            response = request.execute()
-            history.comment_id = response['id']
-            print(f"commented for {user_id} here https://www.youtube.com/watch?v={history.video_id}&lc={history.comment_id}")
+
+            # make comment
+            self.make_comment(history, comment, user_token)
+            print(f"commented for {user_id} here {history.comment_link}")
+
             # send mail
-            user.send_commented_mail(history)
-            # add to history
-            session.add(history)
+            EmailService.send_comment_mail(user.email, history)
+
+            # upsert history, since we need to overwrite existing history without comment if present in DB
+            history_to_dict = history.__dict__
+            history_to_dict.pop('_sa_instance_state', None)
+            upsert(session, History, [history_to_dict])
+
             # use token
             user_token.available_request -= 1
             session.commit()
 
         except SQLAlchemyError as e:
-            logging.error("Object deleted but trying to access")
+            print(traceback.format_exc())
             raise e
-        finally:
-            user_lock.release()
-            print("lock released")
+        except MyException as e:
+            print(traceback.format_exc())
 
+    def make_comment(self, history, comment, token):
+        request = self.youtube.commentThreads().insert(
+            part = "snippet",
+            body = {
+                "snippet": {
+                    "videoId": history.video_id,
+                    "topLevelComment": {
+                        "snippet": { "textOriginal": comment }
+                    }
+                }
+            }
+        )
+        try:
+            response = request.execute()            # this takes time - TODO: async
+
+            history.comment_id = response['id']
+            history.comment = comment
+            comment_link = f"https://www.youtube.com/watch?v={history.video_id}&lc={history.comment_id}"
+            history.comment_link = comment_link
+        except Exception:
+            print(traceback.format_exc())
+            raise MyException("Network Error at server")
 
 class DeveloperYoutube(Youtube):
 
@@ -125,31 +173,39 @@ class DeveloperYoutube(Youtube):
             part="snippet,statistics",
             id=channel_id
         )
-        channel_response = channel_request.execute()
+        try:
+            channel_response = channel_request.execute(httplib2.Http())
 
-        def human_format(num, round_to=2):
-            magnitude = 0
-            while abs(num) >= 1000:
-                magnitude += 1
-                num = round(num / 1000.0, round_to)
-            return '{:.{}f}{}'.format(num, round_to, ['', 'K', 'M'][magnitude])
+            def human_format(num, round_to=2):
+                magnitude = 0
+                while abs(num) >= 1000:
+                    magnitude += 1
+                    num = round(num / 1000.0, round_to)
+                return '{:.{}f}{}'.format(num, round_to, ['', 'K', 'M'][magnitude])
 
-        subscribers = human_format(int(channel_response["items"][0]["statistics"]["subscriberCount"]))
-        return {
-            "title": channel_response["items"][0]["snippet"]["title"],
-            "imgUrl": channel_response["items"][0]["snippet"]["thumbnails"]["default"]["url"],
-            "subscribers": subscribers,
-            "videos": int(channel_response["items"][0]["statistics"]["videoCount"]),
-            "id": channel_id,
-        }
+            subscribers = human_format(int(channel_response["items"][0]["statistics"]["subscriberCount"]))
+            return {
+                "title": channel_response["items"][0]["snippet"]["title"],
+                "imgUrl": channel_response["items"][0]["snippet"]["thumbnails"]["default"]["url"],
+                "subscribers": subscribers,
+                "videos": int(channel_response["items"][0]["statistics"]["videoCount"]),
+                "id": channel_id,
+            }
+        except Exception:
+            print(traceback.format_exc())
+            raise MyException("Network Error! Please try again")
 
     def get_video(self, video_id):
         video_request = self.youtube.videos().list(
             part="snippet",
             id=video_id
         )
-        video_response = video_request.execute()
-        return video_response
+        try:
+            video_response = video_request.execute()
+            return video_response
+        except Exception:
+            print(traceback.format_exc())
+            raise MyException("Network Error! Please try again")
 
     def api_activity(self, channel_id):
 
@@ -158,20 +214,25 @@ class DeveloperYoutube(Youtube):
             channelId= channel_id,
             maxResults = 20
         )
-        activity_response = activity_request.execute()
-        return activity_response
-
+        try:
+            activity_response = activity_request.execute()
+            return activity_response
+        except Exception:
+            print(traceback.format_exc())
+            raise MyException("Network Error! Please try again")
 
     # def extract_video(self, channel_id, tag_list, last_fetch_time):
 
 class Video:
 
-    def __init__(self, id, title, link, time, description) -> None:
+    def __init__(self, id, title, link, time, description, thumbnail_url, channel_title) -> None:
         self.id = id
         self.title = title
         self.link = link
         self.time = time
         self.description = description
+        self.thumbnail_url = thumbnail_url
+        self.channel_title = channel_title
 
     def get_matching_tag(self, tags):
         search_text = [word.lower() for word in (self.description.split() + self.title.split())]
@@ -181,25 +242,26 @@ class Video:
         return word_match[0] if len(word_match) > 0 else None
 
     @classmethod
-    def get_latest_videos(cls, youtube, channel_id, last_fetch_time):
-        from utils.utilities import get_utc_now
+    def get_latest_videos(cls, youtube, channel_id, last_fetched_video_id):
 
         response = youtube.api_activity(channel_id)
 
         result = []
-        current_time = get_utc_now()
+        videos = response["items"]
+        latest_video_id = videos[0]['contentDetails']['upload']['videoId'] if len(videos) > 0 else ""
 
-        for video in response["items"]:
+        for video in videos:
 
-            # ignore playlistItem
+            # consider only video upload activities
             if(video["snippet"]["type"] != "upload"):
                 continue
 
             # get publish time in UTC + 0
-            publish_time = format_date(video["snippet"]["publishedAt"][:19])
+            publish_time = parse_date(video["snippet"]["publishedAt"][:19])
+            video_id = video['contentDetails']['upload']['videoId']
 
             # stop when already fetched video
-            if(publish_time <= last_fetch_time):
+            if last_fetched_video_id == "" or (video_id == last_fetched_video_id):
                 break
 
             str_publish_time = publish_time.strftime("%m/%d/%Y, %H:%M:%S")
@@ -207,9 +269,13 @@ class Video:
             description = video["snippet"]["description"]
             video_id = video['contentDetails']['upload']['videoId']
             video_link = "https://www.youtube.com/watch?v=" + video_id
+            channel_title = video["snippet"]["channelTitle"]
+            thumbnail_url = video["snippet"]["thumbnails"]["medium"]["url"]
 
-            video = Video(id=video_id, title=title, link=video_link, time=str_publish_time, description=description)
+
+            video = Video(id=video_id, title=title, link=video_link, time=str_publish_time,
+                          description=description, channel_title=channel_title, thumbnail_url=thumbnail_url)
 
             result.append(video)
 
-        return result, current_time
+        return result, latest_video_id

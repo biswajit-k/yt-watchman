@@ -1,10 +1,9 @@
-import humanize
 from flask import request, session
 from flask_cors import cross_origin
 
 from settings import db
 from routes import router
-from utils.utilities import get_utc_now
+from utils.utilities import MyException, get_utc_now
 from models.subscription import Subscription, subscriptions_schema
 from models.user import User
 from routes.middleware import auth_required
@@ -28,16 +27,15 @@ def give_subscriptions():
 
     user.available_request -= total_subscriptions
 
-    paused_subscriptions = [Subscription.normalize(subscription) for subscription
-                            in subscriptions_schema.dump(paused_subscription_query)]
-    active_subscriptions = [Subscription.normalize(subscription) for subscription
-                            in subscriptions_schema.dump(active_subscription_query)]
+    try:
+        paused_subscriptions = [Subscription.normalize(subscription) for subscription
+                                in subscriptions_schema.dump(paused_subscription_query)]
+        active_subscriptions = [Subscription.normalize(subscription) for subscription
+                                in subscriptions_schema.dump(active_subscription_query)]
 
-    return {"active": active_subscriptions, "paused": paused_subscriptions}
-    # try:
-    # except:
-    #     return {"error": "Opps! something went wrong!"}
-
+        return {"active": active_subscriptions, "paused": paused_subscriptions}
+    except MyException as e:
+        return {"error": str(e)}, 520
 
 @router.route("/api/subscription/stats", methods=["GET"])
 @cross_origin(supports_credentials=True)
@@ -148,6 +146,8 @@ def serve_channel():
         try:
             channel = youtube.get_channel_from_id(youtube.get_channel_id_from_url(url))
             return channel
+        except MyException as e:
+            return {"error": str(e)}, 520
         except:
             return {"error": "Something went wrong. please try again"}, 520
 

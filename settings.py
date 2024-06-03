@@ -14,8 +14,8 @@ db_pass = os.environ.get('DB_PASS')
 db_name = os.environ.get('DB_NAME')
 db_user = os.environ.get('DB_USER')
 
-db_uri = "mysql+pymysql://root:@localhost:3306/yt-watchman" if is_dev \
-            else f"mysql+pymysql://{db_user}:{db_pass}@{db_endpoint}:3306/{db_name}"
+db_uri = "postgresql://postgres:root@localhost:5432/yt-watchman" if is_dev \
+            else f"postgresql://{db_user}:{db_pass}@{db_endpoint}:5432/{db_name}"
 
 # static folder not required in dev, as serving frontend seperately
 application = Flask("application", static_url_path='/', static_folder='./build')

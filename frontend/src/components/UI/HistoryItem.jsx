@@ -1,5 +1,3 @@
-import React from "react";
-
 import { Tag } from "../index";
 
 const openInNewTab = (url) => {
@@ -25,7 +23,7 @@ export default function HistoryItem({ item }) {
               openInNewTab(`https://www.youtube.com/watch?v=${item.video_id}`)
             }
           >
-            {item.title}
+            {item.video_title}
           </h2>
           {item.comment_id.length !== 0 && (
             <a

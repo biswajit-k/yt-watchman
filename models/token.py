@@ -1,7 +1,6 @@
-import os
 from sqlalchemy.orm.session import object_session
 
-from settings import db, ma
+from settings import db
 from utils.utilities import get_utc_now, get_duration_seconds
 
 # TODO: put constants in a file and import from there like environment variables
@@ -33,32 +32,6 @@ class Token(db.Model):
         self.__available_request = value
 
 
-    def get_credentials(self, refresh=False):
-        """ returns credentials if token is valid else deletes it and returns None
-        """
-        from google.oauth2 import credentials
-        from google.auth.transport.requests import Request
-
-        config = {
-            'token': None,
-            'refresh_token': self.refresh_token,
-            'token_uri': 'https://www.googleapis.com/oauth2/v3/token',
-            'client_id': os.environ.get('CLIENT_ID'),
-            'client_secret': os.environ.get('CLIENT_SECRET')
-        }
-
-        cred = credentials.Credentials(**config)
-
-        if cred.expired:
-            print("token is expired")
-            object_session(self).delete(self)       # type:ignore
-            return None
-
-        if refresh:
-            cred.refresh(Request())
-
-        return cred
-
     # TODO: this function can be made to return time in which comment will get reset
     # 0 - token available; 3352 - 3352 seconds more required; -1 - token not present(use humanize in route, not here)
     @classmethod
@@ -77,7 +50,7 @@ class Token(db.Model):
 
         token = cls.get_token(session, user_id)
         status = {
-            'available': (token and token.get_credentials() is not None) or False
+            'available': token is not None
         }
         if status.get('available'):
             if token.available_request == 0:

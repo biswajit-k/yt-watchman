@@ -79,13 +79,11 @@ export default function YourSubscription() {
         },
       },
       (data) => {
-        setSubscriptionsData(data);
+        setSubscriptions(data);
       }
     );
   }
-  function setSubscriptionsData(data) {
-    setSubscriptions(data);
-  }
+
   function subscriptionHandler(type, subscription) {
     requester(
       {

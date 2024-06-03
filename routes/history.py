@@ -7,6 +7,7 @@ from models.history import History, history_schema
 from models.user import User
 
 from routes.middleware import auth_required
+from utils.utilities import MyException
 
 
 @router.route("/api/history", methods=["GET"])
@@ -21,6 +22,8 @@ def give_history():
         return {"error": "Oops! requests exceed quota limit"}, 429
 
     user.available_request -= len(history_query)
-    history_list = [History.normalize(history) for history in history_schema.dump(history_query)]
-    return {"history": history_list}
-
+    try:
+        history_list = [History.normalize(history) for history in history_schema.dump(history_query)]
+        return {"history": history_list}
+    except MyException as e:
+        return {"error": str(e)}, 520

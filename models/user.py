@@ -5,7 +5,6 @@ from models.token import Token
 from models.history import History
 from models.subscription import Subscription
 from utils.utilities import get_duration_seconds, get_utc_now
-from youtube.mail_sender import send_mail
 
 LOGGED_IN_USER_QUOTA = 400
 GUEST_USER_QUOTA = 200
@@ -32,30 +31,11 @@ class User(db.Model):
 
     def get_youtube(self):
         from youtube.youtube import UserYoutube
-        return UserYoutube(object_session(self), self.id)
-
-    def send_commented_mail(self, history):
-        subject = "Youtube Watchman | Comment made on video sucessfully!"
-        body = f"""Hi Subscriber,
-
-        Comment made on your behalf on video. The details are below-
-        Title: {history.video_title}
-        Tag Found: {history.tag}
-        Comment Link: https://www.youtube.com/watch?v={history.video_id}&lc={history.comment_id}
-
-Relax and let watchman work for you.
-YT-Watchman
-"""
-        print("starting mail send function")
-        send_mail(self.email, subject, body)
-
+        user_youtube = UserYoutube(object_session(self), self.id)
+        return user_youtube if user_youtube.youtube else None
 
     def is_guest(self):
         return not bool(self.email)
-
-    def has_token(self):
-        token = Token.get_token(object_session(self), self.id)
-        return token and token.get_credentials() is not None or False
 
     @property
     def available_request(self):

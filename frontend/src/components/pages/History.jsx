@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import {
@@ -47,6 +47,7 @@ export default function History() {
         },
       },
       (data) => {
+        console.log(data)
         const newChannels = [];
         data.history.forEach((history) => {
           if (!newChannels.includes(history.channel_title)) {

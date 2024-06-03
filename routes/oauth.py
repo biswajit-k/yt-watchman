@@ -5,6 +5,7 @@ from google.oauth2 import id_token
 from google.auth.transport import requests
 from google_auth_oauthlib import flow
 from settings import db                     # db.session is a scoped_session - flask creates, you can create it on ur own aswell
+from utils.utilities import MyException
 from youtube.env_details import env_details
 from models.user import User
 from models.token import Token
@@ -54,16 +55,20 @@ def login_guest():
 @cross_origin(supports_credentials=True)
 @auth_required
 def get_current_user():
-    user_id = session['user_id']
+    user_id = session.get('user_id')
 
     user = User.get_user(db.session, user_id)
+
+    if not user:
+        return {}
+
     return ({
         "id": user.id,
         "name": user.name,
         "email": user.email,
         "is_guest": user.is_guest(),
         "available_request": user.available_request,
-        "has_token": user.has_token(),
+        "has_token": Token.get_token(db.session, user.id) is not None,
     })
 
 
@@ -137,7 +142,13 @@ def has_comment_access():
         return {"status": 0}                            # no comment access
 
     user_youtube = User.get_user(db.session, user_id).get_youtube()
-    user_channel = user_youtube.get_channel()
+    if not user_youtube:
+        return {"status": 0}                            # no comment access
+
+    try:
+        user_channel = user_youtube.get_channel()
+    except MyException as e:
+        return {"error": str(e)}, 500
 
     if (len(user_channel["items"]) == 0):
         # comment access, but no user channel to comment

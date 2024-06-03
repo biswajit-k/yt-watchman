@@ -3,9 +3,12 @@
 # frontend
 node_modules
 build
+maizzle
 
 # backend
 __pycache__
+youtube/email.html
 
 # others
 client_secret.json
+demo.*
