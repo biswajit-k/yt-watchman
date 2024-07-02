@@ -1,9 +1,8 @@
 from flask import session
 from flask_cors import cross_origin
 
-from settings import db
 from routes import router
-from models.history import History, history_schema
+from models.history import History
 from models.user import User
 
 from routes.middleware import auth_required
@@ -15,15 +14,16 @@ from utils.utilities import MyException
 @auth_required
 def give_history():
     user_id = session.get('user_id')
-    history_query = db.session.query(History).filter_by(user_id=user_id).all()
+    history_query = History.query.filter_by(user_id=user_id).all()
 
-    user = User.get_user(db.session, user_id)
+    user = User.query.filter_by(id=user_id).one()
+
     if (len(history_query) > user.available_request):
         return {"error": "Oops! requests exceed quota limit"}, 429
 
     user.available_request -= len(history_query)
     try:
-        history_list = [History.normalize(history) for history in history_schema.dump(history_query)]
+        history_list = [history.normalize() for history in history_query]
         return {"history": history_list}
     except MyException as e:
         return {"error": str(e)}, 520

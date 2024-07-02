@@ -4,12 +4,12 @@ from flask_cors import cross_origin
 from google.oauth2 import id_token
 from google.auth.transport import requests
 from google_auth_oauthlib import flow
-from settings import db                     # db.session is a scoped_session - flask creates, you can create it on ur own aswell
 from utils.utilities import MyException
 from youtube.env_details import env_details
 from models.user import User
 from models.token import Token
 
+from models.db_utils import db_session
 from routes.middleware import auth_required
 
 google_request = requests.Request()
@@ -27,10 +27,10 @@ def login_user():
         session['user_id'] = id_info['sub']
         session.permanent = True
 
-        user = User.get_user(db.session, id_info['sub'])
+        user = User.get_user(id_info['sub'])
         if user is None:
             print("user dont exits")
-            user = User.create_user(db.session, id=id_info['sub'], name=id_info['name'], email=id_info['email'])
+            user = User.create_user(id=id_info['sub'], name=id_info['name'], email=id_info['email'])
         return user.asdict()
 
     except ValueError:
@@ -44,8 +44,8 @@ def login_guest():
         return {"error": "You are already logged in"}, 405
 
     guest = User.create_guest_user()
-    db.session.add(guest)
-    db.session.commit()
+    db_session.add(guest)
+    db_session.commit()
     session['user_id'] = guest.id
 
     return guest.asdict()
@@ -57,7 +57,7 @@ def login_guest():
 def get_current_user():
     user_id = session.get('user_id')
 
-    user = User.get_user(db.session, user_id)
+    user = User.get_user(user_id)
 
     if not user:
         return {}
@@ -68,7 +68,7 @@ def get_current_user():
         "email": user.email,
         "is_guest": user.is_guest(),
         "available_request": user.available_request,
-        "has_token": Token.get_token(db.session, user.id) is not None,
+        "has_token": Token.get_token(user.id) is not None,
     })
 
 
@@ -76,9 +76,10 @@ def get_current_user():
 @cross_origin(supports_credentials=True)
 @auth_required
 def logout_user():
-    user = User.get_user(db.session, session['user_id'])
+    user = User.query.filter_by(id=session['user_id']).one()
+
     if user.is_guest():
-        User.delete_guest(db.session, user.id)
+        User.delete_guest(user.id)
 
     session.pop('user_id')
     print("session deleted")
@@ -90,7 +91,7 @@ def logout_user():
 @auth_required
 def get_token_status():
     user_id = session.get('user_id')
-    return Token.get_status(db.session, user_id)
+    return Token.get_status(user_id)
 
 
 @router.route("/api/set_token", methods=['POST'])
@@ -118,15 +119,15 @@ def set_token_from_code():
 
     # update db
     user_id = session['user_id']
-    existing_token = Token.get_token(db.session, user_id)
+    existing_token = Token.get_token(user_id)
 
     if not existing_token:
         token = Token(user_id=user_id, refresh_token=credentials.refresh_token)
-        db.session.add(token)
+        db_session.add(token)
     else:
-        existing_token.refresh_token=credentials.refresh_token
+        existing_token.refresh_token = credentials.refresh_token
 
-    db.session.commit()
+    db_session.commit()
 
     return {"success": "Comment Access Granted!"}
 
@@ -138,10 +139,10 @@ def has_comment_access():
 
     user_id = session.get('user_id')
 
-    if not Token.get_status(db.session, user_id).get('available'):
+    if not Token.get_status(user_id).get('available'):
         return {"status": 0}                            # no comment access
 
-    user_youtube = User.get_user(db.session, user_id).get_youtube()
+    user_youtube = User.query.filter_by(id=user_id).one().get_youtube()
     if not user_youtube:
         return {"status": 0}                            # no comment access
 

@@ -73,7 +73,7 @@ export default function YourSubscription() {
   function requestSubscription() {
     requester(
       {
-        url: "/api/subscription",
+        url: "/api/subscriptions",
         body: {
           credentials: "include",
         },

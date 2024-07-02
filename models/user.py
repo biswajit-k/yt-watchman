@@ -1,6 +1,8 @@
-from settings import db
-from sqlalchemy.orm.session import object_session
+from datetime import datetime
+from sqlalchemy import String
+from sqlalchemy.orm import mapped_column, Mapped
 
+from models.db_utils import Base, db_session
 from models.token import Token
 from models.history import History
 from models.subscription import Subscription
@@ -10,12 +12,13 @@ LOGGED_IN_USER_QUOTA = 400
 GUEST_USER_QUOTA = 200
 
 
-class User(db.Model):
-    id = db.Column(db.String(120), primary_key=True)
-    name = db.Column(db.String(80), nullable=False)
-    email = db.Column(db.String(120), default="")
-    __reset_time = db.Column(db.DateTime, default=get_utc_now())
-    __available_request = db.Column(db.Integer, nullable=False)
+class User(Base):
+    __tablename__ = 'user'
+    id: Mapped[str] = mapped_column(String(120), primary_key=True)
+    name: Mapped[str] = mapped_column(String(80))
+    email: Mapped[str] = mapped_column(String(120), default="")
+    __reset_time: Mapped[datetime] = mapped_column(default=get_utc_now())
+    __available_request: Mapped[int]
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -31,7 +34,7 @@ class User(db.Model):
 
     def get_youtube(self):
         from youtube.youtube import UserYoutube
-        user_youtube = UserYoutube(object_session(self), self.id)
+        user_youtube = UserYoutube(db_session, self.id)
         return user_youtube if user_youtube.youtube else None
 
     def is_guest(self):
@@ -43,7 +46,7 @@ class User(db.Model):
         if (get_duration_seconds(self.__reset_time) >= 86400 and self.__available_request < request_quota):
             self.__available_request = request_quota
             self.__reset_time = get_utc_now()
-            object_session(self).commit()           # type: ignore (guaranteed that session exist as object is commited
+            db_session.commit()           # type: ignore (guaranteed that session exist as object is commited
                                                     #               at the time of creation)
 
         return self.__available_request
@@ -51,19 +54,19 @@ class User(db.Model):
     @available_request.setter
     def available_request(self, value):
         self.__available_request = value
-        object_session(self).commit()            # type: ignore
+        db_session.commit()            # type: ignore
 
 
     @classmethod
-    def create_user(cls, session, id, name, email):
+    def create_user(cls, id, name, email):
         user = User(id=id, name=name, email=email)
-        session.add(user)
-        session.commit()
+        db_session.add(user)
+        db_session.commit()
         return user
 
     @classmethod
-    def get_user(cls, session, id):
-        return session.query(cls).filter_by(id=id).first()
+    def get_user(cls, id):
+        return User.query.filter_by(id=id).first()
 
     @classmethod
     def create_guest_user(cls):
@@ -74,30 +77,10 @@ class User(db.Model):
         return guest
 
     @classmethod
-    def delete_guest(cls, session, user_id):
-        session.query(Token).filter_by(user_id=user_id).delete()
-        session.query(History).filter_by(user_id=user_id).delete()
-        session.query(Subscription).filter_by(user_id=user_id).delete()
-        session.query(cls).filter_by(id=user_id).delete()
-        session.commit()
+    def delete_guest(cls, user_id):
+        Token.query.filter_by(user_id=user_id).delete()
+        History.query.filter_by(user_id=user_id).delete()
+        Subscription.query.filter_by(user_id=user_id).delete()
+        User.query.filter_by(id=user_id).delete()
+        db_session.commit()
 
-    # user details
-    """
-        fields:
-            public:
-                id, name, email, is_guest, token(backref)
-
-            private:
-            request(available_request)
-        methods:
-            classMethods:   # session parameter take
-                User.send_mail(cls, session, ...)
-                make_comment()
-                has_token()
-                    user.token.refresh_token is not None and not expired -> change working of get_credentials
-
-            static:
-                User.get_user(id)
-
-
-    """

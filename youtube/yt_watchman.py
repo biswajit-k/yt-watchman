@@ -5,20 +5,20 @@ from collections import defaultdict
 from operator import attrgetter
 from sqlalchemy.exc import SQLAlchemyError, IntegrityError
 
-from settings import application
-from thread_safe_utils import create_scoped_session, add_app_context
+from application import application
+from thread_safe_utils import add_app_context
 from models.subscription import Subscription
-from models.token import Token
 from models.history import History
+from models.user import Token
 from models.user import User
+from models.db_utils import non_expiring_session
 from utils.utilities import MyException
 from youtube.youtube import Video
 from youtube.mail_sender import EmailService
 
-
+# objects will get expired on commit
 @add_app_context(application.app_context())
-@create_scoped_session(expire_on_commit=False)    # don't want to expire objects as co
-def yt_watchman(session):
+def yt_watchman():
   """
     algorithm:
       - group subscriptions by channel and fetch latest videos by channel(last fetch time of channel -
@@ -44,8 +44,11 @@ def yt_watchman(session):
   from application import youtube
 
   # core logic
-  all_subscriptions = session.query(Subscription).filter_by(active=True).order_by(
-                  Subscription.channel_id).all()
+  all_subscriptions = non_expiring_session  \
+                      .query(Subscription)  \
+                      .filter_by(active=True) \
+                      .order_by(Subscription.channel_id)  \
+                      .all()
   channel = [list(g) for k, g in groupby(all_subscriptions, attrgetter('channel_id'))]
 
   all_history: list[History] = []
@@ -57,7 +60,6 @@ def yt_watchman(session):
     channel_id = subscriptions[0].channel_id
     last_video_id_fetched = subscriptions[0].last_video_id_fetched
     #### get latest videos for oldest fetch time sub - for each sub iterate list from pos after its last fetch time
-    # TODO: scope for "await" in below function as it takes lot of time
     try:
       fetch_time = datetime.datetime.now(datetime.UTC)
       latest_videos, latest_video_id = Video.get_latest_videos(youtube, channel_id, last_video_id_fetched)
@@ -66,13 +68,17 @@ def yt_watchman(session):
       return
 
     for sub in subscriptions:
-      user = User.get_user(session, sub.user_id)
+      user = non_expiring_session.query(User).filter_by(id=sub.user_id).first()
 
       if user is None:
         continue
 
-      user_token = Token.get_token(session, user.id)
-      session.refresh(user_token)
+      user_token = non_expiring_session.query(Token).filter_by(user_id=user.id).first()
+
+      if user_token is None:
+        continue
+
+      non_expiring_session.refresh(user_token)
 
       sub.last_video_id_fetched = latest_video_id
 
@@ -104,10 +110,10 @@ def yt_watchman(session):
         # then previous history persists
         try:
           all_history.append(video_history)   # add matching video w/o comment in history
-          session.add(video_history)
-          session.commit()
+          non_expiring_session.add(video_history)
+          non_expiring_session.commit()
         except SQLAlchemyError as e:
-          session.rollback()
+          non_expiring_session.rollback()
           all_history.pop()
           if isinstance(e, IntegrityError):
               print("Not inserting! Same history with comment info. already exist!")
@@ -117,11 +123,11 @@ def yt_watchman(session):
 
   mail_recipients = defaultdict(lambda: defaultdict(list))
   for history in all_history:
-    user = User.get_user(session, history.user_id)
+    user = User.query.filter_by(id=history.user_id).one()
     subscription = history.get_subscription()
     for recipient_email in subscription.emails: # type:ignore
       mail_recipients[recipient_email][user.name].append(history)
 
   EmailService.send_history_mail(mail_recipients)
 
-  session.commit()
+  non_expiring_session.commit()

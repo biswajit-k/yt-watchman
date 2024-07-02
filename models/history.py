@@ -1,22 +1,31 @@
-from sqlalchemy.orm.session import object_session
-from sqlalchemy import ForeignKeyConstraint
+from datetime import datetime
+from sqlalchemy.orm import mapped_column, Mapped
+from sqlalchemy import ForeignKeyConstraint, String
 
+from models.db_utils import Base, db_session
 from models.subscription import Subscription
-from settings import db, ma
-from utils.utilities import parse_date, get_utc_now, get_duration_seconds
+from utils.utilities import get_utc_now, get_duration_seconds
 
 
-class History(db.Model):
-    video_id = db.Column(db.String(80), primary_key=True, nullable=False)
-    user_id = db.Column(db.String(80), primary_key=True, nullable=False)
-    channel_id = db.Column(db.String(120), nullable=False)
-    video_title = db.Column(db.String(120), nullable=False)
-    tag = db.Column(db.String(120), nullable=False)
-    found_at = db.Column(db.DateTime, default=get_utc_now())
-    comment_id = db.Column(db.String(120), nullable=False, default='')
+class History(Base):
+    __tablename__ = 'history'
+    video_id: Mapped[str] = mapped_column(primary_key=True)
+    user_id: Mapped[str] = mapped_column(String(40), primary_key=True)
+    channel_id: Mapped[str] = mapped_column(String(40))
+    video_title: Mapped[str] = mapped_column(String(120))
+    tag: Mapped[str]
+    found_at: Mapped[datetime] = mapped_column(default=get_utc_now())
+    comment_id: Mapped[str] = mapped_column(String(120), default='')
+
+    # # non-persistent fields
+    # video_link: str
+    # thumbnail_url: Mapped[str]
+    # channel_title: Mapped[str]
+    # video_description: Mapped[str]
 
     __table_args__ = (ForeignKeyConstraint([user_id, channel_id],
                                            [Subscription.user_id, Subscription.channel_id]), {})
+
 
     def __repr__(self) -> str:
         return f'''video_id- {self.video_id} \n
@@ -27,71 +36,30 @@ class History(db.Model):
         comment_id- {self.comment_id}  \n
         found_at- {self.found_at} \n'''
 
+    def to_dict(self):
+        dict = self.__dict__
+        dict.pop('_sa_instance_state', None)
+        return dict
+
     def get_subscription(self):
-        return object_session(self).query(Subscription).filter_by(user_id=self.user_id, channel_id=self.channel_id).first() # type:ignore
+        return Subscription.query.filter_by(user_id=self.user_id, channel_id=self.channel_id).first()
 
-    # @classmethod
-    # def upsert(cls, session, data, key_columns=[]):
-    #     """ function to insert(or update if already present) the data into model.
-    #     conflict will be decided by concatination of `key_columns` + `id` columns
-    #     if same concat other record present then update else insert.
-    #     It is thread-safe """
-
-    #     stmt = insert(cls).values(data.__dict__)
-
-    #     # Important to exclude the ID for update!
-    #     exclude_for_update = [cls.video_id.name, cls.channel_id.name, *key_columns]
-    #     update_dict = {c.name: c for c in stmt.excluded if c.name not in exclude_for_update}
-    #     print(update_dict)
-
-    #     stmt = stmt.on_conflict_do_update(
-    #         index_elements=key_columns,
-    #         set_=update_dict
-    #     ).returning(cls)
-
-    #     orm_stmt = (
-    #         select(cls)
-    #         .from_statement(stmt)
-    #         .execution_options(populate_existing=True)
-    #     )
-
-    #     print("the raw upsert query:")
-    #     from sqlalchemy.dialects import postgresql
-    #     print(orm_stmt.compile(dialect=postgresql.dialect()))
-    #     return session.execute(orm_stmt).scalar()
-
-
-    @classmethod
-    def normalize(cls, history_dic):
-        import copy
+    def normalize(self):
         import humanize
         from application import youtube
 
-        history = copy.copy(history_dic)
-
-        abc = youtube.get_video(history['video_id'])
-        print("abc is:")
-        print(abc)
-        if len(abc['items']) == 0:
-            print(f"video id: {history['video_id']}")
-        video = abc['items'][0]
+        db_session.refresh(self)
+        history = self.to_dict()
+        video = youtube.get_video(history['video_id'])['items'][0]
 
         history['imgUrl'] = video['snippet']['thumbnails']['high']['url']
         history['video_title'] = video['snippet']['title']
         history['channel_title'] = video['snippet']['channelTitle']
 
-        time_found = get_duration_seconds(parse_date(history["found_at"]))
+        time_found = get_duration_seconds(history["found_at"])
         if (divmod(time_found, 3600)[0] < 24):
             history["found_at"] = f"Found {humanize.naturaldelta(time_found)} ago"
         else:
-            date = parse_date(history["found_at"])
+            date = history["found_at"]
             history["found_at"] = f"Found on {date.day} {date.strftime('%B')}, {date.year}"
         return history
-
-
-class HistorySchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = History
-
-
-history_schema = HistorySchema(many=True)

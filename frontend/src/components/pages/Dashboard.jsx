@@ -53,11 +53,14 @@ export default function Dashboard() {
 					credentials: "include",
 				},
 			},
-			(token) => setToken(token)
+			(token) => {
+				console.log(token)
+				setToken(token)	
+			} 
 		);
 		requester(
 			{
-				url: "/api/subscription",
+				url: "/api/subscriptions",
 				body: {
 					credentials: "include",
 				},
@@ -314,10 +317,9 @@ export default function Dashboard() {
 								className={
 									"absolute right-[-.72rem] top-[.4rem] h-[.35rem] w-[.35rem] rounded-full " +
 									(token.available
-										? "bg-green-500"
-										: token.reset
-										? "bg-yellow-400"
-										: "bg-red-400")
+										? token.reset ? "bg-yellow-400" : "bg-green-500"
+										: "bg-red-400"
+										)
 								}></span>
 						</h3>
 						{!token.available && !token.reset && (

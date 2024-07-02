@@ -1,17 +1,24 @@
 import humanize
-from settings import db, ma
-from utils.utilities import parse_date, get_duration_seconds, get_utc_now
+from sqlalchemy import String, ForeignKey
+from datetime import datetime
+from sqlalchemy.orm import Mapped, mapped_column
+from sqlalchemy.dialects.postgresql import ARRAY
+
+from models.db_utils import Base, db_session
+from utils.utilities import get_duration_seconds, get_utc_now
 
 # TODO: delete flaskenv
-class Subscription(db.Model):
-    user_id = db.Column(db.String(120), db.ForeignKey('user.id'), primary_key=True)
-    channel_id = db.Column(db.String(80), primary_key=True)
-    tags = db.Column(db.JSON, nullable=False)
-    emails = db.Column(db.JSON, nullable=False)
-    active = db.Column(db.Boolean, nullable=False, default=True)
-    created_at = db.Column(db.DateTime, default=get_utc_now())
-    comment = db.Column(db.String(240), nullable=False, default='')
-    last_video_id_fetched = db.Column(db.String(50), default='')
+class Subscription(Base):
+    __tablename__ = 'subscription'
+
+    user_id: Mapped[str] = mapped_column(String(40), ForeignKey('user.id'), primary_key=True)
+    channel_id: Mapped[str] = mapped_column(String(40), primary_key=True)
+    tags: Mapped[list[str]] = mapped_column(ARRAY(String))
+    emails: Mapped[list[str]] = mapped_column(ARRAY(String))
+    active: Mapped[bool] = mapped_column(default=True)
+    created_at: Mapped[datetime] = mapped_column(default=get_utc_now())
+    comment: Mapped[str] = mapped_column(String(240), default='')
+    last_video_id_fetched: Mapped[str] = mapped_column(String(50), default='')
 
     def __repr__(self) -> str:
         return f'''user_id- {self.user_id} \n
@@ -23,19 +30,22 @@ class Subscription(db.Model):
         last_video_id_fetched- {self.last_video_id_fetched} \n
         created- {self.created_at} \n'''
 
-    @classmethod
-    def normalize(cls, subscription_dic):
-        import copy
+    def to_dict(self):
+        dict = self.__dict__
+        dict.pop('_sa_instance_state', None)
+        return dict
+
+    def normalize(self):
         from application import youtube
 
-        subscription = copy.copy(subscription_dic)
-
+        db_session.refresh(self)        # TODO: sqlalchemy is not mapping list objects(obj.property raises error), so I refreshed explicitly
+        subscription = self.to_dict()
         channel = youtube.get_channel_from_id(subscription["channel_id"])
-        time_found = get_duration_seconds(parse_date(subscription["created_at"]))
+        time_found = get_duration_seconds(subscription["created_at"])
         if (divmod(time_found, 3600)[0] < 24):
             subscription["created_at"] = f"Created {humanize.naturaldelta(time_found)} ago"
         else:
-            date = parse_date(subscription["created_at"])
+            date = subscription["created_at"]
             subscription["created_at"] = f"Created on {date.day} {date.strftime('%B')}, {date.year}"
 
         subscription["title"] = channel["title"]
@@ -43,9 +53,3 @@ class Subscription(db.Model):
 
         return subscription
 
-class SubscriptionSchema(ma.SQLAlchemyAutoSchema):
-    class Meta:
-        model = Subscription
-
-
-subscriptions_schema = SubscriptionSchema(many=True)

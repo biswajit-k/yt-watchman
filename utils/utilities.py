@@ -7,7 +7,6 @@ def get_duration_seconds(time):
   return (get_utc_now() - time).total_seconds()
 
 def parse_date(date):
-
   format = '%Y-%m-%dT%H:%M:%S.%f' if '.' in date else '%Y-%m-%dT%H:%M:%S'
   return datetime.strptime(date, format)
 

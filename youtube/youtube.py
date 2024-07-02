@@ -1,12 +1,13 @@
 import os
 import traceback
 import httplib2
+from application import application
+from models.db_utils import db_session
 from models.token import Token
 from models.user import User
 from models.user import History
-from settings import application
 from utils.utilities import MyException, parse_date, upsert
-from thread_safe_utils import add_app_context, create_scoped_session
+from thread_safe_utils import add_app_context
 from youtube.mail_sender import EmailService
 
 class Youtube:
@@ -54,7 +55,7 @@ class UserYoutube(Youtube):
         from models.token import Token
         from google.auth.transport.requests import Request
 
-        token = Token.get_token(session, user_id)
+        token = Token.get_token(user_id)
         if token:
             cred = UserYoutube.get_credentials(token)
             try:
@@ -86,8 +87,6 @@ class UserYoutube(Youtube):
         return credentials.Credentials(**config)
 
     def get_channel(self):
-        if self.youtube is None:
-            return None
 
         channel_request = self.youtube.channels().list(
             part="snippet,contentDetails,statistics",
@@ -101,15 +100,14 @@ class UserYoutube(Youtube):
             raise MyException("Network Error! Please try again")
 
     @add_app_context(application.app_context())
-    @create_scoped_session()
-    def handle_comment(self, session, history, user_id, comment):
+    def handle_comment(self, history, user_id, comment):
 
         from sqlalchemy.exc import SQLAlchemyError
 
-        user = User.get_user(session, user_id)
+        user = User.get_user(user_id)
 
         # lock user_token until the session is committed
-        user_token = session.query(Token).filter_by(user_id=user_id).with_for_update().first()
+        user_token = Token.query.filter_by(user_id=user_id).with_for_update().first()
 
         if not user or not user_token or not user_token.available_request > 0:
             return
@@ -123,13 +121,12 @@ class UserYoutube(Youtube):
             EmailService.send_comment_mail(user.email, history)
 
             # upsert history, since we need to overwrite existing history without comment if present in DB
-            history_to_dict = history.__dict__
-            history_to_dict.pop('_sa_instance_state', None)
-            upsert(session, History, [history_to_dict])
+            history_to_dict = history.to_dict()
+            upsert(db_session, History, [history_to_dict])
 
             # use token
             user_token.available_request -= 1
-            session.commit()
+            db_session.commit()
 
         except SQLAlchemyError as e:
             print(traceback.format_exc())
@@ -221,7 +218,6 @@ class DeveloperYoutube(Youtube):
             print(traceback.format_exc())
             raise MyException("Network Error! Please try again")
 
-    # def extract_video(self, channel_id, tag_list, last_fetch_time):
 
 class Video:
 
