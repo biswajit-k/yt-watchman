@@ -13,16 +13,11 @@ db_uri = "postgresql://postgres:root@localhost:5432/yt-watchman" if is_dev \
             else f"postgresql://{db_user}:{db_pass}@{db_endpoint}:5432/{db_name}"
 
 engine = create_engine(db_uri)
-db_session = scoped_session(sessionmaker(autocommit=False,
-                                         autoflush=False,
-                                         bind=engine))
+db_session = scoped_session(sessionmaker(bind=engine))
 
 non_expiring_session = scoped_session(sessionmaker(
-                autocommit=False,
-                autoflush=False,
                 bind=engine,
-                expire_on_commit=False)
-            )
+                expire_on_commit=False))
 
 class Base(DeclarativeBase):
     query = db_session.query_property()

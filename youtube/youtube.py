@@ -52,7 +52,6 @@ class UserYoutube(Youtube):
     def __init__(self, session, user_id):
 
         from googleapiclient.discovery import build
-        from models.token import Token
         from google.auth.transport.requests import Request
 
         token = Token.get_token(user_id)

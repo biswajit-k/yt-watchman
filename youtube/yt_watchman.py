@@ -123,10 +123,13 @@ def yt_watchman():
 
   mail_recipients = defaultdict(lambda: defaultdict(list))
   for history in all_history:
-    user = User.query.filter_by(id=history.user_id).one()
+    user = User.query.filter_by(id=history.user_id).first()
+    if not user:  # handle when user gets deleted during watchman run
+      continue
     subscription = history.get_subscription()
-    for recipient_email in subscription.emails: # type:ignore
-      mail_recipients[recipient_email][user.name].append(history)
+    if subscription:
+      for recipient_email in subscription.emails:
+        mail_recipients[recipient_email][user.name].append(history)
 
   EmailService.send_history_mail(mail_recipients)
 

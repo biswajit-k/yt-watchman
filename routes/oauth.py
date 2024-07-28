@@ -44,8 +44,6 @@ def login_guest():
         return {"error": "You are already logged in"}, 405
 
     guest = User.create_guest_user()
-    db_session.add(guest)
-    db_session.commit()
     session['user_id'] = guest.id
 
     return guest.asdict()
@@ -125,7 +123,7 @@ def set_token_from_code():
         token = Token(user_id=user_id, refresh_token=credentials.refresh_token)
         db_session.add(token)
     else:
-        existing_token.refresh_token = credentials.refresh_token
+        existing_token.refresh_token = credentials.refresh_token    # type: ignore
 
     db_session.commit()
 

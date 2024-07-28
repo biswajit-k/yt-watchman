@@ -74,6 +74,8 @@ class User(Base):
         id = str(uuid.uuid4())
         name = "guest-" + str(random.randrange(10**2, 10**3))
         guest = User(id=id, name=name)
+        db_session.add(guest)
+        db_session.commit()
         return guest
 
     @classmethod

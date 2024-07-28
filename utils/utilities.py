@@ -14,6 +14,11 @@ def get_utc_now():
   return datetime.now(timezone.utc).replace(tzinfo=None)
 
 def upsert(session, model, rows):
+    """ updates the rows of the table defined by the model by matching
+        the primary key. If row is not found in table, then adds it.
+        Note that the commit is not handeled within the function. It
+        needs to be handled explicitly.
+    """
     from sqlalchemy.dialects import postgresql
     from sqlalchemy import inspect
 
