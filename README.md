@@ -1,5 +1,14 @@
 ## Youtube Watchman - Personalized Dashboard Application
 
+| ![landing page](./landing.png) | 
+|:--:| 
+| *Landing Page* |
+
+
+| ![dashboard](./dashboard.png) | 
+|:--:| 
+| *Dashboard* |
+
 ### 📝 Quick Notes
 
 * How to run(_for development or local testing_):
